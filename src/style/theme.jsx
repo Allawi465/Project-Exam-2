@@ -4,7 +4,7 @@ import React from 'react';
 const theme = {
   color: {
     lightWhite: 'var(--color-lightWhite)',
-    LightBlack: 'var(--color-LightBlack)',
+    lightBlack: 'var(--color-lightBlack)',
     lightgray: 'var(--color-lightgray)',
     pink: 'var(--color-pink)',
     red: 'var(--color-red)',
