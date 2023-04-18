@@ -3,14 +3,12 @@ import React from 'react';
 
 const theme = {
   color: {
-    primary: 'var(--color-primary)',
-    LightBlack: 'var(--color-LightBlack)',
-    black: 'var(--color-black)',
-    white: 'var(--color-white)',
     lightWhite: 'var(--color-lightWhite)',
-    lightgrey: 'var(--color-lightgrey)',
+    LightBlack: 'var(--color-LightBlack)',
+    lightgray: 'var(--color-lightgray)',
+    pink: 'var(--color-pink)',
     red: 'var(--color-red)',
-    darkred: 'var(--color-darkred)',
+    purple: 'var(--color-purple)',
   },
 };
 
