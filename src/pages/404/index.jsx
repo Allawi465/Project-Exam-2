@@ -8,9 +8,9 @@ function RouteNotFound() {
             <meta name="description" content="Page not found. Please try again." />
             <meta name="keywords" content="404, page not found, Holidaze" />
         </Helmet>
-            <div >
+        <div className='text-black'>
             pages not Found
-            </div>
+        </div>
     </div>;
 }
 
