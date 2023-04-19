@@ -1,5 +1,6 @@
 import Modal from 'react-bootstrap/Modal';
-import { Login } from '../../../style/buttons';
+import { ModelBtn } from '../../../style/buttons';
+import SignUp from '../../../form/sign-up';
 
 function SignUpModel(props) {
 
@@ -11,9 +12,10 @@ function SignUpModel(props) {
         <Modal.Header closeButton>
           <Modal.Title>Sign up</Modal.Title>
         </Modal.Header>
-        <Modal.Body>Woohoo, you are reading this text in a modal!</Modal.Body>
+        <Modal.Body><SignUp/></Modal.Body>
         <Modal.Footer>
-        <Login onClick={onSignUpClick}>Login</Login>
+        <Modal.Title>Sign in</Modal.Title>
+        <ModelBtn onClick={onSignUpClick}>Login</ModelBtn>
         </Modal.Footer>
       </Modal>
     </>
