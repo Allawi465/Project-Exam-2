@@ -6,8 +6,8 @@ html {
     --color-lightBlack: #232324;
     --color-lightgray: #57595F;
     --color-pink: #BB86FC;
-    --color-red: #CE4F51;
-    --color-purple: #8C54FB;
+    --color-red: #FB6264;
+    --color-purple: #683DBD;
     height: 100%;
 }
 

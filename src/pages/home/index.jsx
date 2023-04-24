@@ -1,8 +1,11 @@
-import React from 'react';
+import { Container, Row } from 'react-bootstrap';
 import { Helmet } from 'react-helmet-async';
-
+import SearchUi from '../../components/search';
+import Venue from '../../components/cards/cards/cards';
+import Hero from '../../components/hero';
 
 function Home() {
+
     return (
         <div>
             <Helmet>
@@ -11,9 +14,15 @@ function Home() {
                     name="description" content="Holidaze makes vacation planning stress-free. Find, book, and manage your rental with ease and enjoy your trip without worries." />
                 <meta name="keywords" content="travel, vacation, holiday, rental, book, rent out, host, homes, apartments, bookings, reviews" />
             </Helmet>
-            <div>
-                hei
-            </div>
+            <Hero />
+            <SearchUi />
+            <Container className='cards d-flex justify-content-center'>
+                <Row className='g-3'>
+                    <Venue />
+                    <Venue />
+                    <Venue />
+                </Row>
+            </Container>
         </div>
     );
 }
