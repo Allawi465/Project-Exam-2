@@ -12,7 +12,7 @@ function SettingsModel(props) {
           <Modal.Title>Settings</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-        <p className="h5">Change your avatar:</p>
+        <p className="h6">Change your avatar</p>
         <ChangeAvatarForm/>
       </Modal.Body>
       </Modal>
