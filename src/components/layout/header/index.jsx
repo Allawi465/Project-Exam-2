@@ -2,7 +2,7 @@ import NavBar from "../navbar";
 
 function Header() {
     return (
-      <header>
+      <header className="mb-4">
         <NavBar />
       </header>
     );

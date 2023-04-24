@@ -1,0 +1,17 @@
+.input-group {
+
+    &-text {
+        background: none;
+    }
+
+
+    .form-control {
+        border-left: none;
+        border-right: none;
+    }
+}
+
+.search-form {
+    margin: 0 auto !important;
+    max-width: 343px;
+}
