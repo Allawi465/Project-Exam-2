@@ -2,8 +2,8 @@ import { Container } from "react-bootstrap";
 import hero from "../../images/hero.jpg"
 import { HeroBtn } from "../../style/buttons";
 import useModal from "../../hooks/model/useModel";
-import SignUpModel from "../models/authModels/sign-up";
-import LoginModel from '../models/authModels/login';
+import SignUpModel from "../models/sign-up";
+import LoginModel from "../models/login";
 
 function Hero() {
     const {
