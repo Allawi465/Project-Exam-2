@@ -34,12 +34,12 @@ export default function useModal() {
   return {
     showLoginModel,
     showSignUpModel,
+    showSettings,
     handleLoginModel,
     handleCloseLoginModel,
     handleSignUpModel,
     handleCloseSignUpModel,
-    showSettings,
+    handleOpenSettings,
     handleCloseSettings,
-    handleOpenSettings
   };
 }
