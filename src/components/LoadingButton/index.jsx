@@ -2,12 +2,12 @@ import { useEffect, useState } from 'react';
 import { ModelLoadingBtn } from '../../style/buttons';
 import Spinner from 'react-bootstrap/Spinner';
 
-function LoadingButton({ buttonText }) {
+function LoadingButton({ buttonText, isValid, loading }) {
   const [isLoading, setLoading] = useState(false);
 
   useEffect(() => {
     function simulateNetworkRequest() {
-      return new Promise((resolve) => setTimeout(resolve, 3000));
+      return new Promise((resolve) => setTimeout(resolve, 1000));
     }
 
     if (isLoading) {
@@ -15,15 +15,21 @@ function LoadingButton({ buttonText }) {
         setLoading(false);
       });
     }
-  }, [isLoading]);
+  }, [isLoading, loading, isValid]);
+
+  useEffect(() => {
+    if (!loading) {
+      setLoading(false);
+    }
+  }, [loading]);
 
   const handleClick = () => setLoading(true);
 
   return (
-     <ModelLoadingBtn
+    <ModelLoadingBtn
       variant="primary"
-      disabled={isLoading}
-      onClick={!isLoading ? handleClick : null}
+      disabled={loading}
+      onClick={!isLoading && isValid ? handleClick : null}
     >
       {isLoading ? (
         <>
