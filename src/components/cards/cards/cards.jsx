@@ -15,7 +15,7 @@ function Venue() {
           <div className='card-title my-2 mx-1'>
             <Card.Title className='card-title'>Stryn, Norge</Card.Title>
             <div className='card-title-star'>
-              <AiFillStar size={16} />
+              <AiFillStar size={18} />
               <span className='card-title-rating ms-1'>
                 4,9
               </span>
@@ -30,7 +30,11 @@ function Venue() {
               <div className='card-text-icon ms-1'><AiFillCar /></div>
             </div>
             <div className='card-text-prices mt-2'>
-              <span className='card-text-prices-price'>$599</span> <span className='card-text-price-night mt-2'>/night</span>
+                <div>
+                  <span className='card-text-prices-price'>$599</span> 
+                  <span className='card-text-price-night'>/night</span>
+                </div>
+              <button>View</button>
             </div>
           </div>
         </Card.Body>
