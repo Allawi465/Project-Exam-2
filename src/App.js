@@ -5,7 +5,7 @@ import './index.scss';
 import { Layout } from './components//index';
 import { Home, VenueById, Profile, RouteNotFound } from './pages';
 import { HelmetProvider } from 'react-helmet-async';
-import ApiProvider from './api/auth';
+import ApiProvider from './api/index';
 
 function App() {
   return (
