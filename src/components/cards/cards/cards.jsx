@@ -44,7 +44,7 @@ function Venue() {
   return (
     <>
       {data && data.length > 0 && data.map((venue) => (
-        <Col key={venue.id}>
+        <Col xs={12} sm={6} md={4} lg={4} key={venue.id}>
           <Card className='my-2'>
             <Card.Img
               variant="top"
@@ -52,7 +52,7 @@ function Venue() {
             />
             <Card.Body>
               <div className='card-title mt-1'>
-                <Card.Title className='card-title'>{venue.name}</Card.Title>
+                <h5 className='card-title-title'>{venue.name}</h5>
                 <div className='card-title-star'>
                   <AiFillStar size={18} />
                   <span className='card-title-rating ms-1'>
