@@ -16,10 +16,8 @@ function Home() {
             </Helmet>
             <Hero />
             <SearchUi />
-            <Container className='cards d-flex justify-content-center'>
+            <Container className='cards'>
                 <Row className='g-3'>
-                    <Venue />
-                    <Venue />
                     <Venue />
                 </Row>
             </Container>
