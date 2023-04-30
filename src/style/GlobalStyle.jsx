@@ -13,7 +13,7 @@ html {
 
 body {
     height: 100%;
-    font-family: 'PT Sans', sans-serif;
+    font-family: 'Mulish', sans-serif;
 }
 `;
 

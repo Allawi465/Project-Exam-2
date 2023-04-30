@@ -1,5 +1,5 @@
 .card {
-    min-width: 283px;
+    min-width: 350px;
     border: none !important;
 
     &-img-top {
@@ -17,8 +17,6 @@
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
-        font-size: 1rem;
-        margin-top: 2px;
 
         &-rating {
             font-size: 15px;
@@ -30,11 +28,12 @@
             display: flex;
             align-items: center;
             flex-wrap: wrap;
+            margin-bottom: 10px;
 
         }
 
         &-date {
-            border: 3px solid #D7D8D9;
+            border: 2px solid #D7D8D9;
             border-radius: 10px;
             padding: 4px;
             font-size: 13px;
@@ -56,29 +55,63 @@
         &-prices {
             display: flex;
             justify-content: space-between;
-           
+
             &-price {
-                font-size: 28px;
-            } 
+                font-size: 25px;
+                margin-top: 0;
+                margin-bottom: 0rem;
+            }
 
             &-night {
-                font-size: 26px;
+                font-size: 20px;
+                margin-top: 6px;
+                margin-bottom: 0rem;
             }
+
+            &-button {
+                background: transparent;
+                border: none;
+                color: $black;
+                border-radius: .25rem;
+                letter-spacing: 0.2em;
+                font-size: 18px;
+                font-style: italic;
+                transition: all 1s ease-out;
+
+                &:hover {
+                    text-decoration: underline;
+                    text-underline-offset: 3px;
+                }
+            }
+
         }
     }
 }
 
+.col {
+    max-width: 373px;
+}
 
 
-@media (max-width: 911px) {
+@media (max-width: 1200px) {
     .card {
-        min-width: 230px;
+        min-width: 300px;
+    }
+    
+}
+
+@media (max-width: 1000px) {
+    .card {
+        min-width: 240px;
     }
 }
 
-@media (max-width: 250px) {
+@media (max-width: 800px) {
     .card {
-        min-width: unset;
-        max-width: 230px;
+        min-width: 230px;
+        max-width: 100%;
+    }
+    .col {
+        max-width: 100%;
     }
 }
