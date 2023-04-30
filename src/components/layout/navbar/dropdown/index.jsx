@@ -4,7 +4,7 @@ import useModal from '../../../../hooks/model/useModel';
 import SettingsModel from '../../../models/settings';
 import { load } from '../../../../utils/localStorage';
 import { CgProfile } from 'react-icons/cg';
-import { AuthContext } from '../../../../api/auth';
+import { AuthContext } from '../../../../api';
 
 function NavbarDropdown() {
   const {
@@ -13,10 +13,11 @@ function NavbarDropdown() {
     handleOpenSettings
   } = useModal();
 
-  const user = load("user")
-  const { name, avatar } = user;
 
-  const { logout } = useContext(AuthContext);
+  const { dataLogin, logout } = useContext(AuthContext);
+
+  const user = dataLogin ? dataLogin : load('user');
+  const { name, avatar } = user;
 
   return (
     <Dropdown className="d-inline">
