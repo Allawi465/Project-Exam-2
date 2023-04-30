@@ -1,10 +1,10 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState, useContext } from 'react';
 import { FloatingLabel, Form } from 'react-bootstrap';
 import LoadingButton from '../../components/LoadingButton';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import schema from './register';
-import { AuthContext } from '../../api/auth';
+import { AuthContext } from '../../api';
 
 function SignUpForm({ onSignUpClick }) {
     const {
@@ -16,25 +16,21 @@ function SignUpForm({ onSignUpClick }) {
         resolver: yupResolver(schema),
     });
 
-    const [formSubmitted, setFormSubmitted] = useState(false);
     const [errorMessage, setErrorMessage] = useState('');
-    const { signUp, isLoading } = useContext(AuthContext);
+    const { post, isLoading } = useContext(AuthContext);
 
-
-    async function OnFormSubmit(formData) {
-        console.log(formData);
-        setFormSubmitted(true);
-        const user = await signUp(formData);
-        reset();
-        if (user && user.errors) {
-            setErrorMessage(user.errors[0].message);
+    const OnFormSubmit = async (formData) => {
+        const data = await post(formData, "/auth/register");
+        if (data.isError) {
+            setErrorMessage(data.isError);
         } else {
-            onSignUpClick()
+            setErrorMessage("");
+            onSignUpClick();
+            reset();
         }
-    }
+    };
 
     return (
-
         <>
             <form onSubmit={handleSubmit(OnFormSubmit)}>
                 {errorMessage && <p style={{ color: 'var(--color-red)' }}>{errorMessage}</p>}

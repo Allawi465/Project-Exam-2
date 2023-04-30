@@ -4,10 +4,12 @@ import LoadingButton from '../../components/LoadingButton';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import LoginSchema from './schema';
-import { AuthContext } from '../../api/auth';
+import { AuthContext } from '../../api';
+import { save } from '../../utils/localStorage';
 
 
 function LoginForm({ onClose }) {
+    const { login, isLoading } = useContext(AuthContext);
     const {
         register,
         handleSubmit,
@@ -17,23 +19,21 @@ function LoginForm({ onClose }) {
         resolver: yupResolver(LoginSchema),
     });
 
-    const [formSubmitted, setFormSubmitted] = useState(false);
-    const [errorMessage, setErrorMessage] = useState('');
-
-
-    const { login, isLoading } = useContext(AuthContext);
+    const [errorMessage, setErrorMessage] = useState("");
 
     async function OnFormSubmit(formData) {
-        console.log(formData);
-        setFormSubmitted(true);
-        const user = await login(formData);
-        reset();
-        if (user && user.errors) {
-            setErrorMessage(user.errors[0].message);
+        const data = await login(formData);
+        if (data.isError) {
+          setErrorMessage(data.isError);
         } else {
-            onClose();
+          const {accessToken: token, ...user} = data.data;
+          save("token", token);
+          save("user", user);
+          onClose();
+          reset();
+          setErrorMessage("");
         }
-    }
+      }
 
     return (
         <>
