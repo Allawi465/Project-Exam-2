@@ -1,51 +1,31 @@
-import React, { useState, useEffect, useContext } from 'react';
 import { Card, Col } from 'react-bootstrap';
 import { AiFillStar } from 'react-icons/ai'
 import { BsWifi } from 'react-icons/bs'
 import { GiKnifeFork } from 'react-icons/gi'
 import { MdPets } from 'react-icons/md'
 import { AiFillCar } from 'react-icons/ai'
-import { AuthContext } from '../../../api';
 import Loading from '../../spinner';
 import ErrorMessage from '../../alert';
 import { Link } from 'react-router-dom';
-
+import useGetApi from '../../../hooks/api/useGetApi';
 
 function Venue() {
-  const { read } = useContext(AuthContext);
-  const [data, setData] = useState(false);
-  const [loading, setLoading] = useState(false);
-  const [errorMessage, setErrorMessage] = useState(false);
+  
+  const { data, isLoading, isError } = useGetApi('/venues?_owner=true&_bookings=true');
 
-  useEffect(() => {
-    const fetchData = async () => {
-      setLoading(true)
-      const { data, isError } = await read('/venues?_owner=true&_bookings=true');
-      setData(data)
-      if (isError) {
-        setErrorMessage(isError);
-        setLoading(false)
-      } else {
-        setErrorMessage("");
-        setLoading(false)
-      }
-    };
-    fetchData();
-  }, [setData]);
-
-  if (loading) {
+  if (isLoading) {
     return <div className='d-flex justify-content-center mt-4'><Loading /></div>;
   }
 
-  if (errorMessage) {
+  if (isError) {
     return <div style={{ textAlign: 'center' }}><ErrorMessage variant="danger" text="we are aware of the issues with accessing Holidaze, our team is actively working on it." /></div>;
   }
 
   return (
     <>
       {data && data.length > 0 && data.map((venue) => (
-        <Col xs={12} sm={6} md={4} lg={4} key={venue.id}>
-          <Card className='my-2'>
+        <Col xs={12} sm={6} md={4} lg={4}  key={venue.id}>
+          <Card className='mt-2 mb-4'>
             <Card.Img
               variant="top"
               src={venue.media[0]}
@@ -73,7 +53,7 @@ function Venue() {
                     <p className='card-text-prices-price'>${venue.price}</p>
                     <p className='card-text-prices-night'>/night</p>
                   </div>
-                  <button as={Link} to={`/venue/${venue.id}`} className='card-text-prices-button stretched-link'>View</button>
+                  <Link to={`/venue/${venue.id}`} className='card-text-prices-link mt-2 stretched-link'>View</Link>
                 </div>
               </div>
             </Card.Body>
