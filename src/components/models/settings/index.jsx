@@ -13,7 +13,7 @@ function SettingsModel(props) {
         </Modal.Header>
         <Modal.Body>
         <p className="h6">Change your avatar</p>
-        <ChangeAvatarForm/>
+        <ChangeAvatarForm onClose={onClose}/>
       </Modal.Body>
       </Modal>
     </>
