@@ -1,11 +1,13 @@
 .card {
     min-width: 350px;
+    max-width: 100%;
     border: none !important;
 
     &-img-top {
         border-radius: 10px !important;
         height: 259px;
         object-fit: cover;
+        max-width: 100%;
     }
 
     &-body {
@@ -74,19 +76,20 @@
                 margin-bottom: 0rem;
             }
 
-            &-button {
+            &-link {
                 background: transparent;
                 border: none;
+                text-decoration: none;
                 color: $black;
-                border-radius: .25rem;
                 letter-spacing: 0.2em;
                 font-size: 18px;
                 font-style: italic;
-                transition: all 1s ease-out;
+                transition: all 2s ease-in-out;
 
                 &:hover {
                     text-decoration: underline;
                     text-underline-offset: 3px;
+                    color: $black;
                 }
             }
 
@@ -94,12 +97,10 @@
     }
 }
 
-
 @media (max-width: 1200px) {
     .card {
         min-width: 300px;
     }
-
 }
 
 @media (max-width: 1000px) {
@@ -108,9 +109,9 @@
     }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 838px) {
     .card {
-        min-width: 230px;
+        min-width: unset;
         max-width: 100%;
     }
 }
