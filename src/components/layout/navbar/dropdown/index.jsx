@@ -13,22 +13,21 @@ function NavbarDropdown() {
     handleOpenSettings
   } = useModal();
 
-
   const { dataLogin, logout } = useContext(AuthContext);
 
-  const user = dataLogin ? dataLogin : load('user');
-  const { name, avatar } = user;
+  const { name }  = dataLogin ? dataLogin : load('user');
+  const avatar =  load('avatar') || dataLogin;
 
   return (
     <Dropdown className="d-inline">
       <Dropdown.Toggle id="dropdown-autoclose-true" variant='Link' className='dropdown-btn'>
-        {avatar && <img src={avatar} alt={name} width={20} height={20} />}
+        {avatar && <img src={avatar} alt={name} width={30} height={30} className='rounded-circle' />}
         {!avatar && <CgProfile size={20} />}
         <span className='mx-1'>{name}</span>
       </Dropdown.Toggle>
       <Dropdown.Menu>
-        <Dropdown.Item href="#action/3.3">Profile</Dropdown.Item>
-        <Dropdown.Item href="#action/3.1">Host your place</Dropdown.Item>
+        <Dropdown.Item >Profile</Dropdown.Item>
+        <Dropdown.Item >Host your place</Dropdown.Item>
         <Dropdown.Item onClick={handleOpenSettings}>Settings</Dropdown.Item>
         <SettingsModel show={showSettings} onClose={handleCloseSettings} />
         <Dropdown.Divider />
