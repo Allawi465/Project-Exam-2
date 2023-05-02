@@ -5,7 +5,7 @@ const LoginSchema = yup
         email: yup
             .string().trim()
             .required('Please enter your email')
-           .matches(/[\w\-.]+@(stud\.)?noroff\.no$/, 'Email must be from stud.noroff.no or noroff.no domain'),
+            .matches(/[\w\-.]+@(stud\.)?noroff\.no$/, 'Email must be from stud.noroff.no or noroff.no domain'),
         password: yup
             .string().trim()
             .required('Please enter your password')

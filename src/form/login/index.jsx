@@ -6,10 +6,12 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import LoginSchema from './schema';
 import { AuthContext } from '../../api';
 import { save } from '../../utils/localStorage';
+import useApiActions from '../../hooks/api/useApiActions';
 
 
 function LoginForm({ onClose }) {
-    const { login, isLoading } = useContext(AuthContext);
+    const { setDataLogin } = useContext(AuthContext);
+    const { isLoading, fetchData } = useApiActions();
     const {
         register,
         handleSubmit,
@@ -22,13 +24,19 @@ function LoginForm({ onClose }) {
     const [errorMessage, setErrorMessage] = useState("");
 
     async function OnFormSubmit(formData) {
-        const data = await login(formData);
-        if (data.isError) {
-          setErrorMessage(data.isError);
+        const UserData = await fetchData('/auth/login', { method: 'POST', body: JSON.stringify(formData) });
+        if (UserData.isError) {
+          setErrorMessage(UserData.isError);
         } else {
-          const {accessToken: token, ...user} = data.data;
+          const {accessToken: token, avatar, ...user} = UserData.data;
+          setDataLogin({
+            ...user,
+            avatar: avatar,
+            token: token
+          });
           save("token", token);
           save("user", user);
+          save("avatar", avatar);
           onClose();
           reset();
           setErrorMessage("");

@@ -1,12 +1,13 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import { FloatingLabel, Form } from 'react-bootstrap';
 import LoadingButton from '../../components/LoadingButton';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import schema from './register';
-import { AuthContext } from '../../api';
+import useApiActions from '../../hooks/api/useApiActions';
 
 function SignUpForm({ onSignUpClick }) {
+    const { isLoading, fetchData } = useApiActions();
     const {
         register,
         handleSubmit,
@@ -17,12 +18,11 @@ function SignUpForm({ onSignUpClick }) {
     });
 
     const [errorMessage, setErrorMessage] = useState('');
-    const { post, isLoading } = useContext(AuthContext);
 
     const OnFormSubmit = async (formData) => {
-        const data = await post(formData, "/auth/register");
-        if (data.isError) {
-            setErrorMessage(data.isError);
+        const newUser = await fetchData('/auth/register', { method: 'POST', body: JSON.stringify(formData) });
+        if (newUser.isError) {
+            setErrorMessage(newUser.isError);
         } else {
             setErrorMessage("");
             onSignUpClick();
