@@ -17,7 +17,7 @@ function Home() {
             <Hero />
             <SearchUi />
             <Container className='cards'>
-                <Row className='g-3'>
+                <Row>
                     <Venue />
                 </Row>
             </Container>
