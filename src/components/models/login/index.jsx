@@ -3,8 +3,7 @@ import { ModelBtn } from '../../../style/buttons';
 import LoginForm from '../../../form/login';
 
 function LoginModel(props) {
-
-    const { show, onClose, onSignUpClick  } = props;
+  const { show, onClose, onSignUpClick } = props;
 
   return (
     <>
@@ -13,11 +12,11 @@ function LoginModel(props) {
           <Modal.Title>Login</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <LoginForm onClose={onClose}/>
+          <LoginForm onClose={onClose} />
         </Modal.Body>
         <Modal.Footer>
-        <Modal.Title>Login</Modal.Title>
-        <ModelBtn onClick={onSignUpClick}>Sign up</ModelBtn>
+          <Modal.Title>Sign up</Modal.Title>
+          <ModelBtn onClick={onSignUpClick}>Sign up</ModelBtn>
         </Modal.Footer>
       </Modal>
     </>

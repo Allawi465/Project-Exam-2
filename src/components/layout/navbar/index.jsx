@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, { useContext } from 'react';
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import Logo from './ui/logo';
@@ -12,7 +12,12 @@ function NavBar() {
   const user = dataLogin ? dataLogin : load('user');
 
   return (
-    <Navbar variant="light" expand="sm" fixed="top"  style={{ background: 'white' }}>
+    <Navbar
+      variant="light"
+      expand="sm"
+      fixed="top"
+      style={{ background: 'white' }}
+    >
       <Container>
         <Logo />
         {user ? <UserNavbar /> : <UnAuthUi />}

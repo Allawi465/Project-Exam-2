@@ -5,7 +5,7 @@
  */
 
 export function save(key, value) {
-    localStorage.setItem(key, JSON.stringify(value));
+  localStorage.setItem(key, JSON.stringify(value));
 }
 
 /**
@@ -15,12 +15,12 @@ export function save(key, value) {
  */
 
 export function load(key) {
-    try {
-        const value = localStorage.getItem(key);
-        return JSON.parse(value);
-    } catch {
-        return null;
-    }
+  try {
+    const value = localStorage.getItem(key);
+    return JSON.parse(value);
+  } catch {
+    return null;
+  }
 }
 
 /**
@@ -29,5 +29,5 @@ export function load(key) {
  */
 
 export function remove(key) {
-    localStorage.removeItem(key);
+  localStorage.removeItem(key);
 }

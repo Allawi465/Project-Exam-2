@@ -1,4 +1,4 @@
-import { load } from "../utils/localStorage";
+import { load } from '../utils/localStorage';
 
 /**
  * Setting headers as a function
@@ -7,11 +7,11 @@ import { load } from "../utils/localStorage";
  */
 
 export function headers() {
-    const token = load('token');
-    return {
-        'Content-Type': 'application/json; charset=utf-8 ',
-        Authorization: `Bearer ${token}`,
-    };
+  const token = load('token');
+  return {
+    'Content-Type': 'application/json; charset=utf-8 ',
+    Authorization: `Bearer ${token}`,
+  };
 }
 
 /**
@@ -21,8 +21,8 @@ export function headers() {
  */
 
 export async function fetchWToken(url, options = {}) {
-    return fetch(url, {
-        ...options,
-        headers: headers(),
-    });
+  return fetch(url, {
+    ...options,
+    headers: headers(),
+  });
 }

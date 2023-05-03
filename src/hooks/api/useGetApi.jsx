@@ -37,5 +37,4 @@ function useGetApi(path) {
   return { data, isLoading, isError };
 }
 
-
-export default useGetApi ;
+export default useGetApi;

@@ -13,7 +13,7 @@ function useApiActions() {
       setError(false);
       const { method, body } = options;
       const url = `${API_SOCIAL_URL}${path}`;
-      const fetchedData = await fetchWToken(url, { method, body});
+      const fetchedData = await fetchWToken(url, { method, body });
       const data = await fetchedData.json();
       console.log(data);
       if (data.errors) {

@@ -2,8 +2,7 @@ import Modal from 'react-bootstrap/Modal';
 import ChangeAvatarForm from '../../../form/settings';
 
 function SettingsModel(props) {
-
-    const { show, onClose  } = props;
+  const { show, onClose } = props;
 
   return (
     <>
@@ -12,9 +11,9 @@ function SettingsModel(props) {
           <Modal.Title>Settings</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-        <p className="h6">Change your avatar</p>
-        <ChangeAvatarForm onClose={onClose}/>
-      </Modal.Body>
+          <p className="h6">Change your avatar</p>
+          <ChangeAvatarForm onClose={onClose} />
+        </Modal.Body>
       </Modal>
     </>
   );

@@ -15,7 +15,7 @@ export default function useModal() {
 
   const handleLoginModel = () => {
     setShowLoginModel(true);
-    setShowSignUpModel(false) // close the sign up model if it's open
+    setShowSignUpModel(false); // close the sign up model if it's open
   };
 
   const handleCloseLoginModel = () => {

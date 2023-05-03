@@ -27,7 +27,6 @@ const ApiProvider = ({ children }) => {
       {children}
     </AuthContext.Provider>
   );
-
 };
 
 export default ApiProvider;
