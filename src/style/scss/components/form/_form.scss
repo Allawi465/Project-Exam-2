@@ -1,21 +1,19 @@
 .form-text {
-    color: var(--color-red);
+  color: var(--color-red);
 }
 
 .input-group {
+  &-text {
+    background: none;
+  }
 
-    &-text {
-        background: none;
-    }
-
-
-    .form-control {
-        border-left: none;
-        border-right: none;
-    }
+  .form-control {
+    border-left: none;
+    border-right: none;
+  }
 }
 
 .search-form {
-    margin: 0 auto !important;
-    max-width: 343px;
+  margin: 0 auto !important;
+  max-width: 343px;
 }

@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
 html {
@@ -15,6 +15,18 @@ body {
     height: 100%;
     font-family: 'Mulish', sans-serif;
 }
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  .content {
+    flex: 1;
+  }
+
+
 `;
 
 export default GlobalStyle;
