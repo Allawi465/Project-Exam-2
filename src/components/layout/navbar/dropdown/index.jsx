@@ -1,13 +1,13 @@
 import React, { useContext } from 'react';
 import { Dropdown } from 'react-bootstrap';
-import useModal from '../../../../hooks/model/useModel';
-import SettingsModel from '../../../models/settings';
-import { load } from '../../../../utils/localStorage';
-import { CgProfile } from 'react-icons/cg';
 import { AuthContext } from '../../../../api';
+import { load } from '../../../../utils/localStorage';
+import { UseModel } from '../../../../hooks/index';
+import { SettingsModel } from '../../../index';
+import { CgProfile } from 'react-icons/cg';
 
 function NavbarDropdown() {
-  const { showSettings, handleCloseSettings, handleOpenSettings } = useModal();
+  const { showSettings, handleCloseSettings, handleOpenSettings } = UseModel();
 
   const { dataLogin, logout } = useContext(AuthContext);
 
