@@ -1,7 +1,7 @@
 import Alert from 'react-bootstrap/Alert';
 
-function ErrorMessage(props) {
-  return <Alert variant={props.variant}>{props.text}</Alert>;
+function ErrorMessage({ variant, text }) {
+  return <Alert variant={variant}>{text}</Alert>;
 }
 
 export default ErrorMessage;
