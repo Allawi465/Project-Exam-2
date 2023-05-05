@@ -1,9 +1,8 @@
 import { Container } from 'react-bootstrap';
 import hero from '../../images/hero.jpg';
 import { HeroBtn } from '../../style/buttons';
-import useModal from '../../hooks/model/useModel';
-import SignUpModel from '../models/sign-up';
-import LoginModel from '../models/login';
+import { UseModel } from '../../hooks/index';
+import { SignUpModel, LoginModel } from '../index';
 
 function Hero() {
   const {
@@ -13,7 +12,7 @@ function Hero() {
     handleCloseLoginModel,
     handleSignUpModel,
     handleCloseSignUpModel,
-  } = useModal();
+  } = UseModel();
   return (
     <Container className="hero my-4">
       <div className="hero-lead">
