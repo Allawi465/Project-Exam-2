@@ -1,5 +1,5 @@
 import { Container } from 'react-bootstrap';
-import Search from '../../form/search';
+import { Search } from '../../form/index';
 
 function SearchUi() {
   return (
