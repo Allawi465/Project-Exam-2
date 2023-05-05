@@ -1,1 +1,11 @@
 export { default as Layout } from './layout/index';
+export { default as Hero } from './hero';
+export { default as Loading } from './spinner';
+export { default as SearchUi } from './search';
+export { default as LoadingBtn } from './LoadingButton';
+export { default as LoginModel } from './models/login';
+export { default as SignUpModel } from './models/sign-up';
+export { default as SettingsModel } from './models/settings';
+export { default as ErrorMessage } from './alert';
+export { default as Venues } from './cards/cards/index';
+export { default as Venue } from './cards/card/index';
