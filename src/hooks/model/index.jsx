@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export default function useModal() {
+function useModel() {
   const [showLoginModel, setShowLoginModel] = useState(false);
   const [showSignUpModel, setShowSignUpModel] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
@@ -43,3 +43,5 @@ export default function useModal() {
     handleCloseSettings,
   };
 }
+
+export default useModel;
