@@ -1,11 +1,10 @@
-
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import './index.scss';
-import { Layout } from './components//index';
+import { Layout } from './components';
+import ApiProvider from './api/index';
 import { Home, VenueById, Profile, RouteNotFound } from './pages';
 import { HelmetProvider } from 'react-helmet-async';
-import ApiProvider from './api/index';
 
 function App() {
   return (
