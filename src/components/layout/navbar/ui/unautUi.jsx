@@ -1,7 +1,6 @@
 import { LoginBtn, SignUpBtn } from '../../../../style/buttons';
-import LoginModel from '../../../models/login';
-import SignUpModel from '../../../models/sign-up';
-import useModal from '../../../../hooks/model/useModel';
+import { SignUpModel, LoginModel } from '../../../index';
+import { UseModel } from '../../../../hooks';
 
 function UnAuthUi() {
   const {
@@ -11,7 +10,7 @@ function UnAuthUi() {
     handleCloseLoginModel,
     handleSignUpModel,
     handleCloseSignUpModel,
-  } = useModal();
+  } = UseModel();
   return (
     <div>
       <LoginBtn onClick={handleLoginModel} className="me-1">

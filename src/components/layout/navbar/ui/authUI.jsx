@@ -1,7 +1,6 @@
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavbarDropdown from '../dropdown';
 import { NavLink } from 'react-router-dom';
+import {Nav, Navbar} from 'react-bootstrap';
+import NavbarDropdown from '../dropdown';
 
 function UserNavbar() {
   return (
