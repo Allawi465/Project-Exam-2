@@ -1,8 +1,6 @@
 import { Container, Row } from 'react-bootstrap';
+import { Venues, Hero, SearchUi } from '../../components';
 import { Helmet } from 'react-helmet-async';
-import SearchUi from '../../components/search';
-import Venue from '../../components/cards/cards/cards';
-import Hero from '../../components/hero';
 
 function Home() {
   return (
@@ -22,7 +20,7 @@ function Home() {
       <SearchUi />
       <Container className="cards">
         <Row>
-          <Venue />
+          <Venues />
         </Row>
       </Container>
     </div>
