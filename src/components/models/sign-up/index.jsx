@@ -1,6 +1,6 @@
 import Modal from 'react-bootstrap/Modal';
 import { ModelBtn } from '../../../style/buttons';
-import SignUpForm from '../../../form/sign-up';
+import { SignUpForm } from '../../../form/index';
 
 function SignUpModel(props) {
   const { show, onClose, onSignUpClick } = props;

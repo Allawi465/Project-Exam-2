@@ -1,5 +1,5 @@
 import Modal from 'react-bootstrap/Modal';
-import ChangeAvatarForm from '../../../form/settings';
+import { ChangeAvatarForm } from '../../../form/index';
 
 function SettingsModel(props) {
   const { show, onClose } = props;
