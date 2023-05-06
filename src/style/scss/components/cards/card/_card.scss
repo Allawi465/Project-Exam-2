@@ -65,9 +65,15 @@
   }
 
   &-owner {
+    img {
+      object-fit: cover;
+      cursor: pointer;
+    }
+
     p {
       margin-bottom: 0px;
       margin-top: 0px;
+      cursor: pointer;
     }
 
     &-info {
@@ -129,7 +135,7 @@
   }
 }
 
-@media (max-width: 665px) {
+@media (max-width: 682px) {
   .venue {
     flex-wrap: wrap;
     max-width: 100%;

@@ -6,11 +6,14 @@
     color: $black;
   }
 }
-
 .dropdown-btn {
   color: var(--color-lightgray);
   padding-left: var(--bs-navbar-nav-link-padding-x);
   border-color: none;
+
+  img {
+    object-fit: cover;
+  }
 
   &:hover,
   &:focus,
@@ -31,5 +34,8 @@
 @media (max-width: 575px) {
   .dropdown-btn {
     padding-left: unset !important;
+  }
+  .navbar-nav {
+    padding-left: 3px;
   }
 }

@@ -7,7 +7,7 @@ html {
     --color-lightgray: #57595F;
     --color-pink: #BB86FC;
     --color-red: #963839;
-    --color-purple: #683DBD;
+    --color-purple: #673BBF;
     height: 100%;
 }
 
