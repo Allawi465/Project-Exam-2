@@ -11,11 +11,11 @@ function NavBar() {
   return (
     <Navbar
       variant="light"
-      expand="sm"
+      expand="md"
       fixed="top"
       style={{ background: 'white' }}
     >
-      <Container>
+      <Container style={{ maxWidth: '1400px' }}>
         <Logo />
         {user ? <UserNavbar /> : <UnAuthUi />}
       </Container>

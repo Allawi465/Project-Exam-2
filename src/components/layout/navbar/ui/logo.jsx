@@ -4,7 +4,7 @@ import logo from '../../../../images/logo.jpg';
 
 function Logo() {
   return (
-    <Navbar.Brand as={Link} to="/">
+    <Navbar.Brand as={Link} to="/" className="pb-0">
       <img
         src={logo}
         width="60"

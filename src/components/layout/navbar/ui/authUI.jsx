@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import {Nav, Navbar} from 'react-bootstrap';
+import { Nav, Navbar } from 'react-bootstrap';
 import NavbarDropdown from '../dropdown';
 
 function UserNavbar() {
@@ -12,11 +12,11 @@ function UserNavbar() {
             Home
           </Nav.Link>
           <Nav.Link as={NavLink} to={'/profile'}>
-            Host you place
-          </Nav.Link>
-          <Nav.Link as={NavLink} to={'/profile'}>
             Profile
           </Nav.Link>
+          <Nav.Link as={NavLink} to={'/profile'}>
+            Host you place
+          </Nav.Link> 
           <NavbarDropdown />
         </Nav>
       </Navbar.Collapse>

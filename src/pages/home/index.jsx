@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet-async';
 
 function Home() {
   return (
-    <div>
+    <>
       <Helmet>
         <title>Holidaze: plan your next adventure with ease</title>
         <meta
@@ -23,7 +23,7 @@ function Home() {
           <Venues />
         </Row>
       </Container>
-    </div>
+    </>
   );
 }
 

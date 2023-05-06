@@ -51,7 +51,7 @@ function Venue() {
                 </div>
                 <div className="card-text">
                   <div className="card-text-container">
-                    <div className="card-text-date">Sep 10-10</div>
+                    <div className="card-text-date me-1">Sep 10-10</div>
                     <VenuesFacilities
                       breakfast={venue.meta.breakfast}
                       wifi={venue.meta.wifi}

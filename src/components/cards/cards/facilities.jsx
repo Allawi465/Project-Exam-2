@@ -3,25 +3,25 @@ import { GiKnifeFork } from 'react-icons/gi';
 import { MdPets } from 'react-icons/md';
 import { AiFillCar } from 'react-icons/ai';
 
-function VenuesFacilities(props) {
+function VenuesFacilities({ breakfast, wifi, pets, parking }) {
   return (
     <div>
-      {props.breakfast && (
+      {breakfast && (
         <div className="card-text-icon ms-1">
           <GiKnifeFork />
         </div>
       )}
-      {props.wifi && (
+      {wifi && (
         <div className="card-text-icon ms-2">
           <BsWifi />
         </div>
       )}
-      {props.pets && (
+      {pets && (
         <div className="card-text-icon ms-1">
           <MdPets />
         </div>
       )}
-      {props.parking && (
+      {parking && (
         <div className="card-text-icon ms-1">
           <AiFillCar />
         </div>
