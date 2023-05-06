@@ -3,12 +3,12 @@ import { GiKnifeFork } from 'react-icons/gi';
 import { MdPets } from 'react-icons/md';
 import { AiFillCar } from 'react-icons/ai';
 
-function VenueFacilities(props) {
+function VenueFacilities({ breakfast, wifi, pets, parking }) {
   return (
     <div className="venue-facilities">
       <h5>Home facilities</h5>
       <div className="mt-3 d-flex gap-2" style={{ flexDirection: 'column' }}>
-        {props.breakfast ? (
+        {breakfast ? (
           <div className="d-flex gap-2">
             <div className="card-text-icon">
               <GiKnifeFork />
@@ -23,7 +23,7 @@ function VenueFacilities(props) {
             <p>Breakfast not included</p>
           </div>
         )}
-        {props.wifi ? (
+        {wifi ? (
           <div className="d-flex gap-2">
             <div className="card-text-icon">
               <BsWifi />
@@ -38,7 +38,7 @@ function VenueFacilities(props) {
             <p>WiFi is not available for free</p>
           </div>
         )}
-        {props.pets ? (
+        {pets ? (
           <div className="d-flex gap-2">
             <div className="card-text-icon">
               <MdPets />
@@ -53,7 +53,7 @@ function VenueFacilities(props) {
             <p>Pets not allowed</p>
           </div>
         )}
-        {props.parking ? (
+        {parking ? (
           <div className="d-flex gap-2">
             <div className="card-text-icon">
               <AiFillCar />
