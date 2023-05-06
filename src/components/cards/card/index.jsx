@@ -42,11 +42,11 @@ function Venue({ data }) {
             pets={pets}
             parking={parking}
           />
-          <div className="venue-description mt-2">
+          <div className="venue-description my-3">
             <p>
               {description &&
-                (showMore ? description : `${description.slice(0, 150)}...`)}
-              {description && description.length > 150 && !showMore && (
+                (showMore ? description : `${description.slice(0, 350)}...`)}
+              {description && description.length > 350 && !showMore && (
                 <button onClick={handleReadMoreClick}>Read More</button>
               )}
             </p>
