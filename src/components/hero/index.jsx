@@ -1,7 +1,7 @@
 import { Container } from 'react-bootstrap';
 import hero from '../../images/hero.jpg';
 import { HeroBtn } from '../../style/buttons';
-import { UseModel } from '../../hooks/index';
+import { useModel } from '../../hooks/index';
 import { SignUpModel, LoginModel } from '../index';
 
 function Hero() {
@@ -12,7 +12,7 @@ function Hero() {
     handleCloseLoginModel,
     handleSignUpModel,
     handleCloseSignUpModel,
-  } = UseModel();
+  } = useModel();
   return (
     <Container className="hero my-4">
       <div className="hero-lead">
