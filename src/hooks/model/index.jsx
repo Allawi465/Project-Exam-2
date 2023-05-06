@@ -14,6 +14,8 @@ function useModel() {
   };
 
   const handleLoginModel = () => {
+    console.log('handleLoginModel called');
+    console.log(showLoginModel);
     setShowLoginModel(true);
     setShowSignUpModel(false); // close the sign up model if it's open
   };
@@ -32,6 +34,7 @@ function useModel() {
   };
 
   return {
+    setShowLoginModel,
     showLoginModel,
     showSignUpModel,
     showSettings,
