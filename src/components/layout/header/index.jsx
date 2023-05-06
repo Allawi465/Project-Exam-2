@@ -2,7 +2,7 @@ import NavBar from '../navbar';
 
 function Header() {
   return (
-    <header style={{ height: '100px' }}>
+    <header style={{ height: '90px' }}>
       <NavBar />
     </header>
   );
