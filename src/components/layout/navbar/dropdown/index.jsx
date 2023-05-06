@@ -2,12 +2,12 @@ import React, { useContext } from 'react';
 import { Dropdown } from 'react-bootstrap';
 import { AuthContext } from '../../../../api';
 import { load } from '../../../../utils/localStorage';
-import { UseModel } from '../../../../hooks/index';
+import { useModel } from '../../../../hooks/index';
 import { SettingsModel } from '../../../index';
-import { CgProfile } from 'react-icons/cg';
+import defaultAvatar from '../../../../images/defaultAvatar.jpg';
 
 function NavbarDropdown() {
-  const { showSettings, handleCloseSettings, handleOpenSettings } = UseModel();
+  const { showSettings, handleCloseSettings, handleOpenSettings } = useModel();
 
   const { dataLogin, logout } = useContext(AuthContext);
 
@@ -30,7 +30,15 @@ function NavbarDropdown() {
             className="rounded-circle"
           />
         )}
-        {!avatar && <CgProfile size={20} />}
+        {!avatar && (
+          <img
+            src={defaultAvatar}
+            alt={name}
+            width={42}
+            height={42}
+            className="rounded-circle me-2"
+          />
+        )}
         <span className="mx-1">{name}</span>
       </Dropdown.Toggle>
       <Dropdown.Menu>
