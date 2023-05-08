@@ -36,12 +36,12 @@
     }
 
     &-date {
-      border: 2px solid #dedede;
+      border: 1px solid var(--color-lightgray);
       border-radius: 10px;
-      padding: 4px;
+      padding: 3px 5px;
       font-size: 13px;
       letter-spacing: 0.2em;
-      color: var(--color-purple);
+      color: var(--color-lightgray);
     }
 
     &-icon {
@@ -80,15 +80,16 @@
         color: var(--color-purple);
         letter-spacing: 0.2em;
         text-align: center;
-        padding: 1px 15px;
+        padding: 6px 15px;
         font-size: 16px;
         transition: all 0.2s ease-in-out;
         text-transform: uppercase;
         border-radius: 8px;
 
         &:hover {
-          color: $white;
-          background: var(--color-purple);
+          color: var(--color-darkPurple);
+          background: var(--color-lightpink);
+          border: 1px solid var(--color-lightpink);
         }
       }
     }
