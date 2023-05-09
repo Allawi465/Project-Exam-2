@@ -6,9 +6,10 @@ const theme = {
     lightWhite: 'var(--color-lightWhite)',
     lightBlack: 'var(--color-lightBlack)',
     lightgray: 'var(--color-lightgray)',
-    pink: 'var(--color-pink)',
+    lightpink: 'var(--color-lightpink)',
     red: 'var(--color-red)',
     purple: 'var(--color-purple)',
+    darkPurple: 'var(--color-darkPurple)',
   },
 };
 
