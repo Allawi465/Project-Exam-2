@@ -6,6 +6,29 @@ import { LoginModel, SignUpModel } from '../../../index';
 import { AuthContext } from '../../../../api';
 import { load } from '../../../../utils/localStorage';
 
+/**
+ * A component that render the information about the owner of a property
+ *
+ * * This component can also handle displaying a login modal if the user is not login
+ * @component
+ * @param {Object} props The component props
+ * @param {string} props.avatar The URL of the owner's avatar image
+ * @param {string} props.ownerName The name of the owner
+ * @param {string} props.email The email address of the owner
+ * @property {function} AuthContext getting the authentication state from AuthContext
+ * @property {function} load authentication state from local Storage
+ * @property {function} useModel A custom hook that provides the functionality for showing the login and sign up modals
+ * @property {boolean} showLoginModel A boolean that determines whether to show the login modal
+ * @property {boolean} showSignUpModel A boolean that determines whether to show the sign up modal
+ * @property {function} handleLoginModel A function to handle showing the login modal
+ * @property {function} handleCloseLoginModel A function to handle closing the login modal
+ * @property {function} handleSignUpModel A function to handle showing the sign up modal
+ * @property {function} handleCloseSignUpModel A function to handle closing the sign up modal
+ * @returns {React.ReactElement} return owner component
+ * @example
+ * <Owner avatar={props.avatar} ownerName={props.name} email={props.email} />
+ */
+
 function Owner({ avatar, ownerName, email }) {
   const { dataLogin } = useContext(AuthContext);
   const token = dataLogin ? dataLogin : load('token');
@@ -70,7 +93,7 @@ function Owner({ avatar, ownerName, email }) {
         <SignUpModel
           show={showSignUpModel}
           onClose={handleCloseSignUpModel}
-          onSignUpClick={handleLoginModel}
+          onLoginClick={handleLoginModel}
         />
       </div>
     </div>

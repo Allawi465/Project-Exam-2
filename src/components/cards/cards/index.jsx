@@ -1,4 +1,4 @@
-  import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Card, Col } from 'react-bootstrap';
 import { useGetApi } from '../../../hooks/index';
 import { Loading, ErrorMessage } from '../../index';
@@ -6,10 +6,36 @@ import VenuesCarousel from '../../carousel/cards';
 import VenuesFacilities from './facilities';
 import { AiFillHeart } from 'react-icons/ai';
 
-function Venue() {
+/**
+ * A component that renders a list of venues retrieved from an API endpoint
+ * @component
+ * @param {Object} props The component props
+ * @param {Array} props.media The media array containing images of the venue
+ * @param {Number} props.price The price of the venue per night
+ * @param {String} props.name The name of the venue
+ * @param {Number} props.rating The rating of the venue
+ * @param {String} props.id The id of the venue
+ * @param {Object} props.meta The metadata object containing information about the venue's amenities
+ * @param {boolean} props.meta.breakfast Indicates if the venue provides breakfast
+ * @param {boolean} props.meta.wifi Indicates if the venue provides free WiFi
+ * @param {boolean} props.meta.pets Indicates if pets are allowed in the venue
+ * @param {boolean} props.meta.parking Indicates if free parking is available at the venue
+ * @property {function} VenuesCarousel A component that displays a carousel with an array of media for a venue
+ * @property {function} useGetApi A hook for get API
+ * @property {function} ErrorMessage A function to display error message if api return error
+ * @property {function} Loading A function to display spinner when api load
+ * @property {function} Facilities A component that renders the home facilities breakfast, WiFi, pets, and parking
+ * @returns {React.ReactElement} return Venues component
+ * @example
+ * <Venue data={props.data} />
+ */
+
+function Venues() {
   const { data, isLoading, isError } = useGetApi(
     '/venues?_owner=true&_bookings=true'
   );
+
+  console.log(data);
 
   if (isLoading) {
     return (
@@ -33,7 +59,6 @@ function Venue() {
   return (
     <>
       {data &&
-        data.length > 0 &&
         data.map((venue) => (
           <Col xs={12} sm={6} md={4} lg={4} key={venue.id}>
             <Card className="mt-2 mb-4">
@@ -41,7 +66,7 @@ function Venue() {
                 <VenuesCarousel media={venue.media} name={venue.name} />
               )}
               <Card.Body>
-                <div className="card-title mt-1">
+                <div className="card-title mt-1 mb-0">
                   <h5 className="card-title-title">{venue.name}</h5>
                   {venue.rating > 0 && (
                     <div className="venue-detail-rating">
@@ -50,8 +75,19 @@ function Venue() {
                   )}
                 </div>
                 <div className="card-text">
+                  <div className="card-text-address">
+                    {!venue.location.address ||
+                    venue.location.address === 'Unknown' ||
+                    !venue.location.city ||
+                    venue.location.city === 'Unknown' ? (
+                      <p>Unknown location</p>
+                    ) : (
+                      <p>
+                        {venue.location.address}, {venue.location.city}
+                      </p>
+                    )}
+                  </div>
                   <div className="card-text-container">
-                    <div className="card-text-date me-1">Sep 10-10</div>
                     <VenuesFacilities
                       breakfast={venue.meta.breakfast}
                       wifi={venue.meta.wifi}
@@ -86,4 +122,4 @@ function Venue() {
   );
 }
 
-export default Venue;
+export default Venues;
