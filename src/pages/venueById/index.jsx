@@ -1,7 +1,6 @@
 import { Link, useParams } from 'react-router-dom';
 import { Container } from 'react-bootstrap';
-import { useGetApi } from '../../hooks/index';
-import { Helmet } from 'react-helmet-async';
+import { useGetApi, useHelmet } from '../../hooks/index';
 import { Venue, Loading, ErrorMessage } from '../../components';
 import { BsChevronLeft } from 'react-icons/bs';
 
@@ -11,6 +10,14 @@ function VenueById() {
   const { data, isLoading, isError } = useGetApi(
     `/venues/${id}?_owner=true&_bookings=true`
   );
+
+  const title = data.name ? `${data.name} | Holidaze` : 'Venue | Holidaze';
+
+  const VenueByIdMeta = useHelmet({
+    title,
+    description: `Explore and book ${data.name} on Holidaze. View photos, read reviews, and check availability to plan your next event.`,
+    keywords: 'Holidaze, venue, bookings, reviews, rentals',
+  });
 
   if (isLoading) {
     return (
@@ -32,29 +39,17 @@ function VenueById() {
   }
 
   return (
-    <div>
-      <Helmet>
-        <title>{`${data.name} | Holidaze`}</title>
-        <meta
-          name="description"
-          content="Explore and book Venue Name on Holidaze. View photos, read reviews, and check availability to plan your next event."
-        />
-        <meta
-          name="keywords"
-          content="Holidaze, venue, bookings, reviews, rentals"
-        />
-      </Helmet>
-      <div>
-        <Container className="mt-3">
-          <div>
-            <Link className="return-Link" to={'/'}>
-              <BsChevronLeft className="mb-1 me-2" /> Return Home
-            </Link>
-          </div>
-          <Venue data={data} />
-        </Container>
-      </div>
-    </div>
+    <>
+      {VenueByIdMeta}
+      <Container className="mt-3">
+        <div>
+          <Link className="return-Link" to={'/'}>
+            <BsChevronLeft className="mb-1 me-2" /> Return Home
+          </Link>
+        </div>
+        <Venue data={data} />
+      </Container>
+    </>
   );
 }
 

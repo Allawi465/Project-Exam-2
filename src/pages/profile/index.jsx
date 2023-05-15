@@ -2,13 +2,21 @@ import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../api';
 import { load } from '../../utils/localStorage';
 import { useNavigate } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
+import { useHelmet } from '../../hooks';
 
 function Profile() {
   const { dataLogin } = useContext(AuthContext);
+  const { name } = dataLogin ? dataLogin : load('user');
+
   const token = dataLogin ? dataLogin : load('token');
   const [loggedIn, setLoggedIn] = useState(false);
   const navigate = useNavigate();
+
+  const ProfileMeta = useHelmet({
+    title: `${name} profile | Holidaze`,
+    description: `View and manage your Holidaze profile. See your bookings, reviews, and rental properties all in one place.`,
+    keywords: 'Holidaze, profile, bookings, reviews, rentals',
+  });
 
   useEffect(() => {
     if (token) {
@@ -20,17 +28,7 @@ function Profile() {
 
   return (
     <>
-      <Helmet>
-        <title>Your Profile | Holidaze</title>
-        <meta
-          name="description"
-          content="View and manage your Holidaze profile. See your bookings, reviews, and rental properties all in one place."
-        />
-        <meta
-          name="keywords"
-          content="Holidaze, profile, bookings, reviews, rentals"
-        />
-      </Helmet>
+      {ProfileMeta}
       {loggedIn && (
         <div className="text-black">Profile page content goes here</div>
       )}
