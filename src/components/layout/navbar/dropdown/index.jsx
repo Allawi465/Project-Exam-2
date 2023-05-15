@@ -6,6 +6,20 @@ import { useModel } from '../../../../hooks/index';
 import { SettingsModel } from '../../../index';
 import defaultAvatar from '../../../../images/defaultAvatar.jpg';
 
+/**
+ * Renders a dropdown component containing user information and settings when user login
+ * @component
+ * @property {function} useModel A custom hook that provides the functionality for showing the setting avatar model
+ * @property {function} handleOpenSettings A function to handle showing the setting model
+ * @property {function} handleCloseSettings A function to handle closing setting model
+ * @property {function} AuthContext getting the authentication state from AuthContext
+ * @property {function} logout Logout the user and clear the user token and Information
+ * @property {function} load authentication state from local Storage
+ * @returns {React.ReactElement} return dropdown component
+ * @example
+ * <NavbarDropdown />
+ */
+
 function NavbarDropdown() {
   const { showSettings, handleCloseSettings, handleOpenSettings } = useModel();
 
