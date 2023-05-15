@@ -1,22 +1,37 @@
 import { useState } from 'react';
 
+/**
+ * @typedef {Object} useModel return
+ * @property {function} handleOpenSettings A function to handle showing the setting model
+ * @property {function} handleCloseSettings A function to handle closing setting model
+ * @property {function} handleLoginModel A function to handle showing the login modal
+ * @property {function} handleCloseLoginModel A function to handle closing the login modal
+ * @property {function} handleSignUpModel A function to handle showing the sign up modal
+ * @property {function} handleCloseSignUpModel A function to handle closing the sign up modal
+ */
+
+/**
+ *  A custom hook that provides the functionality for showing and close modals
+ *  @returns {useModel}
+ *  @example
+ *  const { showSettings, handleCloseSettings, handleOpenSettings } = useModel();
+ */
+
 function useModel() {
   const [showLoginModel, setShowLoginModel] = useState(false);
   const [showSignUpModel, setShowSignUpModel] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
 
-  const handleCloseSettings = () => {
-    setShowSettings(false);
-  };
-
   const handleOpenSettings = () => {
     setShowSettings(true);
   };
 
+  const handleCloseSettings = () => {
+    setShowSettings(false);
+  };
+
   const handleLoginModel = () => {
-    console.log('handleLoginModel called');
-    console.log(showLoginModel);
-    setShowLoginModel(true);
+    setShowLoginModel(true); // opens the login model
     setShowSignUpModel(false); // close the sign up model if it's open
   };
 
@@ -25,7 +40,7 @@ function useModel() {
   };
 
   const handleSignUpModel = () => {
-    setShowSignUpModel(true);
+    setShowSignUpModel(true); // opens the sign up model
     setShowLoginModel(false); // close the login model if it's open
   };
 
