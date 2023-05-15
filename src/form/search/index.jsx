@@ -3,7 +3,7 @@ import { Form, InputGroup } from 'react-bootstrap';
 import { GoSettings } from 'react-icons/go';
 import { RiSearchLine } from 'react-icons/ri';
 
-function Search() {
+function SearchForm() {
   return (
     <>
       <form className="searchForm">
@@ -27,4 +27,4 @@ function Search() {
   );
 }
 
-export default Search;
+export default SearchForm;

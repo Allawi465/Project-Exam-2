@@ -6,8 +6,25 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import schema from './register';
 import useApiActions from '../../hooks/api/useApiActions';
 
+/**
+ * Renders a register form component with validation and error handling
+ * @component
+ * @param {object} props Component props
+ * @param {function} props.onSignUpClick Callback function to close the register model and opens login model
+ * @property {function} OnFormSubmit A function to handle inputs through API call
+ * @property {function} useApiActions A hook for fetching data from an API endpoint and handling loading state
+ * @property {boolean} isLoading True if API request is loading, false otherwise
+ * @property {function} fetchData Function to fetch data from an API endpoint
+ * @property {function} save Saves data to local storage
+ * @returns {React.ReactElement} register form component
+ * @example
+ * <ChangeAvatarForm onSignUpClick={props.onSignUpClick} />
+ */
+
 function SignUpForm({ onSignUpClick }) {
+  // Authentication and API data handling
   const { isLoading, fetchData } = useApiActions();
+  // Form validation using React Hook Form and Yup
   const {
     register,
     handleSubmit,
@@ -17,16 +34,26 @@ function SignUpForm({ onSignUpClick }) {
     resolver: yupResolver(schema),
   });
 
+  // State for error message
   const [errorMessage, setErrorMessage] = useState('');
 
+  /**
+   * Handler form submission
+   * @async
+   * @param {object} formData Form data
+   */
+
   const OnFormSubmit = async (formData) => {
+    // Call API to register a user
     const newUser = await fetchData('/auth/register', {
       method: 'POST',
       body: JSON.stringify(formData),
     });
+    // Set error message if API response haves an error
     if (newUser.isError) {
       setErrorMessage(newUser.isError);
     } else {
+      // Close modal, opens login form and reset form
       setErrorMessage('');
       onSignUpClick();
       reset();
