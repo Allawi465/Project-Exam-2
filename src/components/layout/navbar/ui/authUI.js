@@ -2,6 +2,15 @@ import { NavLink } from 'react-router-dom';
 import { Nav, Navbar } from 'react-bootstrap';
 import NavbarDropdown from '../dropdown';
 
+/**
+ * The UserNavbar component render the navigation bar for login users
+ * @component
+ * @property {function} AuthContext getting the authentication state from AuthContext
+ * @returns {React.ReactElement} return UserNavbar component
+ * @example
+ * <UserNavbar />
+ */
+
 function UserNavbar() {
   return (
     <>
@@ -15,8 +24,8 @@ function UserNavbar() {
             Profile
           </Nav.Link>
           <Nav.Link as={NavLink} to={'/profile'}>
-            Host you place
-          </Nav.Link> 
+            Host your place
+          </Nav.Link>
           <NavbarDropdown />
         </Nav>
       </Navbar.Collapse>
