@@ -1,19 +1,19 @@
 .logo {
+  color: var(--color-lightgray);
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   padding-left: 0 !important;
   font-family: 'Ysabeau', sans-serif, Mulish;
   font-style: italic;
-  font-weight: 400;
-
+  font-weight: 600;
+  margin-right: unset !important;
   img {
     object-fit: cover;
   }
 }
 
 .navbar-nav {
-  align-items: center;
-
   .nav-link {
     color: var(--color-lightgray);
 
@@ -65,6 +65,11 @@
   }
   .navbar-nav {
     padding-left: 3px;
-    align-items: startæ;
+  }
+}
+
+@media (max-width: 276px) {
+  .content {
+    margin-top: 20px;
   }
 }

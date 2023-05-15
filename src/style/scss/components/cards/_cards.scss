@@ -17,31 +17,33 @@
   &-title {
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
 
     &-title {
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
-      max-width: 67%;
+      max-width: 90%;
+      margin-bottom: 0;
     }
   }
 
   &-text {
-    &-container {
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      margin-bottom: 10px;
+    &-address {
+      color: var(--color-lightgray);
+      font-size: 17px;
+      p {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        max-width: 95%;
+        margin-bottom: 0;
+      }
     }
 
-    &-date {
-      border: 1px solid var(--color-lightgray);
-      border-radius: 10px;
-      padding: 3px 8px;
-      font-size: 13px;
-      letter-spacing: 0.2em;
-      color: var(--color-lightgray);
+    &-container {
+      margin-bottom: 10px;
+      min-height: 30px;
     }
 
     &-icon {
@@ -63,6 +65,9 @@
       font-style: italic;
 
       &-price {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
         font-size: 25px;
         margin-top: 0;
         margin-bottom: 0rem;
@@ -77,17 +82,16 @@
         border: 1px solid var(--color-purple);
         color: var(--color-purple);
         letter-spacing: 0.2em;
+        line-height: 1.5;
+        border-radius: 0.25rem;
         text-align: center;
         padding: 0.375rem 0.75rem;
         font-size: 16px;
         transition: all 0.2s ease-in-out;
         text-transform: uppercase;
-        border-radius: 8px;
-
         &:hover {
-          color: var(--color-darkPurple);
-          background: var(--color-lightpink);
-          border: 1px solid var(--color-lightpink);
+          background: var(--color-purple);
+          color: $white;
         }
       }
     }
