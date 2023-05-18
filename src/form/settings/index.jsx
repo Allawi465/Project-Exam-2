@@ -5,8 +5,8 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import SettingsSchema from './schema';
 import { AuthContext } from '../../api';
 import { load, save } from '../../utils/localStorage';
-import LoadingButton from '../../components/LoadingButton';
-import useApiActions from '../../hooks/api/useApiActions';
+import { LoadingBtn } from '../../components/index';
+import { useApiActions } from '../../hooks/index';
 
 /**
  * Renders a change avatar form component with validation and error handling
@@ -93,7 +93,7 @@ function ChangeAvatarForm({ onClose }) {
           <p className="form-text mx-1">{errors.avatar?.message}</p>
         </FloatingLabel>
         <div className="d-grid">
-          <LoadingButton
+          <LoadingBtn
             buttonText="Save Changes"
             type="submit"
             isValid={isValid}
