@@ -8,7 +8,9 @@ $grid-breakpoints: (
   // Large screen / desktop
   lg: 992px,
   // Extra large screen / wide desktop
-  xl: 1200px
+  xl: 1200px,
+  // Extra Extra large screen / wide desktop
+  xxl: 1300px
 );
 
 /* make the customizations */
@@ -17,6 +19,7 @@ $container-max-widths: (
   md: 100%,
   lg: 1000px,
   xl: 1200px,
+  xxl: 1300px,
 );
 
 /* import bootstrap to set changes */

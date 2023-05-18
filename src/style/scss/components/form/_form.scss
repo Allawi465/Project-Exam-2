@@ -28,3 +28,47 @@
   background-color: var(--color-purple);
   border-color: var(--color-purple);
 }
+
+.calender-form {
+  background: white;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+}
+
+.booking-btn {
+  background: $white;
+  border: 1px solid var(--color-lightgray);
+  padding: 0.375rem 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  font-size: 16px;
+  letter-spacing: 0.2em;
+}
+
+.input-details {
+  max-width: 100%;
+  background: #fdfdfd;
+  border-radius: 10px;
+  &-title {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-style: italic;
+
+    p {
+      color: var(--color-purple);
+      cursor: pointer;
+    }
+  }
+
+  &-light {
+    color: var(--color-lightgray);
+  }
+
+  &-total {
+    font-weight: bold;
+    &-p {
+      color: var(--color-purple);
+    }
+  }
+}

@@ -1,0 +1,124 @@
+.react-calendar {
+  background-color: $white;
+  border-radius: 8px;
+  line-height: 1.125em;
+  border-color: transparent;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+
+  &__navigation button {
+    min-width: 44px;
+    background: none;
+    font-size: 16px;
+    margin-top: 8px;
+  }
+
+  abbr[title] {
+    text-decoration: none;
+  }
+
+  &__month-view {
+    &__days {
+      &__day--weekend {
+        color: #822f30;
+      }
+    }
+  }
+
+  &__tile:enabled:hover,
+  &__tile:enabled:focus {
+    background: $white;
+    color: var(--color-darkPurple);
+    border-radius: 6px;
+  }
+
+  &__tile--now {
+    background: $white;
+    border-radius: 6px;
+    color: var(--color-darkPurple);
+
+    &:enabled:hover,
+    &:enabled:focus {
+      background-color: #e6e6e6;
+      border-radius: 6px;
+      color: var(--color-darkPurple);
+    }
+  }
+
+  &__tile--active {
+    color: var(--color-darkPurple);
+    border-radius: 6px;
+    background: $white;
+
+    &:enabled:hover,
+    &:enabled:focus {
+      background-color: #e6e6e6;
+    }
+  }
+
+  &__tile--range {
+    background-color: #e6e6e6;
+    color: var(--color-darkPurple);
+    border-radius: 0;
+
+    &Start {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      border-top-left-radius: 6px;
+      border-bottom-left-radius: 6px;
+      background: var(--color-purple);
+      color: white;
+    }
+
+    &End {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      border-top-right-radius: 6px;
+      border-bottom-right-radius: 6px;
+      background: var(--color-purple);
+      color: white;
+    }
+  }
+}
+
+.react-calendar--selectRange .react-calendar__tile--hover {
+  background-color: #e6e6e6;
+  color: var(--color-darkPurple);
+}
+
+.react-calendar__tile:disabled {
+  color: #6f6f6f;
+  background: $white;
+  text-decoration-line: line-through;
+}
+
+.guests {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+
+  &-dates {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &-content {
+    display: flex;
+    align-items: center;
+
+    &-numberOfGuest {
+      padding: 5px;
+      margin-bottom: 10px;
+    }
+
+    &-btn {
+      width: 30px;
+      height: 30px;
+      background: $white;
+      border: 1px solid var(--color-lightgray);
+      color: $black;
+      font-size: 16px;
+      border-radius: 50%;
+    }
+  }
+}

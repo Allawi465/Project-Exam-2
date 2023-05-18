@@ -1,13 +1,16 @@
 .logo {
-  color: var(--color-lightgray);
+  color: var(--color-purple);
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   padding-left: 0 !important;
   font-family: 'Ysabeau', sans-serif, Mulish;
   font-style: italic;
-  font-weight: 600;
   margin-right: unset !important;
+  &:hover,
+  &:focus {
+    color: var(--color-purple);
+  }
   img {
     object-fit: cover;
   }
