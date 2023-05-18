@@ -18,67 +18,67 @@ import { AiFillCar } from 'react-icons/ai';
 
 function VenueFacilities({ breakfast, wifi, pets, parking }) {
   return (
-    <div className="venue-facilities">
+    <div className="venue-facilities mt-4">
       <h5>Home facilities</h5>
-      <div className="mt-3 d-flex gap-2" style={{ flexDirection: 'column' }}>
+      <div className="venue-facilities-container mt-3">
         {breakfast ? (
-          <div className="d-flex gap-2">
+          <div className="venue-facilities-icon">
             <div className="card-text-icon">
               <GiKnifeFork />
             </div>
-            <p>Breakfast</p>
+            <p className="text-break">Breakfast included</p>
           </div>
         ) : (
-          <div className="d-flex gap-2">
+          <div className="venue-facilities-icon">
             <div className="card-text-icon">
               <GiKnifeFork />
             </div>
-            <p>Breakfast not included</p>
+            <p className="text-break">Breakfast not included</p>
           </div>
         )}
         {wifi ? (
-          <div className="d-flex gap-2">
+          <div className="venue-facilities-icon">
             <div className="card-text-icon">
               <BsWifi />
             </div>
-            <p>Free WiFi</p>
+            <p className="text-break">Free WiFi</p>
           </div>
         ) : (
-          <div className="d-flex gap-2">
+          <div className="venue-facilities-icon">
             <div className="card-text-icon">
               <BsWifi />
             </div>
-            <p>WiFi is not available for free</p>
+            <p className="text-break">WiFi is not available</p>
           </div>
         )}
         {pets ? (
-          <div className="d-flex gap-2">
+          <div className="venue-facilities-icon">
             <div className="card-text-icon">
               <MdPets />
             </div>
-            <p>Pets allowed</p>
+            <p className="text-break">Pets allowed</p>
           </div>
         ) : (
-          <div className="d-flex gap-2">
+          <div className="venue-facilities-icon">
             <div className="card-text-icon">
               <MdPets />
             </div>
-            <p>Pets not allowed</p>
+            <p className="text-break">Pets not allowed</p>
           </div>
         )}
         {parking ? (
-          <div className="d-flex gap-2">
+          <div className="venue-facilities-icon">
             <div className="card-text-icon">
               <AiFillCar />
             </div>
-            <p>Free Parking</p>
+            <p className="text-break">Free Parking</p>
           </div>
         ) : (
-          <div className="d-flex gap-2">
+          <div className="venue-facilities-icon">
             <div className="card-text-icon">
               <AiFillCar />
             </div>
-            <p>No free parking available</p>
+            <p className="text-break">No free parking available</p>
           </div>
         )}
       </div>

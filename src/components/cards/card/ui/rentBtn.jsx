@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { BookBtn } from '../../../../style/buttons';
 /**
  * A component that render the rental price of a venue and provides a button to rent it
@@ -9,9 +10,9 @@ import { BookBtn } from '../../../../style/buttons';
  * <Rent price={props.price} />
  */
 
-function Rent({ price }) {
+function Rent({ price, id }) {
   return (
-    <div className="venue-prices mt-4 mb-2">
+    <div className="venue-prices mb-2">
       <div className="venue-prices-container">
         <p className="venue-prices-container-price">
           ${price}
@@ -19,7 +20,9 @@ function Rent({ price }) {
         </p>
         <span>Payment estimation</span>
       </div>
-      <BookBtn className="mt-2">Rent</BookBtn>
+      <BookBtn className="mt-2" as={Link} to={`/booking/${id}`}>
+        Rent
+      </BookBtn>
     </div>
   );
 }

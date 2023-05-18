@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import VenueCarousel from '../../carousel/card';
 import { Owner, Details, Facilities, RentBtn } from './ui';
+import { Calender } from '../../index';
+import { BsCalendarDate } from 'react-icons/bs';
 
 /**
  * A component that render a single venue by id
@@ -26,18 +28,26 @@ function Venue({ data }) {
     maxGuests,
     meta,
     name,
+    bookings,
     price,
     rating,
     owner,
     description,
     location,
+    id,
   } = data;
+
   const { avatar, email, name: ownerName } = owner || {};
   const { address, city } = location || {};
   const { breakfast, parking, pets, wifi } = meta || {};
 
   const handleReadMoreClick = () => {
-    setShowMore(true);
+    setShowMore((prevShowMore) => !prevShowMore);
+  };
+
+  const handleBookingSubmit = (formData) => {
+    // Handle the form submission here
+    console.log(formData);
   };
 
   return (
@@ -53,22 +63,36 @@ function Venue({ data }) {
             maxGuests={maxGuests}
           />
           <Owner avatar={avatar} ownerName={ownerName} email={email} />
+
+          <div>
+            <h5>
+              Available dates
+              <BsCalendarDate
+                size={25}
+                className="mx-2 mb-2"
+                style={{ color: '#673BBF' }}
+              />
+            </h5>
+            <Calender bookings={bookings} />
+          </div>
           <Facilities
             breakfast={breakfast}
             wifi={wifi}
             pets={pets}
             parking={parking}
           />
-          <div className="venue-description my-3">
-            <p>
+          <div className="venue-description">
+            <p className="text-break">
               {description &&
-                (showMore ? description : `${description.slice(0, 350)}...`)}
-              {description && description.length > 350 && !showMore && (
-                <button onClick={handleReadMoreClick}>Read More</button>
+                (showMore ? description : `${description.slice(0, 200)}...`)}
+              {description && description.length > 200 && (
+                <button onClick={handleReadMoreClick}>
+                  {showMore ? 'Read Less' : 'Read More'}
+                </button>
               )}
             </p>
           </div>
-          <RentBtn price={price} />
+          <RentBtn price={price} id={id} onSubmit={handleBookingSubmit} />
         </div>
       </div>
     </>
