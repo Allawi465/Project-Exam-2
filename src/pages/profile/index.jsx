@@ -6,14 +6,15 @@ import { useHelmet } from '../../hooks';
 
 function Profile() {
   const { dataLogin } = useContext(AuthContext);
-  const { name } = dataLogin ? dataLogin : load('user');
 
   const token = dataLogin ? dataLogin : load('token');
+
   const [loggedIn, setLoggedIn] = useState(false);
+
   const navigate = useNavigate();
 
   const ProfileMeta = useHelmet({
-    title: `${name} profile | Holidaze`,
+    title: `Your Profile | Holidaze`,
     description: `View and manage your Holidaze profile. See your bookings, reviews, and rental properties all in one place.`,
     keywords: 'Holidaze, profile, bookings, reviews, rentals',
   });
@@ -29,7 +30,7 @@ function Profile() {
   return (
     <>
       {ProfileMeta}
-      {loggedIn && (
+      {loggedIn && dataLogin && (
         <div className="text-black">Profile page content goes here</div>
       )}
     </>
