@@ -29,7 +29,7 @@ function NavBar() {
       fixed="top"
       style={{ background: 'white' }}
     >
-      <Container style={{ maxWidth: '1300px' }}>
+      <Container>
         <Navbar.Brand as={Link} to="/" className="logo my-0 pt-0">
           <img
             src={logo}
