@@ -9,3 +9,5 @@ export { default as SettingsModel } from './models/settings';
 export { default as ErrorMessage } from './alert';
 export { default as Venues } from './cards/cards/index';
 export { default as Venue } from './cards/card/index';
+export { default as Calender } from './calender';
+export { default as Bookings } from './bookings';
