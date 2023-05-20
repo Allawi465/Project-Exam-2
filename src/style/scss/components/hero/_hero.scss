@@ -20,6 +20,10 @@
     width: 400px;
     padding: 20px;
 
+    &-button {
+      display: flex;
+    }
+
     &-container {
       max-width: 202px;
       margin: auto;

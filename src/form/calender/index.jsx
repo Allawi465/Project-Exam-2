@@ -39,9 +39,9 @@ function BookingForm({ bookings, maxGuest, id, price }) {
       ) : (
         <FormUi
           OnFormSubmit={OnFormSubmit}
-          handleSelect={handleSelect}
-          date={date}
-          unavailableDays={unavailableDays}
+          onChange={handleSelect}
+          value={date}
+          tileDisabled={unavailableDays}
           formError={formError}
           removeGuests={removeGuests}
           addGuests={addGuests}

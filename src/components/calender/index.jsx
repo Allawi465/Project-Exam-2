@@ -1,16 +1,14 @@
 import Calendar from 'react-calendar';
-import { useBookingCalendar } from '../../hooks';
 
-function Calender({ bookings }) {
-  const { date, handleSelect, unavailableDays } = useBookingCalendar(bookings);
-
+function Calender({ onChange, tileDisabled, value, className, defaultValue }) {
   return (
     <Calendar
-      onChange={handleSelect}
-      value={date}
+      onChange={onChange}
+      value={value}
       selectRange={true}
-      tileDisabled={unavailableDays}
+      tileDisabled={tileDisabled}
       minDate={new Date()}
+      className={className}
     />
   );
 }

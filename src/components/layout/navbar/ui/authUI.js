@@ -1,6 +1,9 @@
+import { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Nav, Navbar } from 'react-bootstrap';
 import NavbarDropdown from '../dropdown';
+import { AuthContext } from '../../../../api';
+import { load } from '../../../../utils/localStorage';
 
 /**
  * The UserNavbar component render the navigation bar for login users
@@ -12,6 +15,9 @@ import NavbarDropdown from '../dropdown';
  */
 
 function UserNavbar() {
+  const { dataLogin } = useContext(AuthContext);
+  const venueManger =
+    load('venueManger') || (dataLogin && dataLogin.venueManger);
   return (
     <>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -23,9 +29,11 @@ function UserNavbar() {
           <Nav.Link as={NavLink} to={'/profile'}>
             Profile
           </Nav.Link>
-          <Nav.Link as={NavLink} to={'/profile'}>
-            Host your place
-          </Nav.Link>
+          {venueManger === true && (
+            <Nav.Link as={NavLink} to={'/create'}>
+              Host your place
+            </Nav.Link>
+          )}
           <NavbarDropdown />
         </Nav>
       </Navbar.Collapse>

@@ -7,12 +7,12 @@
   &-booking {
     width: 505px;
     max-width: 100%;
-
     &-container {
       max-width: 505px;
       display: flex;
       gap: 20px;
-
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+      border-radius: 10px 0px 0px 10px;
       &-img {
         width: 161px;
         img {
@@ -53,6 +53,7 @@
   .bookings {
     &-booking {
       &-container {
+        border-radius: 10px 10px 0px 0px;
         flex-wrap: wrap;
         &-img {
           width: 100%;

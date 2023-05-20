@@ -60,13 +60,19 @@ function LoginForm({ onClose }) {
       setErrorMessage(UserData.isError);
     } else {
       // Set user data and token in context and local storage
-      const { accessToken: token, avatar, ...user } = UserData.data;
+      const {
+        accessToken: token,
+        avatar,
+        venueManager,
+        ...user
+      } = UserData.data;
       setDataLogin({
         ...user,
         avatar: avatar,
         token: token,
       });
       save('token', token);
+      save('venueManger', venueManager);
       save('user', user);
       save('avatar', avatar);
       // Close modal and reset form

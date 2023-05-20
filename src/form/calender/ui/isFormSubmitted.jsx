@@ -35,7 +35,7 @@ function IsSubmitted({
       dateFrom: date[0].toISOString(),
       dateTo: date[1].toISOString(),
       guests: guests,
-      id: id,
+      venueId: id,
     };
     if (!token) {
       handleLoginModel(true);
@@ -58,9 +58,11 @@ function IsSubmitted({
       {errorMessage && (
         <p style={{ color: 'var(--color-red)' }}>{errorMessage}</p>
       )}
-      <div className="input-details-title">
+      <div className="input-details-title mt-2">
         <h1 className="h5 mb-0 mx-2">Your input details</h1>
-        <p onClick={handleShowForm}>Edit</p>
+        <p className="mx-2" onClick={handleShowForm}>
+          Edit
+        </p>
       </div>
       <div className="guests-dates mt-2 mx-2">
         <p className="my-0 input-details-light">Date</p>

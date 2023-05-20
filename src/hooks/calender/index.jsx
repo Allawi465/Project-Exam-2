@@ -27,14 +27,13 @@ const useBookingCalendar = (bookings, maxGuest, id, price) => {
 
     if (isSameDay(startDate, endDate)) {
       setDate(null);
-      setFormError('Please select different start and end dates.');
+      setFormError('Please select different start and end dates');
     } else {
       const dates = eachDayOfInterval({ start: startDate, end: endDate });
       const isDisabled = dates.some((day) => unavailableDays({ date: day }));
 
       if (isDisabled) {
         setDate(null);
-        setFormError('Selected dates are not available.');
       } else {
         setFormError('');
         setDate(date);

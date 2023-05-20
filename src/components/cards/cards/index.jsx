@@ -32,7 +32,7 @@ import { AiFillHeart } from 'react-icons/ai';
 
 function Venues() {
   const { data, isLoading, isError } = useGetApi(
-    '/venues?_owner=true&_bookings=true'
+    `/venues?_owner=true&_bookings=true&limit=50`
   );
 
   console.log(data);

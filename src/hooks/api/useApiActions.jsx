@@ -39,8 +39,11 @@ function useApiActions() {
       const { method, body } = options;
       const url = `${API_SOCIAL_URL}${path}`;
       const fetchedData = await fetchWToken(url, { method, body });
+      if (fetchedData.status === 204) {
+        return { success: true };
+      }
+      
       const data = await fetchedData.json();
-      console.log(data);
       if (data.errors) {
         setError(data.errors[0].message);
         return { isError: data.errors[0].message };

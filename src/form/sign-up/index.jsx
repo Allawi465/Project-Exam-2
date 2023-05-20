@@ -21,7 +21,7 @@ import useApiActions from '../../hooks/api/useApiActions';
  * <ChangeAvatarForm onSignUpClick={props.onSignUpClick} />
  */
 
-function SignUpForm({ onSignUpClick }) {
+function SignUpForm({ onLoginClick }) {
   // Authentication and API data handling
   const { isLoading, fetchData } = useApiActions();
   // Form validation using React Hook Form and Yup
@@ -55,7 +55,7 @@ function SignUpForm({ onSignUpClick }) {
     } else {
       // Close modal, opens login form and reset form
       setErrorMessage('');
-      onSignUpClick();
+      onLoginClick();
       reset();
     }
   };

@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { NavLink } from 'react-router-dom';
 import { Dropdown } from 'react-bootstrap';
 import { AuthContext } from '../../../../api';
 import { load } from '../../../../utils/localStorage';
@@ -22,9 +23,9 @@ import defaultAvatar from '../../../../images/defaultAvatar.jpg';
 
 function NavbarDropdown() {
   const { showSettings, handleCloseSettings, handleOpenSettings } = useModel();
-
   const { dataLogin, logout } = useContext(AuthContext);
-
+  const venueManger =
+    load('venueManger') || (dataLogin && dataLogin.venueManger);
   const { name } = dataLogin ? dataLogin : load('user');
   const avatar = load('avatar') || dataLogin;
 
@@ -56,8 +57,14 @@ function NavbarDropdown() {
         <span className="mx-1">{name}</span>
       </Dropdown.Toggle>
       <Dropdown.Menu>
-        <Dropdown.Item>Profile</Dropdown.Item>
-        <Dropdown.Item>Host your place</Dropdown.Item>
+        <Dropdown.Item as={NavLink} to={'/profile'}>
+          Profile
+        </Dropdown.Item>
+        {venueManger === true && (
+          <Dropdown.Item as={NavLink} to={'/create'}>
+            Host your place
+          </Dropdown.Item>
+        )}
         <Dropdown.Item onClick={handleOpenSettings}>Settings</Dropdown.Item>
         <SettingsModel show={showSettings} onClose={handleCloseSettings} />
         <Dropdown.Divider />

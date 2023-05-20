@@ -11,7 +11,6 @@ export const LoginBtn = styled.button`
   border-radius: 0.25rem;
   justify-content: center;
   align-items: center;
-  font-size: 16px;
   transition: all 0.2s ease-in-out;
   :hover {
     border: 1px solid ${(props) => props.theme.color.lightBlack};
@@ -57,4 +56,15 @@ export const BookBtn = styled(LoginBtn)`
   border-radius: 72px;
   font-size: 20px;
   height: 48px;
+`;
+
+export const DeletingBtn = styled(LoginBtn)`
+  background: ${(props) => props.theme.color.red};
+  color: #ffffff;
+  width: 100%;
+  :hover {
+    border: 1px solid ${(props) => props.theme.color.red};
+    background: #ffffff;
+    color: ${(props) => props.theme.color.red};
+  }
 `;
