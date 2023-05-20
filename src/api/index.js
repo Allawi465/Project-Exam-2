@@ -37,6 +37,7 @@ export const AuthContext = createContext();
 
 const ApiProvider = ({ children }) => {
   const [dataLogin, setDataLogin] = useState(false);
+  const [viewBookings, setBookings] = useState([]);
 
   /**
    * Logs the user out and removing the user's token, user data, and avatar from local storage
@@ -57,6 +58,7 @@ const ApiProvider = ({ children }) => {
     remove('token');
     remove('user');
     remove('avatar');
+    remove('venueManger');
     setDataLogin(null);
   };
 
@@ -66,6 +68,8 @@ const ApiProvider = ({ children }) => {
         dataLogin,
         setDataLogin,
         logout,
+        viewBookings,
+        setBookings,
       }}
     >
       {children}
