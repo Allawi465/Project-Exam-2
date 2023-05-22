@@ -1,9 +1,6 @@
 import { useState } from 'react';
 import VenueCarousel from '../../carousel/card';
-import { Owner, Details, Facilities, RentBtn } from './ui';
-import { Calender } from '../../index';
-import { BsCalendarDate } from 'react-icons/bs';
-import { useBookingCalendar } from '../../../hooks';
+import { Owner, Details, Facilities, RentBtn, Bookings } from './ui';
 
 /**
  * A component that render a single venue by id
@@ -37,7 +34,6 @@ function Venue({ data }) {
     location,
     id,
   } = data;
-  const { handleSelect, unavailableDays, date } = useBookingCalendar(bookings);
 
   const { avatar, email, name: ownerName } = owner || {};
   const { address, city } = location || {};
@@ -61,21 +57,8 @@ function Venue({ data }) {
           />
           <Owner avatar={avatar} ownerName={ownerName} email={email} />
 
-          <div>
-            <h5>
-              Available dates
-              <BsCalendarDate
-                size={25}
-                className="mx-2 mb-2"
-                style={{ color: '#673BBF' }}
-              />
-            </h5>
-            <Calender
-              onChange={handleSelect}
-              value={date}
-              tileDisabled={unavailableDays}
-            />
-          </div>
+          <Bookings ownerName={ownerName} bookings={bookings} />
+
           <Facilities
             breakfast={breakfast}
             wifi={wifi}
@@ -85,15 +68,15 @@ function Venue({ data }) {
           <div className="venue-description">
             <p className="text-break">
               {description &&
-                (showMore ? description : `${description.slice(0, 500)}...`)}
-              {description && description.length > 500 && (
+                (showMore ? description : `${description.slice(0, 600)}`)}
+              {description && description.length > 600 && (
                 <button onClick={handleReadMoreClick}>
-                  {showMore ? 'Show Less' : 'Show More'}
+                  {showMore ? 'Show Less' : '...Show More'}
                 </button>
               )}
             </p>
           </div>
-          <RentBtn price={price} id={id} />
+          <RentBtn price={price} id={id} ownerName={ownerName} />
         </div>
       </div>
     </>
