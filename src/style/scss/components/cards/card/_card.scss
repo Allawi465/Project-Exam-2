@@ -183,6 +183,14 @@
   }
 }
 
+.table {
+  overflow: hidden;
+  scrollbar-width: thin;
+  overflow-y: auto;
+  scrollbar-color: gray lightgray;
+  max-height: 150px;
+}
+
 @media (max-width: 768px) {
   .venue {
     flex-wrap: wrap;

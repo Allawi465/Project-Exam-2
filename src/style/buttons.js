@@ -51,11 +51,14 @@ export const HeroBtn = styled(LoginBtn)`
 export const BookBtn = styled(LoginBtn)`
   background: ${(props) => props.theme.color.purple};
   color: #ffffff;
-  max-width: 156px;
-  width: 100%;
-  border-radius: 72px;
+  width: 156px;
   font-size: 20px;
-  height: 48px;
+  border-radius: 49px;
+  :hover {
+    border: 1px solid ${(props) => props.theme.color.purple};
+    background: #ffffff;
+    color: ${(props) => props.theme.color.purple};
+  }
 `;
 
 export const DeletingBtn = styled(LoginBtn)`
@@ -66,5 +69,13 @@ export const DeletingBtn = styled(LoginBtn)`
     border: 1px solid ${(props) => props.theme.color.red};
     background: #ffffff;
     color: ${(props) => props.theme.color.red};
+  }
+`;
+
+export const UpdateBtn = styled(LoginBtn)`
+  background: ${(props) => props.theme.color.purple};
+  :hover {
+    border: 1px solid ${(props) => props.theme.color.purple};
+    color: ${(props) => props.theme.color.purple};
   }
 `;
