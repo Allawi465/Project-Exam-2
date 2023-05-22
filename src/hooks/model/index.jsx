@@ -19,10 +19,10 @@ import { useState } from 'react';
 
 function useModel() {
   const [showLoginModel, setShowLoginModel] = useState(false);
-  const [showDeleteBooking, setDeleteBooking] = useState(false);
+  const [showDeleteModel, setDeleteModel] = useState(false);
   const [showSignUpModel, setShowSignUpModel] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
-  const [deleteBookingId, setDeleteBookingId] = useState(null);
+  const [deleteId, setDeleteId] = useState(null);
 
   const handleOpenSettings = () => {
     setShowSettings(true);
@@ -32,14 +32,14 @@ function useModel() {
     setShowSettings(false);
   };
 
-  const handleOpenDeleteBooking = (id) => {
-    setDeleteBookingId(id);
+  const handleOpenDelete = (id) => {
+    setDeleteId(id);
     console.log(id);
-    setDeleteBooking(true);
+    setDeleteModel(true);
   };
 
-  const handleCloseDeleteBooking = () => {
-    setDeleteBooking(false);
+  const handleCloseDelete = () => {
+    setDeleteModel(false);
   };
 
   const handleLoginModel = () => {
@@ -71,10 +71,10 @@ function useModel() {
     handleCloseSignUpModel,
     handleOpenSettings,
     handleCloseSettings,
-    handleOpenDeleteBooking,
-    handleCloseDeleteBooking,
-    showDeleteBooking,
-    deleteBookingId,
+    handleOpenDelete,
+    handleCloseDelete,
+    showDeleteModel,
+    deleteId,
   };
 }
 
