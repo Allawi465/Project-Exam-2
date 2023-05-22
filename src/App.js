@@ -9,6 +9,7 @@ import {
   Profile,
   RouteNotFound,
   Booking,
+  Update,
   Create,
 } from './pages';
 import { HelmetProvider } from 'react-helmet-async';
@@ -25,6 +26,7 @@ function App() {
               <Route path="booking/:id" element={<Booking />} />
               <Route path="profile" element={<Profile />} />
               <Route path="create" element={<Create />} />
+              <Route path="update/:id" element={<Update />} />
               <Route path="*" element={<RouteNotFound />} />
             </Route>
           </Routes>
