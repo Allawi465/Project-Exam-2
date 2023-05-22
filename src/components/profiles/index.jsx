@@ -6,10 +6,11 @@ import { Loading, ErrorMessage } from '../index';
 import { AuthContext } from '../../api';
 import { load } from '../../utils/localStorage';
 import AccordionProfile from './accordion';
-import SettingsAvatarBtn from './accordion/overlay';
+import { SettingsAvatarBtn } from './accordion/ui';
 
 function Profiles() {
-  const { dataLogin, viewBookings, setBookings } = useContext(AuthContext);
+  const { dataLogin, viewBookings, setBookings, viewVenues, setVenues } =
+    useContext(AuthContext);
   const { name } = load('user') || [];
   const token = dataLogin?.token || load('token');
   const avatar = load('avatar') || dataLogin;
@@ -17,15 +18,16 @@ function Profiles() {
   const [loggedIn, setLoggedIn] = useState(false);
 
   const { data, isLoading, isError } = useGetApi(
-    `/profiles/${name}?_owner=true&_bookings=true`
+    `/profiles/${name}?_venues=true&_bookings=true`
   );
 
-  const { name: userName, email, bookings, venueManager } = data;
+  const { name: userName, email, bookings, venueManager, venues } = data;
 
   useEffect(() => {
     if (token) {
       setLoggedIn(true);
       setBookings(bookings);
+      setVenues(venues);
     } else {
       navigate('/', { replace: true });
       setLoggedIn(false);
@@ -76,6 +78,7 @@ function Profiles() {
           <AccordionProfile
             bookings={viewBookings}
             venueManager={venueManager}
+            venues={viewVenues}
           />
         </Container>
       )}

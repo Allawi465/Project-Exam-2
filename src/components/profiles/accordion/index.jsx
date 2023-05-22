@@ -1,7 +1,7 @@
 import Accordion from 'react-bootstrap/Accordion';
-import YourBookings from './itemOne';
+import { YourBookings, YourVenues } from './ui';
 
-function AccordionProfile({ bookings, venues, bookingsVenue, venueManager }) {
+function AccordionProfile({ bookings, venues, venueManager }) {
   return (
     <Accordion defaultActiveKey={['0']} flush alwaysOpen>
       <Accordion.Item eventKey="0">
@@ -12,11 +12,7 @@ function AccordionProfile({ bookings, venues, bookingsVenue, venueManager }) {
         <>
           <Accordion.Item eventKey="1">
             <Accordion.Header>Your venues</Accordion.Header>
-            <Accordion.Body>{/* Venue content */}</Accordion.Body>
-          </Accordion.Item>
-          <Accordion.Item eventKey="2">
-            <Accordion.Header>Bookings of your venues</Accordion.Header>
-            <Accordion.Body>{/* Bookings content */}</Accordion.Body>
+            <YourVenues venues={venues} />
           </Accordion.Item>
         </>
       ) : null}

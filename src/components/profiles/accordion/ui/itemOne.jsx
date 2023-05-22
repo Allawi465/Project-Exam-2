@@ -1,17 +1,15 @@
 import { Link } from 'react-router-dom';
 import { Container, Col, Row, Accordion } from 'react-bootstrap';
-import { useModel } from '../../../hooks/index';
-import { CancelBookingsModel } from '../../index';
-import defaultImages from '../../../images/default.jpg';
+import { useModel } from '../../../../hooks/index';
+import { CancelBookingsModel } from '../../../index';
+import defaultImages from '../../../../images/default.jpg';
 import { AiFillHeart } from 'react-icons/ai';
+import { HiLocationMarker } from 'react-icons/hi';
+import { MdGroup } from 'react-icons/md';
 
 function YourBookings({ bookings }) {
-  const {
-    handleOpenDeleteBooking,
-    handleCloseDeleteBooking,
-    showDeleteBooking,
-    deleteBookingId,
-  } = useModel();
+  const { handleOpenDelete, handleCloseDelete, showDeleteModel, deleteId } =
+    useModel();
   return (
     <>
       <Accordion.Body className="profile-bookings">
@@ -51,18 +49,25 @@ function YourBookings({ bookings }) {
                             to={`/venue/${booking.venue.id}`}
                             className="profile-bookings-container-info-link"
                           >
-                            <div className="profile-bookings-container-info-title">
-                              <h2 className="my-2 h6 card-title-title">
-                                {booking.venue.name}
-                              </h2>
+                            <h2 className="mb-2 h6 mt-0">
+                              {booking.venue.name}
+                            </h2>
+
+                            <div className="d-flex gap-2 mb-1">
                               {booking.venue.rating > 0 && (
-                                <div className="venue-detail-rating ms-2">
-                                  <AiFillHeart />{' '}
+                                <div className="venue-detail-rating">
+                                  <AiFillHeart className="me-1" />
                                   <span>{booking.venue.rating}</span>
                                 </div>
                               )}
+                              <div>
+                                <MdGroup className="me-1 mb-1" size={20} />
+                                <span>{booking.guests}</span>
+                              </div>
                             </div>
+
                             <span>
+                              <HiLocationMarker className="me-1 mb-1" />
                               {!booking.venue.location.country ||
                               booking.venue.location.country === 'Unknown' ||
                               !booking.venue.location.city ||
@@ -75,7 +80,7 @@ function YourBookings({ bookings }) {
                                 </span>
                               )}
                             </span>
-                            <div className="mt-2">
+                            <div className="mt-1">
                               <h3 className="h5">Date</h3>
                               <p className="mb-0">
                                 {new Date(booking.dateFrom)
@@ -88,12 +93,11 @@ function YourBookings({ bookings }) {
                               </p>
                             </div>
                           </Link>
-                          <div className="profile-bookings-container-btn mt-2">
+                          <div className="profile-bookings-container-btn">
                             {new Date(booking.dateFrom) > new Date() && (
                               <button
-                                onClick={() =>
-                                  handleOpenDeleteBooking(booking.id)
-                                }
+                                onClick={() => handleOpenDelete(booking.id)}
+                                className="my-1 p-0"
                               >
                                 Cancel bookings
                               </button>
@@ -109,11 +113,11 @@ function YourBookings({ bookings }) {
               <p>No bookings yet...</p>
             )}
           </Row>
-          {showDeleteBooking && (
+          {showDeleteModel && (
             <CancelBookingsModel
-              show={showDeleteBooking}
-              onClose={handleCloseDeleteBooking}
-              id={deleteBookingId}
+              show={showDeleteModel}
+              onClose={handleCloseDelete}
+              id={deleteId}
             />
           )}
         </Container>
