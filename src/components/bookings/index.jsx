@@ -28,7 +28,7 @@ function Booking({ data }) {
             <div className="venue-detail-details-title">
               <h1 className="venue-detail-h1 my-2">{name}</h1>
               {rating > 0 && (
-                <div className="venue-detail-rating ms-2">
+                <div className="venue-detail-rating mx-2">
                   <AiFillHeart /> <span>{rating}</span>
                 </div>
               )}
