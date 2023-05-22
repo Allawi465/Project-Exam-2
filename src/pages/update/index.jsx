@@ -1,11 +1,11 @@
 import { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Container } from 'react-bootstrap';
-import { CreateVenueForm } from '../../form';
+import { UpdateVenue } from '../../form';
 import { AuthContext } from '../../api';
 import { load } from '../../utils/localStorage';
 
-function Create() {
+function Update() {
   const { dataLogin } = useContext(AuthContext);
   const token = dataLogin?.token || load('token');
   const venueManger =
@@ -30,13 +30,13 @@ function Create() {
     <Container>
       <div className="create my-5">
         <div className="create-container">
-          <h1 className="h4 mx-1">Host your own place</h1>
+          <h1 className="h4 mx-1">Update your place</h1>
           <p className="mx-1">Earn passive income by renting properties!</p>
-          <CreateVenueForm />
+          <UpdateVenue />
         </div>
       </div>
     </Container>
   );
 }
 
-export default Create;
+export default Update;
