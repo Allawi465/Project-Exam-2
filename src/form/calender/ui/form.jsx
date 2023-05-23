@@ -8,7 +8,6 @@ function FormUi({
   removeGuests,
   addGuests,
   handleCloseForm,
-  defaultValue,
   guests,
 }) {
   return (
@@ -23,7 +22,7 @@ function FormUi({
         tileDisabled={tileDisabled}
       />
       {formError && (
-        <p className="mx-2 my-0" style={{ color: 'var(--color-red)' }}>
+        <p className="mx-2 my-2" style={{ color: 'var(--color-red)' }}>
           {formError}
         </p>
       )}
