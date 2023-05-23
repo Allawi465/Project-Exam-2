@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { BsFillChatSquareTextFill } from 'react-icons/bs';
 import defaultAvatar from '../../../../images/defaultAvatar.jpg';
 import { useModel } from '../../../../hooks';
@@ -30,6 +31,7 @@ import { load } from '../../../../utils/localStorage';
  */
 
 function Owner({ avatar, ownerName, email }) {
+  const navigate = useNavigate();
   const { dataLogin } = useContext(AuthContext);
   const token = dataLogin ? dataLogin : load('token');
   const {
@@ -44,6 +46,8 @@ function Owner({ avatar, ownerName, email }) {
   const handleOwnerVisit = () => {
     if (!token) {
       handleLoginModel(true);
+    } else {
+      navigate(`/profile/${ownerName}`);
     }
   };
 
@@ -72,7 +76,7 @@ function Owner({ avatar, ownerName, email }) {
               height={42}
               className="rounded-circle me-2"
             />
-          )}
+          )}  
         </div>
         <div className="venue-owner-info">
           <div onClick={handleOwnerVisit}>
