@@ -53,15 +53,16 @@ const useBookingCalendar = (bookings, maxGuest, id, price) => {
   const addGuests = () => {
     if (guests < maxGuest) {
       setGuests((prevGuests) => prevGuests + 1);
+    } else {
+      setFormError(`Venues maximum guest is ${maxGuest}`);
     }
-    setIsFormSubmitted(false);
   };
 
   const removeGuests = () => {
+    setFormError(false);
     if (guests > 1) {
       setGuests((prevGuests) => prevGuests - 1);
     }
-    setIsFormSubmitted(false);
   };
 
   const validateForm = () => {
