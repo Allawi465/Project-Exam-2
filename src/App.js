@@ -24,7 +24,7 @@ function App() {
               <Route index element={<Home />} />
               <Route path="venue/:id" element={<VenueById />} />
               <Route path="booking/:id" element={<Booking />} />
-              <Route path="profile" element={<Profile />} />
+              <Route path="profile/:name" element={<Profile />} />
               <Route path="create" element={<Create />} />
               <Route path="update/:id" element={<Update />} />
               <Route path="*" element={<RouteNotFound />} />
