@@ -18,7 +18,7 @@ import { AiFillCar } from 'react-icons/ai';
 
 function VenueFacilities({ breakfast, wifi, pets, parking }) {
   return (
-    <div className="venue-facilities mt-2">
+    <div className="venue-facilities mt-3">
       <h5>Home facilities</h5>
       <div className="venue-facilities-container mt-3">
         {breakfast ? (
