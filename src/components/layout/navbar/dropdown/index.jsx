@@ -4,7 +4,7 @@ import { Dropdown } from 'react-bootstrap';
 import { AuthContext } from '../../../../api';
 import { load } from '../../../../utils/localStorage';
 import { useModel } from '../../../../hooks/index';
-import { SettingsModel } from '../../../index';
+import { SettingsModel, VenueMangerModel } from '../../../index';
 import defaultAvatar from '../../../../images/defaultAvatar.jpg';
 
 /**
@@ -22,10 +22,17 @@ import defaultAvatar from '../../../../images/defaultAvatar.jpg';
  */
 
 function NavbarDropdown() {
-  const { showSettings, handleCloseSettings, handleOpenSettings } = useModel();
+  const {
+    showSettings,
+    handleCloseSettings,
+    handleOpenSettings,
+    handleCloseVenueManger,
+    showVenueManger,
+    handleOpenVenueManger,
+  } = useModel();
   const { dataLogin, logout } = useContext(AuthContext);
   const venueManger =
-    load('venueManger') || (dataLogin && dataLogin.venueManger);
+    (dataLogin && dataLogin.venueManger) || load('venueManger');
   const { name } = dataLogin ? dataLogin : load('user');
   const avatar = load('avatar') || dataLogin;
 
@@ -38,26 +45,29 @@ function NavbarDropdown() {
       >
         {avatar && (
           <img
-            src={avatar}
+            src={avatar || defaultAvatar}
             alt={name}
             width={30}
             height={30}
             className="rounded-circle"
+            onError={(e) => {
+              e.target.src = defaultAvatar;
+            }}
           />
         )}
         {!avatar && (
           <img
             src={defaultAvatar}
             alt={name}
-            width={42}
-            height={42}
+            width={30}
+            height={30}
             className="rounded-circle me-2"
           />
         )}
         <span className="mx-1">{name}</span>
       </Dropdown.Toggle>
       <Dropdown.Menu>
-        <Dropdown.Item as={NavLink} to={'/profile'}>
+        <Dropdown.Item as={NavLink} to={`/profile/${name}`}>
           Profile
         </Dropdown.Item>
         {venueManger === true && (
@@ -65,8 +75,20 @@ function NavbarDropdown() {
             Host your place
           </Dropdown.Item>
         )}
-        <Dropdown.Item onClick={handleOpenSettings}>Settings</Dropdown.Item>
+        {venueManger === false && (
+          <Dropdown.Item onClick={handleOpenVenueManger}>
+            Become a host
+          </Dropdown.Item>
+        )}
+        <Dropdown.Item onClick={handleOpenSettings}>
+          Change avatar
+        </Dropdown.Item>
+
         <SettingsModel show={showSettings} onClose={handleCloseSettings} />
+        <VenueMangerModel
+          show={showVenueManger}
+          onClose={handleCloseVenueManger}
+        />
         <Dropdown.Divider />
         <Dropdown.Item onClick={logout}>Sign out</Dropdown.Item>
       </Dropdown.Menu>
