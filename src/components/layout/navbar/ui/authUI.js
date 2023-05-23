@@ -4,6 +4,8 @@ import { Nav, Navbar } from 'react-bootstrap';
 import NavbarDropdown from '../dropdown';
 import { AuthContext } from '../../../../api';
 import { load } from '../../../../utils/localStorage';
+import { useModel } from '../../../../hooks';
+import { VenueMangerModel } from '../../../index';
 
 /**
  * The UserNavbar component render the navigation bar for login users
@@ -17,7 +19,10 @@ import { load } from '../../../../utils/localStorage';
 function UserNavbar() {
   const { dataLogin } = useContext(AuthContext);
   const venueManger =
-    load('venueManger') || (dataLogin && dataLogin.venueManger);
+    (dataLogin && dataLogin.venueManger) || load('venueManger');
+  const { name } = dataLogin ? dataLogin : load('user');
+  const { handleCloseVenueManger, showVenueManger, handleOpenVenueManger } =
+    useModel();
   return (
     <>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -26,7 +31,10 @@ function UserNavbar() {
           <Nav.Link as={NavLink} to={'/'}>
             Home
           </Nav.Link>
-          <Nav.Link as={NavLink} to={'/profile'}>
+          {venueManger === false && (
+            <Nav.Link onClick={handleOpenVenueManger}>Become a host</Nav.Link>
+          )}
+          <Nav.Link as={NavLink} to={`/profile/${name}`}>
             Profile
           </Nav.Link>
           {venueManger === true && (
@@ -37,6 +45,10 @@ function UserNavbar() {
           <NavbarDropdown />
         </Nav>
       </Navbar.Collapse>
+      <VenueMangerModel
+        show={showVenueManger}
+        onClose={handleCloseVenueManger}
+      />
     </>
   );
 }
