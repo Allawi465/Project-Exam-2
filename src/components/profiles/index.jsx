@@ -1,27 +1,36 @@
 import { useContext, useEffect, useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 import { Container } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
 import { useGetApi } from '../../hooks/index';
 import { Loading, ErrorMessage } from '../index';
 import { AuthContext } from '../../api';
 import { load } from '../../utils/localStorage';
 import AccordionProfile from './accordion';
 import { SettingsAvatarBtn } from './accordion/ui';
+import defaultAvatar from '../../images/defaultAvatar.jpg';
 
 function Profiles() {
+  let { name } = useParams();
   const { dataLogin, viewBookings, setBookings, viewVenues, setVenues } =
     useContext(AuthContext);
-  const { name } = load('user') || [];
   const token = dataLogin?.token || load('token');
   const avatar = load('avatar') || dataLogin;
   const navigate = useNavigate();
   const [loggedIn, setLoggedIn] = useState(false);
+  const isLogName = (dataLogin && dataLogin.name) || load('user')?.name;
 
   const { data, isLoading, isError } = useGetApi(
-    `/profiles/${name}?_venues=true&_bookings=true`
+    `/profiles/${name}?_bookings=true&_venues=true`
   );
 
-  const { name: userName, email, bookings, venueManager, venues } = data;
+  const {
+    name: userName,
+    email,
+    bookings,
+    venues,
+    avatar: userAvatar,
+    venueManager,
+  } = data;
 
   useEffect(() => {
     if (token) {
@@ -32,7 +41,7 @@ function Profiles() {
       navigate('/', { replace: true });
       setLoggedIn(false);
     }
-  }, [navigate, token, bookings, setBookings]);
+  }, [navigate, token, bookings, setBookings, setVenues, venues]);
 
   if (isLoading) {
     return (
@@ -60,25 +69,47 @@ function Profiles() {
           <div className="profile my-4">
             <div className="profile-container">
               <div className="profile-avatar">
-                <div className="profile-avatar-container">
-                  <img
-                    src={avatar}
-                    alt={userName}
-                    width={100}
-                    height={100}
-                    className="rounded-circle"
-                  />
-                  <SettingsAvatarBtn />
-                </div>
-                <h1 className="profile-name">{userName}</h1>
+                {isLogName === name ? (
+                  <div className="profile-avatar-container">
+                    <img
+                      src={avatar || defaultAvatar}
+                      alt={userName}
+                      width={100}
+                      height={100}
+                      className="rounded-circle"
+                      onError={(e) => {
+                        e.target.src = defaultAvatar;
+                      }}
+                    />
+                    <SettingsAvatarBtn />
+                  </div>
+                ) : (
+                  <div className="profile-avatar-container">
+                    <img
+                      src={userAvatar || defaultAvatar}
+                      alt={userName}
+                      width={100}
+                      height={100}
+                      className="rounded-circle"
+                      onError={(e) => {
+                        e.target.src = defaultAvatar;
+                      }}
+                    />
+                  </div>
+                )}
               </div>
             </div>
+            <h1 className="profile-name h3 text-capitalize mb-0 mt-1">
+              {userName}
+            </h1>
             <span className="profile-email">{email}</span>
           </div>
           <AccordionProfile
             bookings={viewBookings}
             venueManager={venueManager}
             venues={viewVenues}
+            name={name}
+            isLogName={isLogName}
           />
         </Container>
       )}
