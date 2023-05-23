@@ -20,7 +20,7 @@ function Details({ rating, name, address, city, maxGuests }) {
   return (
     <div className="venue-detail-details">
       <div className="venue-detail-details-title">
-        <h1 className="venue-detail-h1 my-2">{name}</h1>
+        <h1 className="venue-detail-h1 my-2 text-break">{name}</h1>
         {rating > 0 && (
           <div className="venue-detail-rating">
             <AiFillHeart /> <span>{rating}</span>
