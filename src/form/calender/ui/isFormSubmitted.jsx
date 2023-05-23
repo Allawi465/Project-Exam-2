@@ -18,6 +18,7 @@ function IsSubmitted({
   const { isLoading, fetchData } = useApiActions();
   const { dataLogin } = useContext(AuthContext);
   const token = dataLogin ? dataLogin : load('token');
+  const name = (dataLogin && dataLogin.name) || load('user')?.name;
   const [errorMessage, setErrorMessage] = useState('');
   const navigate = useNavigate();
 
@@ -48,7 +49,7 @@ function IsSubmitted({
       if (bookVenue.isError) {
         setErrorMessage(bookVenue.isError);
       } else {
-        navigate('/profile', { replace: true });
+        navigate(`/profile/${name}`, { replace: true });
       }
     }
   };
