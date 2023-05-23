@@ -6,7 +6,7 @@ import { AiFillHeart } from 'react-icons/ai';
 import { HiLocationMarker } from 'react-icons/hi';
 import { MdGroup } from 'react-icons/md';
 
-function YourVenues({ venues }) {
+function YourVenues({ venues, isLogName, name }) {
   return (
     <>
       <Accordion.Body className="profile-bookings">
@@ -45,7 +45,9 @@ function YourVenues({ venues }) {
                             to={`/venue/${venue.id}`}
                             className="profile-bookings-container-info-link"
                           >
-                            <h2 className="my-2 h6">{venue.name}</h2>
+                            <h2 className="mb-2 h6 mt-0 profile-bookings-container-info-title">
+                              {venue.name}
+                            </h2>
 
                             <div className="d-flex gap-2 mb-1">
                               {venue.rating > 0 && (
@@ -81,9 +83,11 @@ function YourVenues({ venues }) {
                             </div>
                           </Link>
                         </div>
-                        <div className="profile-bookings-container-settings">
-                          <SettingsVenue id={venue.id} />
-                        </div>
+                        {isLogName === name && (
+                          <div className="profile-bookings-container-settings">
+                            <SettingsVenue id={venue.id} />
+                          </div>
+                        )}
                       </div>
                     </Col>
                   ))}

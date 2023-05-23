@@ -7,7 +7,7 @@ import { AiFillHeart } from 'react-icons/ai';
 import { HiLocationMarker } from 'react-icons/hi';
 import { MdGroup } from 'react-icons/md';
 
-function YourBookings({ bookings }) {
+function YourBookings({ bookings, name, isLogName }) {
   const { handleOpenDelete, handleCloseDelete, showDeleteModel, deleteId } =
     useModel();
   return (
@@ -49,9 +49,11 @@ function YourBookings({ bookings }) {
                             to={`/venue/${booking.venue.id}`}
                             className="profile-bookings-container-info-link"
                           >
-                            <h2 className="mb-2 h6 mt-0">
-                              {booking.venue.name}
-                            </h2>
+                        
+                              <h2 className="mb-2 h6 mt-0 profile-bookings-container-info-title">
+                                {booking.venue.name}
+                              </h2>
+                  
 
                             <div className="d-flex gap-2 mb-1">
                               {booking.venue.rating > 0 && (
@@ -93,16 +95,18 @@ function YourBookings({ bookings }) {
                               </p>
                             </div>
                           </Link>
-                          <div className="profile-bookings-container-btn">
-                            {new Date(booking.dateFrom) > new Date() && (
-                              <button
-                                onClick={() => handleOpenDelete(booking.id)}
-                                className="my-1 p-0"
-                              >
-                                Cancel bookings
-                              </button>
-                            )}
-                          </div>
+                          {isLogName === name && (
+                            <div className="profile-bookings-container-btn mb-1">
+                              {new Date(booking.dateFrom) > new Date() && (
+                                <button
+                                  onClick={() => handleOpenDelete(booking.id)}
+                                  className="my-1 p-0"
+                                >
+                                  Cancel bookings
+                                </button>
+                              )}
+                            </div>
+                          )}
                         </div>
                       </div>
                     </Col>
