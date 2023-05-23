@@ -25,7 +25,7 @@ function Rent({ price, id, ownerName }) {
 
   const handleDeleteVenue = () => {
     handleCloseDelete();
-    navigate('/profile');
+    navigate(`/profile/${ownerName}`);
   };
 
   return (
