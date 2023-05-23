@@ -18,13 +18,31 @@ import BookingsTable from './tableBookings';
 function Bookings({ ownerName, bookings }) {
   const { dataLogin } = useContext(AuthContext);
   const { handleSelect, unavailableDays, date } = useBookingCalendar(bookings);
-  const name = (dataLogin && dataLogin.name) || load('user')?.name || '';
+  const name = (dataLogin && dataLogin.name) || load('user')?.name;
 
   return (
     <>
       {ownerName === name ? (
         <div>
-          <BookingsTable bookings={bookings} />
+          {bookings && bookings.length > 0 ? (
+            <BookingsTable bookings={bookings} />
+          ) : (
+            <div>
+              <h5>
+                Available dates
+                <BsCalendarDate
+                  size={25}
+                  className="mx-2 mb-2"
+                  style={{ color: '#673BBF' }}
+                />
+              </h5>
+              <Calender
+                onChange={handleSelect}
+                value={date}
+                tileDisabled={unavailableDays}
+              />
+            </div>
+          )}
         </div>
       ) : (
         <div>

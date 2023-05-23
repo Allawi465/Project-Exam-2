@@ -3,16 +3,15 @@ import Table from 'react-bootstrap/Table';
 function BookingsTable({ bookings }) {
   const formatDate = (dateString) => {
     const date = new Date(dateString);
-    return date.toLocaleDateString('en-GB'); // Format as DD-MM-YYYY
+    return date.toLocaleDateString('en-GB');
   };
   return (
     <>
-      <h5>Venues bookings</h5>
       <div className="table">
-        <Table striped bordered hover size="sm" className="mb-0">
+        <Table striped bordered hover size="sm" className="my-0">
           <thead>
             <tr>
-              <th>#</th>
+              <th>Bookings</th>
               <th>From</th>
               <th>To</th>
               <th>Guests</th>
