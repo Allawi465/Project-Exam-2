@@ -22,7 +22,16 @@ function useModel() {
   const [showDeleteModel, setDeleteModel] = useState(false);
   const [showSignUpModel, setShowSignUpModel] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
+  const [showVenueManger, setVenueManger] = useState(false);
   const [deleteId, setDeleteId] = useState(null);
+
+  const handleOpenVenueManger = () => {
+    setVenueManger(true);
+  };
+
+  const handleCloseVenueManger = () => {
+    setVenueManger(false);
+  };
 
   const handleOpenSettings = () => {
     setShowSettings(true);
@@ -75,6 +84,9 @@ function useModel() {
     handleCloseDelete,
     showDeleteModel,
     deleteId,
+    showVenueManger,
+    handleOpenVenueManger,
+    handleCloseVenueManger,
   };
 }
 
