@@ -112,6 +112,7 @@ function UpdateVenue() {
         errorMessage={errorMessage}
         setErrorMessage={setErrorMessage}
         defaultValues={defaultValues}
+        btnText={'Update now'}
       />
     </>
   );

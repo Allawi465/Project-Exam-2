@@ -82,6 +82,7 @@ function CreateVenueForm() {
         errorMessage={errorMessage}
         setErrorMessage={setErrorMessage}
         defaultValues={defaultValues}
+        btnText={'Host now'}
       />
     </>
   );

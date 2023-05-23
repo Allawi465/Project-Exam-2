@@ -8,7 +8,13 @@ import { AiOutlinePlus } from 'react-icons/ai';
 import { RiDeleteBin2Line } from 'react-icons/ri';
 import { confirmUrl } from '../../utils/regExImageUrl';
 
-function CreateForm({ isLoading, OnFormSubmit, errorMessage, defaultValues }) {
+function CreateForm({
+  isLoading,
+  OnFormSubmit,
+  errorMessage,
+  defaultValues,
+  btnText,
+}) {
   const {
     name = '',
     price = '',
@@ -242,7 +248,7 @@ function CreateForm({ isLoading, OnFormSubmit, errorMessage, defaultValues }) {
 
       <div className="d-grid my-4">
         <LoadingButton
-          buttonText="Host now"
+          buttonText={btnText}
           type="submit"
           isValid={isValid}
           Loading={isLoading}
