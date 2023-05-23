@@ -5,6 +5,7 @@ export { default as SearchUi } from './search';
 export { default as LoadingBtn } from './LoadingButton';
 export { default as LoginModel } from './models/login';
 export { default as SignUpModel } from './models/sign-up';
+export { default as VenueMangerModel } from './models/venueManger';
 export { default as SettingsModel } from './models/settings';
 export { default as CancelBookingsModel } from './models/booking';
 export { default as ErrorMessage } from './alert';
