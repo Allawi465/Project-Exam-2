@@ -1,6 +1,6 @@
 import Calendar from 'react-calendar';
 
-function Calender({ onChange, tileDisabled, value, className, defaultValue }) {
+function Calender({ onChange, tileDisabled, value, className }) {
   return (
     <Calendar
       onChange={onChange}
