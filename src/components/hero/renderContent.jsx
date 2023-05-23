@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import { load } from '../../utils/localStorage';
 import { HeroBtn } from '../../style/buttons';
 import { useModel } from '../../hooks/index';
-import { SignUpModel, LoginModel } from '../index';
+import { SignUpModel, LoginModel, VenueMangerModel } from '../index';
 import { AuthContext } from '../../api';
 import { Link } from 'react-router-dom';
 
@@ -15,6 +15,9 @@ export function RenderDifferentContent() {
     handleCloseLoginModel,
     handleSignUpModel,
     handleCloseSignUpModel,
+    showSettings,
+    handleCloseSettings,
+    handleOpenSettings,
   } = useModel();
   const user = dataLogin ? dataLogin : load('user');
   const venueManger =
@@ -54,8 +57,10 @@ export function RenderDifferentContent() {
   } else {
     return (
       <div className="hero-text-container">
-        <h1>Need a place to stay during your trip?</h1>
-        <p>Discover and book the latest venues hosted with us!</p>
+        <h1>Want to host your own place?</h1>
+        <p>Earn passive income by renting properties!</p>
+        <HeroBtn onClick={handleOpenSettings}>Become a host</HeroBtn>
+        <VenueMangerModel show={showSettings} onClose={handleCloseSettings} />
       </div>
     );
   }
