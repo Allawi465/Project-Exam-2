@@ -1,5 +1,5 @@
-import Modal from 'react-bootstrap/Modal';
 import { VenueMangerForm } from '../../../form/index';
+import { CustomModal } from '..';
 
 /**
  * Renders a modal for change the user avatar
@@ -13,18 +13,17 @@ import { VenueMangerForm } from '../../../form/index';
  * <SettingsModel show={props.show} onClose={props.onClose}/>
  */
 
-function VenueMangerModel({ show, onClose }) {
+function VenueMangerModel({ show, onClose, onSignUpClick }) {
   return (
     <>
-      <Modal show={show} onHide={onClose} animation={true}>
-        <Modal.Header closeButton>
-          <Modal.Title>Settings</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <p className="h6">Want to host your own place?</p>
-          <VenueMangerForm onClose={onClose} />
-        </Modal.Body>
-      </Modal>
+      <CustomModal
+        show={show}
+        onHide={onClose}
+        title="Settings"
+        body="Want to host your own place?"
+        content={<VenueMangerForm onClose={onClose} />}
+        onSignUpClick={onSignUpClick}
+      />
     </>
   );
 }

@@ -10,11 +10,15 @@ import { SearchForm } from '../../form/index';
  * <SearchUi />
  */
 
-function SearchUi() {
+function SearchUi({ onSelectDates, onSelectGuests, onChangeSearch }) {
   return (
-    <Container className="search mb-4">
+    <Container className="search mb-3">
       <div className="search-form">
-        <SearchForm />
+        <SearchForm
+          onSelectDates={onSelectDates}
+          onSelectGuests={onSelectGuests}
+          onChangeSearch={onChangeSearch}
+        />
       </div>
     </Container>
   );

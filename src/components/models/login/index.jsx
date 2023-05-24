@@ -1,4 +1,4 @@
-import Modal from 'react-bootstrap/Modal';
+import { CustomModal } from '..';
 import { ModelBtn } from '../../../style/buttons';
 import { LoginForm } from '../../../form/index';
 
@@ -17,20 +17,15 @@ import { LoginForm } from '../../../form/index';
 
 function LoginModel({ show, onClose, onSignUpClick }) {
   return (
-    <>
-      <Modal show={show} onHide={onClose} animation={true}>
-        <Modal.Header closeButton>
-          <Modal.Title>Login</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <LoginForm onClose={onClose} />
-        </Modal.Body>
-        <Modal.Footer>
-          <Modal.Title>Sign up</Modal.Title>
-          <ModelBtn onClick={onSignUpClick}>Sign up</ModelBtn>
-        </Modal.Footer>
-      </Modal>
-    </>
+    <CustomModal
+      show={show}
+      onHide={onClose}
+      title="Login"
+      content={<LoginForm onClose={onClose} />}
+      onSignUpClick={onSignUpClick}
+      footerTitle={'Sign up'}
+      footerContent={<ModelBtn onClick={onSignUpClick}>Sign up</ModelBtn>}
+    />
   );
 }
 

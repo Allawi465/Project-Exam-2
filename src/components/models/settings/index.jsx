@@ -1,5 +1,5 @@
-import Modal from 'react-bootstrap/Modal';
 import { ChangeAvatarForm } from '../../../form/index';
+import { CustomModal } from '..';
 
 /**
  * Renders a modal for change the user avatar
@@ -16,15 +16,13 @@ import { ChangeAvatarForm } from '../../../form/index';
 function SettingsModel({ show, onClose }) {
   return (
     <>
-      <Modal show={show} onHide={onClose} animation={true}>
-        <Modal.Header closeButton>
-          <Modal.Title>Settings</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <p className="h6">Change your avatar</p>
-          <ChangeAvatarForm onClose={onClose} />
-        </Modal.Body>
-      </Modal>
+      <CustomModal
+        show={show}
+        onHide={onClose}
+        title="Settings"
+        body="Change your avatar"
+        content={<ChangeAvatarForm onClose={onClose} />}
+      />
     </>
   );
 }
