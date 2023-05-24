@@ -1,6 +1,3 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { AuthContext } from '../../api';
-import { load } from '../../utils/localStorage';
 import { useHelmet } from '../../hooks';
 import { Profiles } from '../../components';
 
