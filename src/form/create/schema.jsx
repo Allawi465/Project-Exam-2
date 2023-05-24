@@ -18,7 +18,12 @@ const createSchema = yup
       .url('Please enter a valid URL')
       .required('Please enter images url of the venue'),
     price: yup.number().required().typeError('Please enter price').min(1),
-    maxGuests: yup.number().required().typeError('Please enter guests').min(1),
+    maxGuests: yup
+      .number()
+      .required()
+      .typeError('Please enter guests')
+      .min(1)
+      .max(100),
     rating: yup
       .number()
       .required()

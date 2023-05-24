@@ -192,6 +192,7 @@ function CreateForm({
             name="maxGuests"
             placeholder="2"
             min={1}
+            max={100}
             defaultValue={maxGuests}
           />
           <p className="form-text mx-1">{errors.maxGuests?.message}</p>
