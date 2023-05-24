@@ -6,6 +6,7 @@ import defaultImages from '../../../../images/default.jpg';
 import { AiFillHeart } from 'react-icons/ai';
 import { HiLocationMarker } from 'react-icons/hi';
 import { MdGroup } from 'react-icons/md';
+import format from 'date-fns/format';
 
 function YourBookings({ bookings, name, isLogName }) {
   const { handleOpenDelete, handleCloseDelete, showDeleteModel, deleteId } =
@@ -49,11 +50,9 @@ function YourBookings({ bookings, name, isLogName }) {
                             to={`/venue/${booking.venue.id}`}
                             className="profile-bookings-container-info-link"
                           >
-                        
-                              <h2 className="mb-2 h6 mt-0 profile-bookings-container-info-title">
-                                {booking.venue.name}
-                              </h2>
-                  
+                            <h2 className="mb-2 h6 mt-0 profile-bookings-container-info-title">
+                              {booking.venue.name}
+                            </h2>
 
                             <div className="d-flex gap-2 mb-1">
                               {booking.venue.rating > 0 && (
@@ -85,13 +84,8 @@ function YourBookings({ bookings, name, isLogName }) {
                             <div className="mt-1">
                               <h3 className="h5">Date</h3>
                               <p className="mb-0">
-                                {new Date(booking.dateFrom)
-                                  .toLocaleDateString()
-                                  .slice(0, -2)}{' '}
-                                -{' '}
-                                {new Date(booking.dateTo)
-                                  .toLocaleDateString()
-                                  .slice(0, -2)}
+                                {format(new Date(booking.dateFrom), 'dd.MM.yy')}{' '}
+                                - {format(new Date(booking.dateTo), 'dd.MM.yy')}
                               </p>
                             </div>
                           </Link>
