@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { BookBtn, DeletingBtn, UpdateBtn } from '../../../../style/buttons';
 import { AuthContext } from '../../../../api';
 import { load } from '../../../../utils/localStorage';
@@ -20,13 +20,6 @@ function Rent({ price, id, ownerName }) {
   const { handleOpenDelete, handleCloseDelete, showDeleteModel, deleteId } =
     useModel();
   const name = (dataLogin && dataLogin.name) || load('user')?.name || '';
-
-  const navigate = useNavigate();
-
-  const handleDeleteVenue = () => {
-    handleCloseDelete();
-    navigate(`/profile/${ownerName}`);
-  };
 
   return (
     <div className="venue-prices mb-2">
@@ -50,7 +43,7 @@ function Rent({ price, id, ownerName }) {
             </UpdateBtn>
             <DeleteVenuesModel
               show={showDeleteModel}
-              onClose={handleDeleteVenue}
+              onClose={handleCloseDelete}
               id={deleteId}
             />
           </div>
