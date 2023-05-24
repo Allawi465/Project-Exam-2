@@ -34,7 +34,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "https://8eni.github.com/my-react-app",
+  "homepage": "https://Allawi465.github.com/holidaze",
   "eslintConfig": {
     "extends": [
       "react-app",
