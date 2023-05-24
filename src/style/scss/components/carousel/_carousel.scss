@@ -1,0 +1,66 @@
+.carousel {
+  max-height: 547px;
+
+  &-item.active,
+  &-item-next,
+  &-inner {
+    max-height: 547px;
+    border-radius: 10px;
+  }
+
+  &-item-prev {
+    max-height: 547px;
+  }
+  &-indicators {
+    z-index: 555;
+  }
+}
+
+.venuesImages {
+  max-height: 259px;
+  position: relative;
+
+  &-carousel {
+    position: relative;
+    max-height: 259px;
+
+    &-.active,
+    &-next,
+    &-inner {
+      max-height: 259px;
+    }
+
+    &-item-prev {
+      max-height: 259px;
+    }
+  }
+}
+
+.venues-img-scroll {
+  width: 43px;
+  height: 43px;
+  background: #fcfcfc;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 555;
+}
+
+.left {
+  left: 0;
+  margin-left: 20px;
+}
+
+.right {
+  right: 0;
+  margin-right: 20px;
+}
+
+img:-moz-loading {
+  visibility: hidden;
+}

@@ -1,0 +1,27 @@
+/* grid breakpoints customizations */
+$grid-breakpoints: (
+  // Extra small screen / phone
+  xs: 0,
+  // Small screen / phone
+  sm: 575px,
+  // Medium screen / tablet
+  md: 768px,
+  // Large screen / desktop
+  lg: 992px,
+  // Extra large screen / wide desktop
+  xl: 1200px,
+  // Extra Extra large screen / wide desktop
+  xxl: 1300px
+);
+
+/* container breakpoints customizations */
+$container-max-widths: (
+  sm: 100%,
+  md: 100%,
+  lg: 1000px,
+  xl: 1200px,
+  xxl: 1300px,
+);
+
+/* import bootstrap to set changes */
+@import '~bootstrap/scss/bootstrap';

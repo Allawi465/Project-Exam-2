@@ -1,1 +1,24 @@
-@import "~bootstrap/scss/bootstrap";
+// Bootstrap style and Bootstrap variables overrides
+@import './components/custom';
+
+// our Original Style
+
+// Navbar stylesheets
+@import './components/navbar/navbar';
+// Bootstrap model stylesheets
+@import './components/models/models';
+// hero stylesheets
+@import './components/hero/hero';
+// form stylesheets
+@import './components/form/form';
+// cards and card stylesheets
+@import './components/cards/cards';
+@import './components/cards/card/card';
+// carousel stylesheets
+@import './components/carousel/carousel';
+// calender stylesheets
+@import './components/calender/calender';
+// booking stylesheets
+@import './components/booking/booking';
+// profile stylesheets
+@import './components/profile/profile';

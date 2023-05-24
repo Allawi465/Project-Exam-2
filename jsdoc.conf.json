@@ -1,0 +1,7 @@
+{
+  "source": {
+    "include": ["src"],
+    "includePattern": ".jsx?$",
+    "exclude": ["node_modules/"]
+  }
+}

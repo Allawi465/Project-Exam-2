@@ -3,21 +3,18 @@ import React from 'react';
 
 const theme = {
   color: {
-    primary: 'var(--color-primary)',
-    LightBlack: 'var(--color-LightBlack)',
-    black: 'var(--color-black)',
-    white: 'var(--color-white)',
     lightWhite: 'var(--color-lightWhite)',
-    lightgrey: 'var(--color-lightgrey)',
+    lightBlack: 'var(--color-lightBlack)',
+    lightgray: 'var(--color-lightgray)',
+    lightpink: 'var(--color-lightpink)',
     red: 'var(--color-red)',
-    darkred: 'var(--color-darkred)',
+    purple: 'var(--color-purple)',
+    darkPurple: 'var(--color-darkPurple)',
   },
 };
 
-export const Theme= ({ children }) => (
-  <ThemeProvider theme={theme}>
-    {children}
-  </ThemeProvider>
+export const Theme = ({ children }) => (
+  <ThemeProvider theme={theme}>{children}</ThemeProvider>
 );
 
 export default Theme;

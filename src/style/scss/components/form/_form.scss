@@ -1,0 +1,211 @@
+.form-text {
+  color: var(--color-red);
+}
+
+.input-group {
+  &-text {
+    background: none;
+  }
+
+  .form-control {
+    border-left: none;
+    border-right: none;
+  }
+}
+
+.search-form {
+  margin: 0 auto !important;
+  max-width: 343px;
+}
+
+.errorMessage {
+  max-width: 800px;
+  text-align: center;
+  margin: auto;
+}
+
+.form-check-input:checked {
+  background-color: var(--color-purple);
+  border-color: var(--color-purple);
+}
+
+.calender-form {
+  background: white;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+}
+
+.booking-btn {
+  background: $white;
+  border: 1px solid var(--color-lightgray);
+  padding: 0.375rem 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  font-size: 16px;
+  letter-spacing: 0.1em;
+}
+
+.input-details {
+  max-width: 100%;
+  background: #fdfdfd;
+  border-radius: 10px;
+  &-title {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-style: italic;
+
+    p {
+      color: var(--color-purple);
+      cursor: pointer;
+    }
+  }
+
+  &-light {
+    color: var(--color-lightgray);
+  }
+
+  &-total {
+    font-weight: bold;
+    &-p {
+      color: var(--color-purple);
+    }
+  }
+}
+
+.create {
+  display: flex;
+  justify-content: center;
+  color: $black;
+
+  &-container {
+    width: 500px;
+  }
+
+  &-form {
+    &-number {
+      display: flex;
+      gap: 10px;
+    }
+
+    &-checkbox {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    &-address {
+      display: flex;
+      gap: 40px;
+    }
+
+    &-media {
+      display: flex;
+
+      &-floating {
+        width: 100%;
+      }
+
+      &-floating .form-control {
+        border-right: none;
+        border-radius: 0.375rem 0 0 0.375rem;
+      }
+
+      &-plus {
+        width: 58px;
+        height: 58px;
+        border: 1px solid #ced4da;
+        border-radius: 0 0.375rem 0.375rem 0;
+        border-left: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        svg {
+          font-size: 20px;
+          cursor: pointer;
+          width: 100%;
+        }
+
+        p {
+          font-size: 14px;
+        }
+      }
+    }
+
+    &-images {
+      &-container {
+        background: rgba(255, 255, 255, 1e-6);
+        border: 1px solid #ced4da;
+        border-radius: 0.375rem;
+        overflow: hidden;
+        scrollbar-width: thin;
+        overflow-y: auto;
+        scrollbar-color: gray lightgray;
+        max-height: 160px;
+        img {
+          object-fit: cover;
+        }
+
+        &-delete {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          svg {
+            cursor: pointer;
+          }
+        }
+
+        &-images {
+          display: flex;
+          align-items: center;
+        }
+      }
+    }
+  }
+}
+
+.searchForm {
+  position: relative;
+  &-filter {
+    cursor: pointer;
+  }
+  &-calender {
+    max-width: 343px;
+    width: 100%;
+    box-shadow: -1px 42px 62px 19px rgba(0, 0, 0, 0.37);
+    -webkit-box-shadow: -1px 42px 62px 19px rgba(0, 0, 0, 0.37);
+    -moz-box-shadow: -1px 42px 62px 19px rgba(0, 0, 0, 0.37);
+    position: absolute;
+    background: #fdfdfd;
+    border-radius: 10px;
+    z-index: 999;
+
+    &-calender {
+      box-shadow: none !important;
+      width: 343px;
+    }
+  }
+}
+
+.selected-dates {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(255, 255, 255, 0.000001);
+  border: 1px solid #ced4da;
+  border-radius: 0.375rem;
+  padding: 5px;
+  cursor: pointer;
+}
+
+@media (max-width: 508px) {
+  .create {
+    &-form {
+      &-address {
+        gap: 10px;
+      }
+    }
+  }
+}

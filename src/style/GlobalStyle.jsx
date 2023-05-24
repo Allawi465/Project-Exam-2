@@ -1,22 +1,28 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
 html {
-    --color-primary: #FEEAB0;
-    --color-black: #000000;
-    --color-LightBlack: #222326;
-    --color-white: #FFFFFF;
-    --color-lightWhite: #F6F6F6;
-    --color-lightgrey: #8e8e8e;
-    --color-red: #eb5757;
-    --color-darkred: #670901;
-    height: 100%;
+  --color-lightWhite: #F2F2F3;
+  --color-lightBlack: #232324;
+  --color-lightgray: #57595F;
+  --color-lightpink: #ddd3fd;
+  --color-red: #963839;
+  --color-purple: #673BBF;
+  --color-darkPurple: #452683;
 }
 
 body {
-    height: 100%;
-    font-family: 'PT Sans', sans-serif;
+  font-family: 'Mulish', sans-serif;
 }
-`;
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content {
+  flex: 1;
+}`;
 
 export default GlobalStyle;
