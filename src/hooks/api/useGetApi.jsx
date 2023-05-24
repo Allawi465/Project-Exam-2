@@ -29,7 +29,6 @@ function useGetApi(path) {
         const url = `${API_SOCIAL_URL}${path}`;
         const fetchedData = await fetchWToken(url);
         const data = await fetchedData.json();
-        console.log(data);
         if (data.errors) {
           setError(data.errors[0].message);
           return { isError: data.errors[0].message };
