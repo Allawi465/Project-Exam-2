@@ -15,8 +15,8 @@ function VenueById() {
 
   const VenueByIdMeta = useHelmet({
     title,
-    description: `Explore and book ${data.name} on Holidaze. View photos, read reviews, and check availability to plan your next event.`,
-    keywords: 'Holidaze, venue, bookings, reviews, rentals',
+    description: `Explore and book ${data.name} on Holidaze. View photos, address  and check availability to plan your next event.`,
+    keywords: 'Holidaze, venue, bookings, rentals',
   });
 
   if (isLoading) {

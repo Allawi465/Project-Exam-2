@@ -7,15 +7,15 @@ import { Profiles } from '../../components';
 function Profile() {
   const ProfileMeta = useHelmet({
     title: `Your profile | Holidaze`,
-    description: `View and manage your Holidaze profile. See your bookings, reviews, and rental properties all in one place.`,
-    keywords: 'Holidaze, profile, bookings, reviews, rentals',
+    description: `View and manage your Holidaze profile. See your bookings, and rental properties all in one place.`,
+    keywords: 'Holidaze, profile, bookings, rentals',
   });
 
   return (
-    <div>
+    <>
       {ProfileMeta}
       <Profiles />
-    </div>
+    </>
   );
 }
 

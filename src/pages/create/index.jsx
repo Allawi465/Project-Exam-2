@@ -4,6 +4,7 @@ import { Container } from 'react-bootstrap';
 import { CreateVenueForm } from '../../form';
 import { AuthContext } from '../../api';
 import { load } from '../../utils/localStorage';
+import { useHelmet } from '../../hooks';
 
 function Create() {
   const { dataLogin } = useContext(AuthContext);
@@ -12,6 +13,12 @@ function Create() {
     load('venueManger') || (dataLogin && dataLogin.venueManger);
   const navigate = useNavigate();
   const [loggedIn, setLoggedIn] = useState(false);
+
+  const createMeta = useHelmet({
+    title: `Create venue | Holidaze`,
+    description: `Create your dream venue and make it available for bookings on Holidaze. Customize the details, upload photos, and start attracting guests to your unique place.`,
+    keywords: 'Holidaze, venue, bookings, rentals, update',
+  });
 
   useEffect(() => {
     if (token && venueManger) {
@@ -27,15 +34,18 @@ function Create() {
   }
 
   return (
-    <Container>
-      <div className="create my-5">
-        <div className="create-container">
-          <h1 className="h4 mx-1">Host your own place</h1>
-          <p className="mx-1">Earn passive income by renting properties!</p>
-          <CreateVenueForm />
+    <>
+      {createMeta}
+      <Container>
+        <div className="create my-5">
+          <div className="create-container">
+            <h1 className="h4 mx-1">Host your own place</h1>
+            <p className="mx-1">Earn passive income by renting properties!</p>
+            <CreateVenueForm />
+          </div>
         </div>
-      </div>
-    </Container>
+      </Container>
+    </>
   );
 }
 

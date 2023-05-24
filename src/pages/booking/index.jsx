@@ -15,12 +15,11 @@ function Booking() {
 
   const title = data.name ? `book ${data.name} | Holidaze` : 'Book | Holidaze';
 
-  console.log(data);
-
   const bookingsMeta = useHelmet({
     title,
-    description: `book ${data.name} on Holidaze. View photos, read reviews, and check in the dates`,
-    keywords: 'Holidaze, venue, bookings, rentals',
+    description: `Book ${data.name} on Holidaze. View photos, check location, price, and check in the dates`,
+    keywords:
+      'Holidaze, venue bookings, rentals, venue availability, venue location',
   });
 
   if (isLoading) {
