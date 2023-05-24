@@ -34,7 +34,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "https://Allawi465.github.com/holidaze",
+  "homepage": "https://Allawi465.github.io/holidaze",
   "eslintConfig": {
     "extends": [
       "react-app",
