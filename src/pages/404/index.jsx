@@ -4,6 +4,8 @@ import { useHelmet } from '../../hooks';
 import { UpdateBtn } from '../../style/buttons';
 import { BsChevronRight } from 'react-icons/bs';
 
+console.log('Intentional Syntax Error');
+
 function RouteNotFound() {
   const notFoundMeta = useHelmet({
     title: ` 404 page | Holidaze`,
