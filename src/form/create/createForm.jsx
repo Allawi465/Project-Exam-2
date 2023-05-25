@@ -173,7 +173,11 @@ function CreateForm({
       </div>
 
       <div className="create-form-number">
-        <FloatingLabel label="price" className="my-3">
+        <FloatingLabel
+          label="price"
+          className="my-3"
+          style={{ maxWidth: '166px' }}
+        >
           <Form.Control
             {...register('price')}
             type="number"
@@ -185,7 +189,11 @@ function CreateForm({
           <p className="form-text mx-1">{errors.price?.message}</p>
         </FloatingLabel>
 
-        <FloatingLabel label="Guests" className="my-3">
+        <FloatingLabel
+          label="Guests"
+          className="my-3"
+          style={{ maxWidth: '166px' }}
+        >
           <Form.Control
             {...register('maxGuests')}
             type="number"
@@ -198,7 +206,11 @@ function CreateForm({
           <p className="form-text mx-1">{errors.maxGuests?.message}</p>
         </FloatingLabel>
 
-        <FloatingLabel label="rating" className="my-3">
+        <FloatingLabel
+          label="rating"
+          className="my-3"
+          style={{ maxWidth: '166px' }}
+        >
           <Form.Control
             {...register('rating')}
             type="number"
