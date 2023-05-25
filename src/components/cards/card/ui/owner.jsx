@@ -76,7 +76,7 @@ function Owner({ avatar, ownerName, email }) {
               height={42}
               className="rounded-circle me-2"
             />
-          )}  
+          )}
         </div>
         <div className="venue-owner-info">
           <div onClick={handleOwnerVisit}>

@@ -22,7 +22,6 @@ function FilterVenues(venues, selectedDates, guests, search) {
         venue.location.city.toLowerCase().includes(search.toLowerCase()))
     );
   });
-  
 }
 
 export default FilterVenues;

@@ -42,7 +42,7 @@ function useApiActions() {
       if (fetchedData.status === 204) {
         return { success: true };
       }
-      
+
       const data = await fetchedData.json();
       if (data.errors) {
         setError(data.errors[0].message);
