@@ -1,4 +1,11 @@
-# Getting Started with Create React App
+  # Holidaze 
+[![pages-build-deployment](https://github.com/Allawi465/holidaze/actions/workflows/pages/pages-build-deployment/badge.svg?branch=main)](https://github.com/Allawi465/holidaze/actions/workflows/pages/pages-build-deployment)
+  
+  
+  
+  
+  
+  # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
