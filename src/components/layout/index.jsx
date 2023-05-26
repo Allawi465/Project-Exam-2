@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from './header';
 import { Outlet } from 'react-router-dom';
+import Footer from './footer';
 
 /**
  * A layout component that renders the header and content sections
@@ -19,6 +20,7 @@ function Layout() {
       <div className="content">
         <Outlet />
       </div>
+      <Footer />
     </div>
   );
 }
