@@ -6,27 +6,15 @@ import { SettingsModel } from '../../../index';
 
 function SettingsAvatarBtn() {
   const { showSettings, handleCloseSettings, handleOpenSettings } = useModel();
-  const renderTooltip = (props) => (
-    <Tooltip id="button-tooltip" {...props}>
-      Change your avatar
-    </Tooltip>
-  );
 
   return (
     <>
-      <OverlayTrigger
-        placement="top"
-        delay={{ show: 150, hide: 150 }}
-        overlay={renderTooltip}
+      <div
+        className="profile-avatar-container-settings"
+        onClick={handleOpenSettings}
       >
-        <button
-          className="profile-avatar-container-svg"
-          onClick={handleOpenSettings}
-        >
-          {' '}
-          <AiOutlinePlusCircle size={25} />
-        </button>
-      </OverlayTrigger>
+        <AiOutlinePlusCircle size={25} />
+      </div>
       <SettingsModel show={showSettings} onClose={handleCloseSettings} />
     </>
   );
