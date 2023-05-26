@@ -50,6 +50,18 @@
   }
 }
 
+.navbar-toggler {
+  color: $black;
+  border: none !important;
+  outline: none;
+}
+
+.navbar-toggler:focus {
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
+
 .btn-check:checked + .btn,
 :not(.btn-check) + .btn:active,
 .btn:first-child:active,

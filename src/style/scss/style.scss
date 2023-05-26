@@ -4,16 +4,18 @@
 // our Original Style
 
 // Navbar stylesheets
-@import './components/navbar/navbar';
+@import './components/navigations/navbar';
+// footer stylesheets
+@import './components/navigations/footer';
 // Bootstrap model stylesheets
 @import './components/models/models';
 // hero stylesheets
 @import './components/hero/hero';
-// form stylesheets
-@import './components/form/form';
 // cards and card stylesheets
 @import './components/cards/cards';
 @import './components/cards/card/card';
+// form stylesheets
+@import './components/form/form';
 // carousel stylesheets
 @import './components/carousel/carousel';
 // calender stylesheets

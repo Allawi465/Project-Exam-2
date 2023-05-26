@@ -21,7 +21,7 @@
       &-svg {
         position: absolute;
         bottom: 0;
-        left: 76%;
+        left: 71%;
         background: transparent;
         border: none;
       }
@@ -163,6 +163,14 @@
     left: 0;
     inset: none;
     max-width: 100%;
+  }
+}
+
+@media (max-width: 375px) {
+  .profile {
+    &-bookings {
+      padding: 1rem 0rem 1rem 0rem;
+    }
   }
 }
 
