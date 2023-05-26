@@ -33,14 +33,14 @@ function Rent({ price, id, ownerName }) {
       {ownerName === name ? (
         <div className="d-flex gap-2 mt-3">
           <div>
-            <DeletingBtn className="mt-2" onClick={() => handleOpenDelete(id)}>
-              Delete
-            </DeletingBtn>
-          </div>
-          <div>
             <UpdateBtn className="mt-2" as={Link} to={`/update/${id}`}>
               Update venue
             </UpdateBtn>
+          </div>
+          <div>
+            <DeletingBtn className="mt-2" onClick={() => handleOpenDelete(id)}>
+              Delete
+            </DeletingBtn>
             <DeleteVenuesModel
               show={showDeleteModel}
               onClose={handleCloseDelete}
