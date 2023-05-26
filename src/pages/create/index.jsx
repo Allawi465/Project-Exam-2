@@ -37,7 +37,7 @@ function Create() {
     <>
       {createMeta}
       <Container>
-        <div className="create my-5">
+        <div className="create my-3">
           <div className="create-container">
             <h1 className="h4 mx-1">Host your own place</h1>
             <p className="mx-1">Earn passive income by renting properties!</p>
