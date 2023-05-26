@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/holidaze/static/css/main.582d8dd5.css",
-    "main.js": "/holidaze/static/js/main.a27a5404.js",
+    "main.css": "/holidaze/static/css/main.2ee908a0.css",
+    "main.js": "/holidaze/static/js/main.ef863974.js",
     "static/js/787.8474de57.chunk.js": "/holidaze/static/js/787.8474de57.chunk.js",
     "static/media/hero.jpg": "/holidaze/static/media/hero.b4e4d33695dbbee75c4c.jpg",
     "index.html": "/holidaze/index.html",
-    "main.582d8dd5.css.map": "/holidaze/static/css/main.582d8dd5.css.map",
-    "main.a27a5404.js.map": "/holidaze/static/js/main.a27a5404.js.map",
+    "main.2ee908a0.css.map": "/holidaze/static/css/main.2ee908a0.css.map",
+    "main.ef863974.js.map": "/holidaze/static/js/main.ef863974.js.map",
     "787.8474de57.chunk.js.map": "/holidaze/static/js/787.8474de57.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.582d8dd5.css",
-    "static/js/main.a27a5404.js"
+    "static/css/main.2ee908a0.css",
+    "static/js/main.ef863974.js"
   ]
 }
