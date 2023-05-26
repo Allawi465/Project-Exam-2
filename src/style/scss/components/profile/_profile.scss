@@ -21,9 +21,13 @@
       &-svg {
         position: absolute;
         bottom: 0;
-        left: 71%;
+        left: 71% !important;
         background: transparent;
         border: none;
+        color: $black;
+        width: 28px;
+        max-width: 28px;
+        min-width: 28px;
       }
     }
   }
