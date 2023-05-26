@@ -77,13 +77,15 @@ function YourBookings({ bookings, name, isLogName }) {
                           </span>
                         )}
                       </span>
-                      <div className="mt-1">
-                        <h3 className="h5">Date</h3>
-                        <p className="mb-0">
-                          {format(new Date(booking.dateFrom), 'dd.MM.yy')} -{' '}
-                          {format(new Date(booking.dateTo), 'dd.MM.yy')}
-                        </p>
-                      </div>
+                      {isLogName === name && (
+                        <div className="mt-1">
+                          <h3 className="h5">Date</h3>
+                          <p className="mb-0">
+                            {format(new Date(booking.dateFrom), 'dd.MM.yy')} -{' '}
+                            {format(new Date(booking.dateTo), 'dd.MM.yy')}
+                          </p>
+                        </div>
+                      )}
                     </Link>
                     {isLogName === name && (
                       <div className="profile-bookings-container-btn mb-1">
