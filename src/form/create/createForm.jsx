@@ -173,9 +173,9 @@ function CreateForm({
         </FloatingLabel>
       </div>
 
-      <Row className="g-1">
+      <Row>
         <Col xs>
-          <FloatingLabel label="price" className="my-3">
+          <FloatingLabel label="price" className="my-1">
             <Form.Control
               {...register('price')}
               type="number"
@@ -188,7 +188,7 @@ function CreateForm({
           </FloatingLabel>
         </Col>
         <Col xs>
-          <FloatingLabel label="Guests" className="my-3">
+          <FloatingLabel label="Guests" className="my-1">
             <Form.Control
               {...register('maxGuests')}
               type="number"
@@ -202,7 +202,7 @@ function CreateForm({
           </FloatingLabel>
         </Col>
         <Col xs>
-          <FloatingLabel label="rating" className="my-3">
+          <FloatingLabel label="rating" className="my-1">
             <Form.Control
               {...register('rating')}
               type="number"
@@ -252,7 +252,7 @@ function CreateForm({
         />
       </div>
 
-      <div className="d-grid my-4">
+      <div className="d-grid mt-4">
         <LoadingButton
           buttonText={btnText}
           type="submit"
