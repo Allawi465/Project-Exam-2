@@ -22,16 +22,17 @@
       &-settings {
         position: absolute !important;
         bottom: 0;
+        cursor: pointer;
         right: 0 !important;
-      }
-
-      button {
         background: #ffffff;
         border: none;
+        display: flex;
+        justify-content: center;
         color: $black;
         border-radius: 50%;
-        width: 34px;
-        height: 34px;
+        align-items: center;
+        width: 30px;
+        height: 30px;
       }
     }
   }
