@@ -14,20 +14,24 @@
   &-avatar {
     &-container {
       position: relative;
-      min-width: 119px;
+      min-width: 100px;
       img {
         object-fit: cover;
       }
-      &-svg {
-        position: absolute;
+
+      &-settings {
+        position: absolute !important;
         bottom: 0;
-        left: 71% !important;
-        background: transparent;
+        right: 6% !important;
+      }
+
+      &-svg {
+        background: #ffffff;
         border: none;
         color: $black;
-        width: 28px;
-        max-width: 28px;
-        min-width: 28px;
+        border-radius: 50%;
+        width: 34px;
+        height: 34px;
       }
     }
   }
