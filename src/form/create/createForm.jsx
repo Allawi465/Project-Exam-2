@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { Row, Col } from 'react-bootstrap';
 import { yupResolver } from '@hookform/resolvers/yup';
 import createSchema from './schema';
 import { FloatingLabel, Form } from 'react-bootstrap';
@@ -172,57 +173,49 @@ function CreateForm({
         </FloatingLabel>
       </div>
 
-      <div className="create-form-number">
-        <FloatingLabel
-          label="price"
-          className="my-3"
-          style={{ maxWidth: '166px' }}
-        >
-          <Form.Control
-            {...register('price')}
-            type="number"
-            name="price"
-            placeholder="100"
-            min={1}
-            defaultValue={price}
-          />
-          <p className="form-text mx-1">{errors.price?.message}</p>
-        </FloatingLabel>
-
-        <FloatingLabel
-          label="Guests"
-          className="my-3"
-          style={{ maxWidth: '166px' }}
-        >
-          <Form.Control
-            {...register('maxGuests')}
-            type="number"
-            name="maxGuests"
-            placeholder="2"
-            min={1}
-            max={100}
-            defaultValue={maxGuests}
-          />
-          <p className="form-text mx-1">{errors.maxGuests?.message}</p>
-        </FloatingLabel>
-
-        <FloatingLabel
-          label="rating"
-          className="my-3"
-          style={{ maxWidth: '166px' }}
-        >
-          <Form.Control
-            {...register('rating')}
-            type="number"
-            name="rating"
-            placeholder="5"
-            min={1}
-            max={5}
-            defaultValue={rating}
-          />
-          <p className="form-text mx-1">{errors.rating?.message}</p>
-        </FloatingLabel>
-      </div>
+      <Row className="g-1">
+        <Col xs>
+          <FloatingLabel label="price" className="my-3">
+            <Form.Control
+              {...register('price')}
+              type="number"
+              name="price"
+              placeholder="100"
+              min={1}
+              defaultValue={price}
+            />
+            <p className="form-text mx-1">{errors.price?.message}</p>
+          </FloatingLabel>
+        </Col>
+        <Col xs>
+          <FloatingLabel label="Guests" className="my-3">
+            <Form.Control
+              {...register('maxGuests')}
+              type="number"
+              name="maxGuests"
+              placeholder="2"
+              min={1}
+              max={100}
+              defaultValue={maxGuests}
+            />
+            <p className="form-text mx-1">{errors.maxGuests?.message}</p>
+          </FloatingLabel>
+        </Col>
+        <Col xs>
+          <FloatingLabel label="rating" className="my-3">
+            <Form.Control
+              {...register('rating')}
+              type="number"
+              name="rating"
+              placeholder="5"
+              min={1}
+              max={5}
+              defaultValue={rating}
+            />
+            <p className="form-text mx-1">{errors.rating?.message}</p>
+          </FloatingLabel>
+        </Col>
+      </Row>
 
       <div className="create-form-checkbox">
         <Form.Check
