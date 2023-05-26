@@ -81,7 +81,9 @@ function Profiles() {
                         e.target.src = defaultAvatar;
                       }}
                     />
-                    <SettingsAvatarBtn />
+                    <div className="profile-avatar-container-settings">
+                      <SettingsAvatarBtn />
+                    </div>
                   </div>
                 ) : (
                   <div className="profile-avatar-container">
