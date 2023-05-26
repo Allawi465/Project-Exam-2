@@ -41,7 +41,7 @@ This is my final exam in Noroff Front-end Development. The project focuses on cr
    If there are no errors from the API, the login modal will be displayed.
    ```
    
-## User stories
+### User stories
 - [x] A user may view a list of Venues
 - [x] A user may search for a specific Venue
 - [x] A user may view a specific Venue page by id
@@ -78,7 +78,7 @@ npm run start
 
 Project is configured to run deployment on Github pages on push to branch "master" Deploy static content to Pages.
 
-[![pages-build-deployment](https://github.com/Allawi465/holidaze/actions/workflows/pages/pages-build-deployment/badge.svg?branch=main)](https://github.com/Allawi465/holidaze/actions/workflows/pages/pages-build-deployment)
+[![pages-build-deployment](https://github.com/Allawi465/holidaze/actions/workflows/pages/pages-build-deployment/badge.svg?branch=gh-pages)](https://github.com/Allawi465/holidaze/actions/workflows/pages/pages-build-deployment)
 
 [live link](https://allawi465.github.io/holidaze/)
 
@@ -92,10 +92,52 @@ The project was just build with
 - JavaScript
 - Noroff API
 
-## API
+### API
 - The API for this project can be found under Holidaze EndPoints in the Noroff API documentation.
 - https://noroff-api-docs.netlify.app/
+
+## Dependencies & configurations
+  - react-icons": "^4.8.0"
+  - react-calendar: "^4.2.1"
+  - react-router-dom: "^6.10.0"
+  - react-helmet-async: "^1.3.0"
+  - styled-components: "^5.3.9"
+  - @hookform/resolvers: "^3.1.0
+  - react-hook-form: "^7.43.9"
+  - yup: "^1.1.1"
+  - bootstrap: "^5.2.3"
+  - react-bootstrap: "^2.7.4"
+  - sass: "^1.62.0"
+  - jsdoc: "^4.0.2"
+  - date-fns: "^2.30.0"
+  - gh-pages: "^5.0.0"
+  - husky: "^8.0.3"
+  - lint-staged: "^13.2.2"
+  - prettier: "^2.8.8"
   
+  ### Files that are ignored inside .gitignored
+
+  /out
+  .vscode/settings.json
+  .eslintcach
+   
+  ### Configurations
+  
+  Project is configured to run lint-staged with eslint --fix as pre-commit hook.
+  
+  Project is configured to run prettier on all files on-save.
+  
+ The following configurations are set in the .prettierrc file:
+   ```
+    {
+   "trailingComma": "es5",
+   "semi": true,
+   "singleQuote": true,
+   "tabWidth": 2,
+   "useTabs": false
+   }
+   ```
+   
 ## Contact
 
 If you have a suggestion that would make the site better, please contact me.
@@ -105,74 +147,3 @@ I am very grateful for the feedbacks and the support.
 Please contact me if you have any questions!
 
 Don't forget to give the project a star! Thanks again!
-  
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
