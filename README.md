@@ -114,18 +114,40 @@ The project was just built with
   - husky: "^8.0.3"
   - lint-staged: "^13.2.2"
   - prettier: "^2.8.8"
+  - cypress-dotenv: "^2.0.0"
+  - dotenv: "^16.0.3"
+  - cypress: "^12.13.0"
+  - eslint-plugin-cypress: "^2.13.3"
   
   ### Files that are ignored inside .gitignored
 
-  /out
-  .vscode/settings.json
-  .eslintcach
+  - /out
+  - .vscode/settings.json
+  - .eslintcach
+  - /cypress/screenshots
+  - /cypress/videos
+  - .env
+  
+## End To End testing, Cypress
+
+- signUp.cy.js
+  - sign up with valid credentials
+  - sign up error handling with invalid email, name, password
+- login.cy.js
+  - Login with valid credentials
+  - Login error handling with invalid email and password
+- logout.cy.js
+  - LocalStorage delete token
+- createVenue.cy.js
+  - Tests user can create a venue
+  - Tests form validates inputs to create a venue
+  - booking.cy.js
+  - Tests user can book a venue
+  - Unauthorized Tests user cant book a venue
    
-  ### Configurations
+### Prettier Configurations
   
-  The Project is configured to run lint-staged with eslint --fix as pre-commit hook.
-  
-  The Project is configured to run prettier on all files on save.
+ The Project is configured to run prettier on all files on save.
   
  The following configurations are set in the .prettierrc file:
    ```
@@ -137,6 +159,12 @@ The project was just built with
    "useTabs": false
    }
    ```
+   
+ ## Eslint configurations
+ 
+ The Project is configured to run lint-staged with eslint --fix as pre-commit hook.
+
+ rules: no-undef: "Off", no-useless-escape: "Off"
    
 ## Contact
 
