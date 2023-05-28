@@ -3,7 +3,7 @@
  
  ## Description
 
-This is my final exam in Noroff Front-end Development. The project focuses on creating a front-end application for booking site called Holidaze with Noroff API CRUD. The task involved developing a modern and user-friendly front end application based on User Stories provided by the client. 
+This is my final exam in Noroff Front-end Development. The project focuses on creating a front-end application for a booking site called Holidaze with Noroff API CRUD. The task involved developing a modern and user-friendly front-end application based on User Stories provided by the client. 
 
 ### Pages
 
@@ -17,11 +17,11 @@ This is my final exam in Noroff Front-end Development. The project focuses on cr
  
  - Booking page: displays the selected venue along with a calendar showing the available dates for booking. Users can use the plus and minus buttons to add or reduce the number of guests for the booking. After selecting the dates and number of guests, the user can click the "Set" button. The form will then be set with the selected dates, number of guests, and the price for the booking. A "Book Now" button allows users to proceed with the booking.
 
-- Create venue page: To create a new venue, users are required to either log in or register as a venue manager using the provided registration form. The creation process involves filling out all the required fields, including uploading an image, providing a title and description, facilities, specifying the price, address, maximum number of guests,  and rating for the venue. Once all the required information is entered, users can submit the venue by clicking the "Host now" button. If there are no errors from the API, the user will be redirected to the newly created venue page, which can be accessed using the unique ID assigned to it.
+- Create venue page: To create a new venue, users are required to either login or register as a venue manager using the provided registration form. The creation process involves filling out all the required fields, including uploading an image, providing a title and description, facilities, specifying the price, address, maximum number of guests,  and rating for the venue. Once all the required information is entered, users can submit the venue by clicking the "Host now" button. If there are no errors from the API, the user will be redirected to the newly created venue page, which can be accessed using the unique ID assigned to it.
 
-- Update venue page: To update a venue, users are required to either log in or register as a venue manager using the provided registration form. When updating a venue, the existing values of the venue will be pre-filled in the update form. Users can modify any fields, such as uploading a new image, changing the title, facilities, description, price, address, maximum number of guests, or rating for the venue. After making the necessary updates, users can submit the changes by clicking the "Update now" button. If there are no errors from the API, the venue will be successfully updated and the user will be redirected to the updated venue page, which can be accessed using the unique ID assigned to it.
+- Update venue page: To update a venue, users are required to either login or register as a venue manager using the provided registration form. When updating a venue, the existing values of the venue will be pre-filled in the update form. Users can modify any fields, such as uploading a new image, changing the title, facilities, description, price, address, maximum number of guests, or rating for the venue. After making the necessary updates, users can submit the changes by clicking the "Update now" button. If there are no errors from the API, the venue will be successfully updated and the user will be redirected to the updated venue page, which can be accessed using the unique ID assigned to it.
 
-- Login model: To use the ContactPage in this project, you must fill out the following inputs with specific requirements:
+- Login model: To use the Login model in this project, you must fill out the following inputs with specific requirements:
    ```
    Password: minimum of 8 characters and is required.
    Email: Email must be from stud.noroff.no or noroff.no domain and is required.
@@ -29,7 +29,7 @@ This is my final exam in Noroff Front-end Development. The project focuses on cr
    Once you have filled out all required fields, click the "Login" button.
    ```
  
-- Sign up model: To use the ContactPage in this project, you must fill out the following inputs with specific requirements:
+- Sign up model: To use the Sign up model in this project, you must fill out the following inputs with specific requirements:
    ```
    name: name should not contain punctuation except underscore (_).
    Password: minimum of 8 characters and is required.
@@ -76,7 +76,7 @@ npm run start
 
 ## Deployment
 
-Project is configured to run deployment on Github pages on push to branch "master" Deploy static content to Pages.
+The project is configured to run deployment on Github pages on push to branch "master" Deploy static content to Pages.
 
 [![pages-build-deployment](https://github.com/Allawi465/holidaze/actions/workflows/pages/pages-build-deployment/badge.svg?branch=gh-pages)](https://github.com/Allawi465/holidaze/actions/workflows/pages/pages-build-deployment)
 
@@ -84,7 +84,7 @@ Project is configured to run deployment on Github pages on push to branch "maste
 
 ## Built With
 
-The project was just build with
+The project was just built with
 - React
 - HTML 
 - SASS
@@ -123,9 +123,9 @@ The project was just build with
    
   ### Configurations
   
-  Project is configured to run lint-staged with eslint --fix as pre-commit hook.
+  The Project is configured to run lint-staged with eslint --fix as pre-commit hook.
   
-  Project is configured to run prettier on all files on-save.
+  The Project is configured to run prettier on all files on save.
   
  The following configurations are set in the .prettierrc file:
    ```
@@ -142,7 +142,7 @@ The project was just build with
 
 If you have a suggestion that would make the site better, please contact me.
 
-I am very grateful for the feedbacks and the support. 
+I am very grateful for the feedback and the support. 
 
 Please contact me if you have any questions!
 
