@@ -8,6 +8,7 @@ import Footer from './footer';
  * @component
  * @property {function} Header render the Header component
  * @property {function} Outlet render the content sections
+ * @property {function} Footer render the Footer component
  * @returns {React.ReactElement} return Layout component
  * @example
  * <Layout />

@@ -2,9 +2,6 @@ import * as yup from 'yup';
 
 /**
  * Validation schema for user avatar
- * @typedef {Object}  SettingsSchema
- * @property {String} avatar.url User's avatar string must be a valid URL
- * @throws {Error} If validation fails
  */
 
 const SettingsSchema = yup.object({

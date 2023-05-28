@@ -5,21 +5,28 @@ import { AuthContext } from '../../../api';
 import { DeletingBtn } from '../../../style/buttons';
 
 /**
- * Renders a modal for change the user avatar
+ * Renders a modal for deleting a booking
  * @component
  * @param {Object} props The component props
  * @param {boolean} props.show Whether the modal should be displayed
  * @param {function} props.onClose The function to call when the modal is closed
- * @property {function} ChangeAvatarForm A form that handles user input
- * @returns {React.ReactElement} The SettingsModel component
+ * @property {function} OnFormSubmit A form that handles user input
+ * @property {function} CustomModal The function that return the custom model
+ * @returns {React.ReactElement} The CancelBookingsModel component
  * @example
- * <SettingsModel show={props.show} onClose={props.onClose}/>
+ * <CancelBookingsModel show={show} onClose={onClose} id={id} />
  */
 
 function CancelBookingsModel({ show, onClose, id }) {
   const { fetchData, isError } = useApiActions();
   const [errorMessage, setErrorMessage] = useState('');
   const { setBookings } = useContext(AuthContext);
+
+  /**
+   * Handles form submission asynchronously.
+   * @async
+   * @returns {Promise} A Promise that resolves when the form submission is completed
+   */
 
   const OnFormSubmit = async () => {
     try {
@@ -32,6 +39,7 @@ function CancelBookingsModel({ show, onClose, id }) {
       if (bookVenue.isError) {
         setErrorMessage(bookVenue.isError);
       } else {
+        // Updates the bookings array by filtering out the booking with the specified id
         setBookings((prevBookings) =>
           prevBookings.filter((booking) => booking.id !== id)
         );

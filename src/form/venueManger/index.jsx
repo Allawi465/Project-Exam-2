@@ -10,18 +10,18 @@ import useApiActions from '../../hooks/api/useApiActions';
 import { load, save } from '../../utils/localStorage';
 
 /**
- * Renders a register form component with validation and error handling
+ * Renders a venue manger form component with validation and error handling
  * @component
  * @param {object} props Component props
- * @param {function} props.onSignUpClick Callback function to close the register model and opens login model
+ * @param {function} props.onClose Callback function to close the model
  * @property {function} OnFormSubmit A function to handle inputs through API call
  * @property {function} useApiActions A hook for fetching data from an API endpoint and handling loading state
  * @property {boolean} isLoading True if API request is loading, false otherwise
  * @property {function} fetchData Function to fetch data from an API endpoint
  * @property {function} save Saves data to local storage
- * @returns {React.ReactElement} register form component
+ * @returns {React.ReactElement} VenueMangerForm form component
  * @example
- * <ChangeAvatarForm onSignUpClick={props.onSignUpClick} />
+ * <VenueMangerForm onClose={onClose} />
  */
 
 function VenueMangerForm({ onClose }) {
@@ -52,7 +52,7 @@ function VenueMangerForm({ onClose }) {
    */
 
   const OnFormSubmit = async (formData) => {
-    // Call API to register a user
+    // Call API to change the venueManager state
     const venueManagerRe = await fetchData(`/profiles/${name}`, {
       method: 'put',
       body: JSON.stringify(formData),
@@ -61,13 +61,14 @@ function VenueMangerForm({ onClose }) {
     if (venueManagerRe.isError) {
       setErrorMessage(venueManagerRe.isError);
     } else {
+      // Set venueManager and userData in context and local storage
       const { venueManager, ...userData } = venueManagerRe.data;
       setDataLogin({
         ...userData,
         venueManager: venueManager,
       });
       save('venueManger', venueManager);
-      // Close modal, opens login form and reset form
+      // Close modal, reset the error message and navigate to create venue form
       setErrorMessage('');
       onClose();
       navigate('/create', { replace: true });

@@ -7,6 +7,27 @@ import { AuthContext } from '../../../api';
 import { useApiActions } from '../../../hooks/index';
 import { load } from '../../../utils/localStorage';
 
+/**
+ * Renders the input details and showing the price of the selected dates
+ * @component
+ * @param {Object} props The component props
+ * @param {function} props.handleShowForm The function to handle showing the form
+ * @param {Date} props.date The selected dates
+ * @param {number} props.guests The number of guests
+ * @param {number} props.price The price of the venue
+ * @param {function} props.calculatePrice The function to calculate the total price.
+ * @param {string} props.id The venue ID
+ * @property {function} AuthContext getting the authentication state from AuthContext
+ * @property {function} load authentication state from local Storage
+ * @property {function} useModel A custom hook that provides the functionality for showing the login and sign up modals
+ * @property {boolean} showLoginModel A boolean that determines whether to show the login modal
+ * @property {boolean} showSignUpModel A boolean that determines whether to show the sign up modal
+ * @property {function} handleLoginModel A function to handle showing the login modal
+ * @property {function} handleCloseLoginModel A function to handle closing the login modal
+ * @property {function} handleSignUpModel A function to handle showing the sign up modal
+ * @returns {JSX.ReactElement} The rendered input details component
+ */
+
 function IsSubmitted({
   handleShowForm,
   date,

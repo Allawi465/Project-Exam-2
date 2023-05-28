@@ -21,7 +21,7 @@ import useApiActions from '../../hooks/api/useApiActions';
  * @property {function} save Saves data to local storage
  * @returns {React.ReactElement} Login form component
  * @example
- * <LoginForm onClose={props.onClose} />
+ * <LoginForm onClose={onClose} />
  */
 
 function LoginForm({ onClose }) {

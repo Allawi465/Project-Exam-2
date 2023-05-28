@@ -8,7 +8,7 @@ import { SettingsModel, VenueMangerModel } from '../../../index';
 import defaultAvatar from '../../../../images/defaultAvatar.jpg';
 
 /**
- * Renders a dropdown component containing user information and settings when user login
+ * Render a dropdown component containing user information and settings when user login
  * @component
  * @property {function} useModel A custom hook that provides the functionality for showing the setting avatar model
  * @property {function} handleOpenSettings A function to handle showing the setting model
@@ -16,6 +16,8 @@ import defaultAvatar from '../../../../images/defaultAvatar.jpg';
  * @property {function} AuthContext getting the authentication state from AuthContext
  * @property {function} logout Logout the user and clear the user token and Information
  * @property {function} load authentication state from local Storage
+ * @property {function} handleCloseVenueManger A function to handle closing the setting VenueManger modal
+ * @property {function} handleOpenVenueManger A function to handle showing the setting VenueManger modal
  * @returns {React.ReactElement} return dropdown component
  * @example
  * <NavbarDropdown />

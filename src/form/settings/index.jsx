@@ -22,7 +22,7 @@ import { useApiActions } from '../../hooks/index';
  * @property {function} load Gets the data from local storage
  * @returns {React.ReactElement} change avatar form component
  * @example
- * <ChangeAvatarForm onClose={props.onClose} />
+ * <ChangeAvatarForm onClose={onClose} />
  */
 
 function ChangeAvatarForm({ onClose }) {

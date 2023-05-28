@@ -4,6 +4,13 @@ import { useHelmet } from '../../hooks';
 import { UpdateBtn } from '../../style/buttons';
 import { BsChevronRight } from 'react-icons/bs';
 
+/**
+ * Component for rendering the "Route Not Found" page
+ * @component
+ * @property {function} useHelmet A function to show the meta and title
+ * @returns {JSX.ReactElement} RouteNotFound page component
+ */
+
 function RouteNotFound() {
   const notFoundMeta = useHelmet({
     title: ` 404 page | Holidaze`,

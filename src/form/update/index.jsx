@@ -5,6 +5,20 @@ import { useGetApi } from '../../hooks';
 import useApiActions from '../../hooks/api/useApiActions';
 import CreateForm from '../create/createForm';
 
+/**
+ * Renders a update form component with validation and error handling
+ * @component
+ * @property {function} OnFormSubmit A function to handle inputs through API call'
+ * @property {function} useGetApi A hook for get API
+ * @property {function} useApiActions A hook for fetching data from an API endpoint and handling loading state
+ * @property {boolean} isLoading True if API request is loading, false otherwise
+ * @property {function} fetchData Function to fetch data from an API endpoint
+ * @property {function} CreateForm Function to render form fields
+ * @returns {React.ReactElement} update form component
+ * @example
+ * <UpdateVenue />
+ */
+
 function UpdateVenue() {
   let { id } = useParams();
   const [defaultValues, setDefaultValues] = useState({});
@@ -12,7 +26,6 @@ function UpdateVenue() {
 
   useEffect(() => {
     if (data) {
-      // Ensure location property is present in the data
       const updatedDefaultValues = {
         name: data.name || '',
         description: data.description,
@@ -38,8 +51,10 @@ function UpdateVenue() {
 
   // Authentication and API data handling
   const { isLoading, fetchData } = useApiActions();
-  // Form validation using React Hook Form and Yup
+
+  // navigate with useNavigate
   const navigate = useNavigate();
+
   // State for error message
   const [errorMessage, setErrorMessage] = useState('');
 
@@ -87,19 +102,18 @@ function UpdateVenue() {
       },
     };
 
-    // Call API to change avatar url
-    const create = await fetchData(`/venues/${id}`, {
+    // Call API to update venue
+    const update = await fetchData(`/venues/${id}`, {
       method: 'put',
       body: JSON.stringify(venueData),
     });
     // Set error message if API response haves an error
-    if (create.isError) {
-      setErrorMessage(create.isError);
+    if (update.isError) {
+      setErrorMessage(update.isError);
     } else {
-      // Set user data and avatar in context and local storage
-      const { id } = create.data;
+      // Set the ID of the update venue to navigate path
+      const { id } = update.data;
       navigate(`/venue/${id}`, { replace: true });
-      // Close modal and reset form
       setErrorMessage('');
     }
   };

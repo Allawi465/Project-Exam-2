@@ -3,6 +3,19 @@ import { useNavigate } from 'react-router-dom';
 import useApiActions from '../../hooks/api/useApiActions';
 import CreateForm from './createForm';
 
+/**
+ * Renders a create form component with validation and error handling
+ * @component
+ * @property {function} OnFormSubmit A function to handle inputs through API call
+ * @property {function} useApiActions A hook for fetching data from an API endpoint and handling loading state
+ * @property {boolean} isLoading True if API request is loading, false otherwise
+ * @property {function} fetchData Function to fetch data from an API endpoint
+ * @property {function} CreateForm Function to render form fields
+ * @returns {React.ReactElement} create form component
+ * @example
+ * <CreateVenueForm />
+ */
+
 function CreateVenueForm() {
   // Authentication and API data handling
   const { isLoading, fetchData } = useApiActions();
@@ -10,7 +23,7 @@ function CreateVenueForm() {
   const navigate = useNavigate();
   // State for error message
   const [errorMessage, setErrorMessage] = useState('');
-
+  // creating empty object for default values
   const defaultValues = {};
 
   /**

@@ -2,10 +2,6 @@ import * as yup from 'yup';
 
 /**
  * Validation schema for login form
- * @typedef {Object} LoginSchema
- * @property {string} email The user's email, required, from the stud.noroff.no or noroff.no domain
- * @property {string} password The user's password, required, with a length of at least 8 characters
- * @throws {Error} Throws an error if email or password are missing or invalid
  */
 
 const LoginSchema = yup

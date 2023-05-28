@@ -1,8 +1,17 @@
-import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
-import Tooltip from 'react-bootstrap/Tooltip';
 import { AiOutlinePlusCircle } from 'react-icons/ai';
 import { useModel } from '../../../../hooks/index';
 import { SettingsModel } from '../../../index';
+
+/**
+ * A component that renders the settings avatar button
+ * @component
+ * @property {function} useModel A custom hook that provides the functionality for showing the setting avatar model
+ * @property {function} handleOpenSettings A function to handle showing the setting model
+ * @property {function} handleCloseSettings A function to handle closing setting model
+ * @returns {React.ReactElement} The settings avatar button component
+ * @example
+ * <SettingsAvatarBtn />
+ */
 
 function SettingsAvatarBtn() {
   const { showSettings, handleCloseSettings, handleOpenSettings } = useModel();

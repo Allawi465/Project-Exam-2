@@ -4,6 +4,19 @@ import DeleteVenuesModel from '../../../models/venue';
 import { useModel } from '../../../../hooks/index';
 import { SlOptions } from 'react-icons/sl';
 
+/**
+ * A component that renders the settings for a venue
+ * @component
+ * @param {Object} props The component props
+ * @param {string} props.id The ID of the venue
+ * @property {function} useModel A custom hook that provides the functionality for showing the setting avatar model
+ * @property {function} handleOpenSettings A function to handle showing the setting model
+ * @property {function} handleCloseSettings A function to handle closing setting model
+ * @returns {React.ReactElement} The settings venue component
+ * @example
+ * <SettingsVenue id={id} />
+ */
+
 function SettingsVenue({ id }) {
   const { handleOpenDelete, handleCloseDelete, showDeleteModel, deleteId } =
     useModel();

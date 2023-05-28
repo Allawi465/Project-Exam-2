@@ -2,6 +2,34 @@ import React, { useState } from 'react';
 import isSameDay from 'date-fns/isSameDay';
 import { FormSearchFilter } from './form';
 
+/**
+ * SearchForm component for displaying a search form with calender and add guest
+ * @component
+ * @param {object}  props Component props
+ * @param {Function} props.onSelectDates Handler for selecting dates
+ * @param {Function} props.onSelectGuests Handler for selecting guests
+ * @param {Function} props.onChangeSearch Handler for search input change
+ * @property {Function} onFormSubmit Handler for form submission
+ * @property {Function} handleSearchChange Handler for search input change
+ * @property {Function} handleFilter Handler displaying the filer calender
+ * @property {boolean} showContent indicating whether to show the content of the form
+ * @property {Function} handleSelect Handler for date selection in the calendar
+ * @property {Date} selectedDates Array of selected dates in the calendar
+ * @property {string} formError Error message to display in the form
+ * @property {Function} removeGuests Handler for removing guests
+ * @property {number} guests Number of guests
+ * @property {Function} addGuests Handler for adding guests
+ * @property {Function} handleCloseForm Handler for closing the form
+ * @property {Function} FormSearchFilter display the search anf filter form
+ * @returns {JSX.ReactElement} The SearchForm component
+ * @example
+ * <SearchForm
+ *  onSelectDates={onSelectDates}
+ *  onSelectGuests={onSelectGuests}
+ *  onChangeSearch={onChangeSearch}
+ *  />
+ */
+
 function SearchForm({ onSelectDates, onSelectGuests, onChangeSearch }) {
   const [showContent, setShowContent] = useState(false);
   const [selectedDates, setSelectedDates] = useState(null);

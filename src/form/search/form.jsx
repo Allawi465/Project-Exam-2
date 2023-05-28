@@ -3,6 +3,38 @@ import { GoSettings } from 'react-icons/go';
 import { RiSearchLine } from 'react-icons/ri';
 import { Calender } from '../../components/index';
 
+/**
+ * A component for displaying a search form with filters
+ * @component
+ * @param {object} props Component props
+ * @param {Function} props.onFormSubmit Handler for form submission
+ * @param {Function} props.handleSearchChange Handler for search input change
+ * @param {Function} props.handleFilter Handler displaying the filer calender
+ * @param {boolean} props.showContent indicating whether to show the content of the form
+ * @param {Function} props.handleSelect Handler for date selection in the calendar
+ * @param {Date} props.selectedDates Array of selected dates in the calendar
+ * @param {string} props.formError Error message to display in the form
+ * @param {Function} props.removeGuests Handler for removing guests
+ * @param {number} props.guests Number of guests
+ * @param {Function} props.addGuests Handler for adding guests
+ * @param {Function} props.handleCloseForm Handler for closing the form
+ * @returns {JSX.ReactElement} The FormSearchFilter component
+ * @example
+ * <FormSearchFilter
+ *  onFormSubmit={onFormSubmit}
+ *  handleSearchChange={handleSearchChange}
+ *  handleFilter={handleFilter}
+ *  showContent={showContent}
+ *  handleSelect={handleSelect}
+ *  selectedDates={selectedDates}
+ *  formError={formError}
+ *  removeGuests={removeGuests}
+ *  guests={guests}
+ *  addGuests={addGuests}
+ *  handleCloseForm={handleCloseForm}
+ *  />
+ */
+
 export function FormSearchFilter({
   onFormSubmit,
   handleSearchChange,
@@ -26,7 +58,7 @@ export function FormSearchFilter({
             </InputGroup.Text>
             <Form.Control
               type="search"
-              placeholder="Search"
+              placeholder="Search by name or address"
               aria-label="Search"
               onChange={handleSearchChange}
             />

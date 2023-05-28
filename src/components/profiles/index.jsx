@@ -9,6 +9,26 @@ import AccordionProfile from './accordion';
 import { SettingsAvatarBtn } from './accordion/ui';
 import defaultAvatar from '../../images/defaultAvatar.jpg';
 
+/**
+ * A component that displays user profiles, including their avatar, name, email, bookings, and venues
+ * @component
+ * @param {Object} props The component props
+ * @param {String} props.name The name of the profile
+ * @param {String} props.email The email of the profile user
+ * @param {string} props.avatar The URL of the profile user avatar image
+ * @param {boolean} props.venueManager state of the profile venue manager
+ * @param {Array} props.bookings The array of profile bookings
+ * @param {Array} props.venues The array of profile venues
+ * @property {function} AuthContext getting the authentication state from AuthContext
+ * @property {function} load authentication state from local Storage
+ * @property {function} useGetApi A hook for get API
+ * @property {function} ErrorMessage A function to display error message if api return error
+ * @property {function} Loading A function to display spinner when api load
+ * @returns {React.ReactElement} The Profiles component
+ * @example
+ * <Profile />
+ */
+
 function Profiles() {
   let { name } = useParams();
   const { dataLogin, viewBookings, setBookings, viewVenues, setVenues } =

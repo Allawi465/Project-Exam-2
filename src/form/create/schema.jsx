@@ -1,5 +1,9 @@
 import * as yup from 'yup';
 
+/**
+ * The Yup validation schema for the create form.
+ */
+
 const createSchema = yup
   .object({
     name: yup.string().trim().required('Please enter venue name'),

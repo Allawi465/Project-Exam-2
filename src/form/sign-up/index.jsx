@@ -18,7 +18,7 @@ import useApiActions from '../../hooks/api/useApiActions';
  * @property {function} save Saves data to local storage
  * @returns {React.ReactElement} register form component
  * @example
- * <ChangeAvatarForm onSignUpClick={props.onSignUpClick} />
+ * <ChangeAvatarForm onSignUpClick={onSignUpClick} />
  */
 
 function SignUpForm({ onLoginClick }) {

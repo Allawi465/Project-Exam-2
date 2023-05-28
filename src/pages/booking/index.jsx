@@ -6,6 +6,17 @@ import { Loading, ErrorMessage } from '../../components';
 import { BsChevronLeft } from 'react-icons/bs';
 import { Bookings } from '../../components';
 
+/**
+ * Component for rendering the booking page
+ * @component
+ * @property {function} useHelmet A function to show the meta and title
+ * @property {function} useGetApi A hook for get API
+ * @property {function} ErrorMessage A function to display error message if api return error
+ * @property {function} Loading A function to display spinner when api load
+ * @property {function} Bookings A function to display booking components
+ * @returns {JSX.ReactElement} Booking page component
+ */
+
 function Booking() {
   let { id } = useParams();
 

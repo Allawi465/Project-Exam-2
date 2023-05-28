@@ -13,6 +13,9 @@ import { GrMenu } from 'react-icons/gr';
  * The UserNavbar component render the navigation bar for login users
  * @component
  * @property {function} AuthContext getting the authentication state from AuthContext
+ * @property {function} load authentication state from local Storage
+ * @property {function} handleCloseVenueManger A function to handle closing the setting VenueManger modal
+ * @property {function} handleOpenVenueManger A function to handle showing the setting VenueManger modal
  * @returns {React.ReactElement} return UserNavbar component
  * @example
  * <UserNavbar />

@@ -9,6 +9,27 @@ import { AiOutlinePlus } from 'react-icons/ai';
 import { RiDeleteBin2Line } from 'react-icons/ri';
 import { confirmUrl } from '../../utils/regExImageUrl';
 
+/**
+ * Renders a create form for a venue with input fields
+ * @component
+ * @param {Object} props The component props
+ * @param {boolean} props.isLoading Indicates if the form is in a loading state.
+ * @param {function} props.OnFormSubmit The callback function to handle form submission.
+ * @param {string} props.errorMessage The error message to display
+ * @param {Object} props.defaultValues The default values for the form fields
+ * @param {string} props.btnText The text for the form submit button
+ * @returns {JSX.ReactElement} The create form component
+ * @example
+ * <CreateForm
+ *  OnFormSubmit={OnFormSubmit}
+ *  isLoading={isLoading}
+ *  errorMessage={errorMessage}
+ *  setErrorMessage={setErrorMessage}
+ *  defaultValues={defaultValues}
+ *  btnText={'Host now'}
+ *  />
+ */
+
 function CreateForm({
   isLoading,
   OnFormSubmit,

@@ -2,15 +2,16 @@ import { VenueMangerForm } from '../../../form/index';
 import { CustomModal } from '..';
 
 /**
- * Renders a modal for change the user avatar
+ * Renders a modal for change user venueManager state
  * @component
  * @param {Object} props The component props
  * @param {boolean} props.show Whether the modal should be displayed
  * @param {function} props.onClose The function to call when the modal is closed
- * @property {function} ChangeAvatarForm A form that handles user input
+ * @property {function} CustomModal The function that return the custom model
+ * @property {function} VenueMangerForm A form that handles user input
  * @returns {React.ReactElement} The SettingsModel component
  * @example
- * <SettingsModel show={props.show} onClose={props.onClose}/>
+ * <VenueMangerModel show={props.show} onClose={props.onClose}/>
  */
 
 function VenueMangerModel({ show, onClose, onSignUpClick }) {

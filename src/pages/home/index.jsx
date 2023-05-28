@@ -5,6 +5,20 @@ import { useHelmet } from '../../hooks';
 import { AiOutlineCloseCircle } from 'react-icons/ai';
 import format from 'date-fns/format';
 
+/**
+ * Component for rendering the home page
+ * @component
+ * @property {function} useHelmet A function to show the meta and title
+ * @property {function} handleSelectDates A The function to add dates
+ * @property {function} handleSelectGuests A The function to add guests
+ * @property {function} handleClearDates A The function to clear dates
+ * @property {function} handleClearGuests A The function to clear guests
+ * @property {function} Hero A function to display Hero component
+ * @property {function} Venues A function to render venues component
+ * @property {function} SearchUi A function to search and filter the venues
+ * @returns {JSX.ReactElement} Home page component
+ */
+
 function Home() {
   const [selectedDates, setSelectedDates] = useState(null);
   const [guests, setGuests] = useState(null);

@@ -8,6 +8,7 @@ import { CustomModal } from '..';
  * @param {boolean} props.show Whether the modal should be displayed
  * @param {function} props.onClose The function to call when the modal is closed
  * @property {function} ChangeAvatarForm A form that handles user input
+ * @property {function} CustomModal The function that return the custom model
  * @returns {React.ReactElement} The SettingsModel component
  * @example
  * <SettingsModel show={props.show} onClose={props.onClose}/>

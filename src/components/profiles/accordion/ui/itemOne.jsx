@@ -8,6 +8,18 @@ import { HiLocationMarker } from 'react-icons/hi';
 import { MdGroup } from 'react-icons/md';
 import format from 'date-fns/format';
 
+/**
+ * A component that renders the bookings for a user
+ * @component
+ * @param {Object} props The component props
+ * @param {Array} props.bookings The array of bookings
+ * @param {string} props.name The name of the user
+ * @param {string} props.isLogName the name of the login user
+ * @returns {React.ReactElement} The YourBookings component
+ * @example
+ * <YourBookings bookings={bookings} name={name} isLogName={isLogName} />
+ */
+
 function YourBookings({ bookings, name, isLogName }) {
   const { handleOpenDelete, handleCloseDelete, showDeleteModel, deleteId } =
     useModel();

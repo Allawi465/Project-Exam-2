@@ -6,6 +6,19 @@ import { AiFillHeart } from 'react-icons/ai';
 import { HiLocationMarker } from 'react-icons/hi';
 import { MdGroup } from 'react-icons/md';
 
+/**
+ * A component that renders the venues for a user
+ * @component
+ * @param {Object} props The component props
+ * @param {Array} props.venues The array of venues
+ * @param {string} props.name The name of the user
+ * @param {string} props.isLogName the name of the login user
+ * @property {function} SettingsVenue A function to show the setting to the user venues
+ * @returns {React.ReactElement} The YourBookings component
+ * @example
+ * <YourVenues venues={venues} name={name} isLogName={isLogName} />
+ */
+
 function YourVenues({ venues, isLogName, name }) {
   return (
     <>

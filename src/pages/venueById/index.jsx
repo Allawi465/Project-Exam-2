@@ -4,6 +4,20 @@ import { useGetApi, useHelmet } from '../../hooks/index';
 import { Venue, Loading, ErrorMessage } from '../../components';
 import { BsChevronLeft } from 'react-icons/bs';
 
+/**
+ * Component for rendering venue by id page
+ * @component
+ * @property {function} useHelmet A function to show the meta and title
+ * @property {function} useHelmet A function to show the meta and title
+ * @property {function} AuthContext getting the authentication state from AuthContext
+ * @property {function} load authentication state from local Storage
+ * @property {function} useGetApi A hook for get API
+ * @property {function} ErrorMessage A function to display error message if api return error
+ * @property {function} Loading A function to display spinner when api load
+ * @property {function} Venue A function to display venue by id
+ * @returns {JSX.ReactElement} Venue by id page component
+ */
+
 function VenueById() {
   let { id } = useParams();
 

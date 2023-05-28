@@ -10,6 +10,7 @@ import { SignUpForm } from '../../../form/index';
  * @param {function} props.onClose The function to call when the modal is closed
  * @param {function} props.onLoginClick The function to call when the "Login" button is clicked
  * @property {function} SignUpForm A form that handles user input
+ * @property {function} CustomModal The function that return the custom model
  * @returns {React.ReactElement} The LoginModel component
  * @example
  * <SignUpModel show={props.show} onClose={props.onClose} onLoginClick={props.onLoginClick} />

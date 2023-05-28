@@ -1,4 +1,34 @@
 import { Calender } from '../../../components';
+
+/**
+ * Renders a form for booking venue
+ * @component
+ * @param {Object} props The component props
+ * @param {function} props.OnFormSubmit The function to handle form submission
+ * @param {function} props.onChange The function to handle Calender input change
+ * @param {Array} props.value The selected dates value
+ * @param {function} props.tileDisabled The function used to check if a tile date should be disabled
+ * @param {string} props.formError The error message to display in the form
+ * @param {function} props.removeGuests The function to remove guests
+ * @param {function} props.addGuests The function to add guests
+ * @param {function} props.handleCloseForm The function to handle form closure
+ * @param {number} props.guests The number of guests
+ * @returns {JSX.ReactElement} The rendered form UI
+ * @example
+ * <FormUi
+ *  OnFormSubmit={OnFormSubmit}
+ *  onChange={handleSelect}
+ *  value={date}
+ *  tileDisabled={unavailableDays}
+ *  formError={formError}
+ *  removeGuests={removeGuests}
+ *  addGuests={addGuests}
+ *  handleCloseForm={handleCloseForm}
+ *  guests={guests}
+ *  price={price}
+ *  />
+ */
+
 function FormUi({
   OnFormSubmit,
   onChange,

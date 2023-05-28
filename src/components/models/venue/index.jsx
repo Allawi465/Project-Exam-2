@@ -6,6 +6,19 @@ import { load } from '../../../utils/localStorage';
 import { AuthContext } from '../../../api';
 import { DeletingBtn } from '../../../style/buttons';
 
+/**
+ * Renders a modal for deleting a venue
+ * @component
+ * @param {Object} props The component props
+ * @param {boolean} props.show Whether the modal should be displayed
+ * @param {function} props.onClose The function to call when the modal is closed
+ * @property {function} OnFormSubmit A form that handles user input
+ * @property {function} CustomModal The function that return the custom model
+ * @returns {React.ReactElement} The DeleteVenuesModel component
+ * @example
+ * <DeleteVenuesModel show={show} onClose={onClose} id={id} />
+ */
+
 function DeleteVenuesModel({ show, onClose, id }) {
   const { dataLogin, setVenues } = useContext(AuthContext);
   const { fetchData, isError } = useApiActions();
@@ -13,6 +26,12 @@ function DeleteVenuesModel({ show, onClose, id }) {
   const name = (dataLogin && dataLogin.name) || load('user')?.name || '';
 
   const navigate = useNavigate();
+
+  /**
+   * Handles form submission asynchronously.
+   * @async
+   * @returns {Promise} A Promise that resolves when the form submission is completed
+   */
 
   const OnFormSubmit = async () => {
     try {
@@ -25,6 +44,7 @@ function DeleteVenuesModel({ show, onClose, id }) {
       if (deleteVenue.isError) {
         setErrorMessage(deleteVenue.isError);
       } else {
+        // Updates the venues array by filtering out the venue with the specified id
         setVenues((prevVenues) =>
           prevVenues.filter((venue) => venue.id !== id)
         );

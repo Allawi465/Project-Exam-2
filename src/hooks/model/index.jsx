@@ -8,6 +8,10 @@ import { useState } from 'react';
  * @property {function} handleCloseLoginModel A function to handle closing the login modal
  * @property {function} handleSignUpModel A function to handle showing the sign up modal
  * @property {function} handleCloseSignUpModel A function to handle closing the sign up modal
+ * @property {function} handleOpenDelete A function to handle showing the delete modal
+ * @property {function} handleCloseDelete A function to handle closing the delete modal
+ * @property {function} handleOpenVenueManger A function to handle showing venueManger model
+ * @property {function} handleCloseVenueManger A function to handle closing venueManger model
  */
 
 /**
@@ -43,7 +47,6 @@ function useModel() {
 
   const handleOpenDelete = (id) => {
     setDeleteId(id);
-    console.log(id);
     setDeleteModel(true);
   };
 
