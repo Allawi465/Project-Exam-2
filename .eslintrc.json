@@ -15,12 +15,6 @@
         "cypress/no-unnecessary-waiting": "off",
         "no-unused-vars": "off"
       }
-    },
-    {
-      "files": ["cypress/support/component.js"],
-      "globals": {
-        "Cypress": "readonly"
-      }
     }
   ],
   "parserOptions": {
