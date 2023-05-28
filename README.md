@@ -78,7 +78,7 @@ npm run start
 
 The project is configured to run deployment on Github pages on push to branch "master" Deploy static content to Pages.
 
-[![pages-build-deployment](https://github.com/Allawi465/holidaze/actions/workflows/pages/pages-build-deployment/badge.svg?branch=gh-pages)](https://github.com/Allawi465/holidaze/actions/workflows/pages/pages-build-deployment)
+[![pages-build-deployment](https://github.com/Allawi465/holidaze/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/Allawi465/holidaze/actions/workflows/pages/pages-build-deployment)
 
 [live link](https://allawi465.github.io/holidaze/)
 
