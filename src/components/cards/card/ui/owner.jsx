@@ -27,7 +27,7 @@ import { load } from '../../../../utils/localStorage';
  * @property {function} handleCloseSignUpModel A function to handle closing the sign up modal
  * @returns {React.ReactElement} return owner component
  * @example
- * <Owner avatar={props.avatar} ownerName={props.name} email={props.email} />
+ * <Owner avatar={avatar} ownerName={name} email={email} />
  */
 
 function Owner({ avatar, ownerName, email }) {

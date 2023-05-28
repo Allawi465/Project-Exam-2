@@ -19,7 +19,8 @@ function FilterVenues(venues, selectedDates, guests, search) {
       }) &&
       (venue.name.toLowerCase().includes(search.toLowerCase()) ||
         venue.location.address.toLowerCase().includes(search.toLowerCase()) ||
-        venue.location.city.toLowerCase().includes(search.toLowerCase()))
+        venue.location.city.toLowerCase().includes(search.toLowerCase()) ||
+        venue.location.country.toLowerCase().includes(search.toLowerCase()))
     );
   });
 }

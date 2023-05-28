@@ -1,5 +1,15 @@
 import Table from 'react-bootstrap/Table';
 
+/**
+ * A component that renders a table of bookings
+ * @component
+ * @param {Object} props The component props
+ * @param {Array} props.bookings The array of bookings to display in the table
+ * @returns {React.ReactElement} return bookings as table
+ * @example
+ * <BookingsTable bookings={bookings} />
+ */
+
 function BookingsTable({ bookings }) {
   const formatDate = (dateString) => {
     const date = new Date(dateString);

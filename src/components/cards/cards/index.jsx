@@ -14,16 +14,17 @@ import { AiFillHeart } from 'react-icons/ai';
  * A component that renders a list of venues retrieved from an API endpoint
  * @component
  * @param {Object} props The component props
+ * @param {Array} props.selectedDates the dates selected from filter calender
+ * @param {Array} props.guests the guests number selected from filter calender
+ * @param {Array} props.search the search value from the search bar
  * @param {Array} props.media The media array containing images of the venue
  * @param {Number} props.price The price of the venue per night
  * @param {String} props.name The name of the venue
  * @param {Number} props.rating The rating of the venue
  * @param {String} props.id The id of the venue
+ * @param {Object} props.location The location of the venue
  * @param {Object} props.meta The metadata object containing information about the venue's amenities
- * @param {boolean} props.meta.breakfast Indicates if the venue provides breakfast
- * @param {boolean} props.meta.wifi Indicates if the venue provides free WiFi
- * @param {boolean} props.meta.pets Indicates if pets are allowed in the venue
- * @param {boolean} props.meta.parking Indicates if free parking is available at the venue
+ * @property {function} FilterVenues A function that filter venues by filtering with dates, number and with search value to.
  * @property {function} VenuesCarousel A component that displays a carousel with an array of media for a venue
  * @property {function} useGetApi A hook for get API
  * @property {function} ErrorMessage A function to display error message if api return error
@@ -31,7 +32,10 @@ import { AiFillHeart } from 'react-icons/ai';
  * @property {function} Facilities A component that renders the home facilities breakfast, WiFi, pets, and parking
  * @returns {React.ReactElement} return Venues component
  * @example
- * <Venue data={props.data} />
+ *  <Venues
+ *   selectedDates={selectedDates}
+ *   guests={guests}
+ *   search={search}
  */
 
 function Venues({ selectedDates, guests, search }) {
@@ -64,7 +68,7 @@ function Venues({ selectedDates, guests, search }) {
     return (
       <>
         <ErrorMessage
-          variant="warning"
+          variant="danger"
           text={errorMessageDisplay(search, guests, selectedDates)}
         />
       </>
@@ -90,14 +94,14 @@ function Venues({ selectedDates, guests, search }) {
               </div>
               <div className="card-text">
                 <div className="card-text-address">
-                  {!venue.location.address ||
-                  venue.location.address === 'Unknown' ||
+                  {!venue.location.country ||
+                  venue.location.country === 'Unknown' ||
                   !venue.location.city ||
                   venue.location.city === 'Unknown' ? (
                     <p>Unknown location</p>
                   ) : (
                     <p>
-                      {venue.location.address}, {venue.location.city}
+                      {venue.location.city}, {venue.location.country}
                     </p>
                   )}
                 </div>

@@ -13,7 +13,7 @@ import { AiFillCar } from 'react-icons/ai';
  * @param {boolean} props.parking Indicates if free parking is available at the venue
  * @returns {React.ReactElement} return VenueFacilities component
  * @example
- * <VenueFacilities breakfast={props.breakfast} wifi={props.wifi} pets={props.pets} parking={props.parking} />
+ * <VenueFacilities breakfast={breakfast} wifi={wifi} pets={pets} parking={parking} />
  */
 
 function VenueFacilities({ breakfast, wifi, pets, parking }) {

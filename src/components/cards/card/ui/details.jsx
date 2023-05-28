@@ -10,13 +10,14 @@ import { MdGroup } from 'react-icons/md';
  * @param {string} props.name The name of the venue
  * @param {string} props.address The address of the venue
  * @param {string} props.city The city of the venue
+ * @param {string} props.country The country of the venue
  * @param {number} props.maxGuests The maximum number of guests allowed
  * @returns {React.ReactElement} return details component
  * @example
- * <Details rating={props.rating} name={props.name} address={props.address} city={props.city} maxGuests={props.maxGuests} />
+ * <Details rating={rating} name={name} address={address} city={city} maxGuests={maxGuests} />
  */
 
-function Details({ rating, name, address, city, maxGuests }) {
+function Details({ rating, name, address, city, country, maxGuests }) {
   return (
     <div className="venue-detail-details">
       <div className="venue-detail-details-title">
@@ -34,11 +35,13 @@ function Details({ rating, name, address, city, maxGuests }) {
             {!address ||
             address === 'Unknown' ||
             !city ||
-            city === 'Unknown' ? (
+            city === 'Unknown' ||
+            !country ||
+            country === 'Unknown' ? (
               <span>Unknown location</span>
             ) : (
               <span>
-                {address}, {city}
+                {address}, {city}, {country}
               </span>
             )}
           </span>

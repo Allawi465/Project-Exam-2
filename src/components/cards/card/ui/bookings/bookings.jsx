@@ -6,13 +6,15 @@ import { BsCalendarDate } from 'react-icons/bs';
 import { useBookingCalendar } from '../../../../../hooks';
 import BookingsTable from './tableBookings';
 /**
- * A component that render the rental price of a venue and provides a button to rent it
+ * A component that render venue bookings
  * @component
  * @param {Object} props The component props
- * @param {number} props.price The price of the venue rental
- * @returns {React.ReactElement} return venue price and a button to rent it as a component
+ * @param {string} props.ownerName The name of the profile
+ * @param {Array} props.bookings The bookings data of the venue
+ * @property {function} BookingsTable A function that render the bookings as table
+ * @returns {React.ReactElement} return profile bookings
  * @example
- * <Rent price={props.price} />
+ * <Bookings ownerName={ownerName} bookings={bookings} />
  */
 
 function Bookings({ ownerName, bookings }) {
