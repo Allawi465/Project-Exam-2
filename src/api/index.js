@@ -1,4 +1,4 @@
-import React, { useState, createContext } from 'react';
+import { useState, createContext } from 'react';
 import { remove } from '../utils/localStorage';
 
 /**
@@ -20,6 +20,8 @@ export const AuthContext = createContext();
  * @property {boolean} useState dataLogin and setDataLogin in the useState
  * @property {Function} logout A function to log the user out
  * @property {Function} setDataLogin A function to update the login data
+ * @property {setBookings} setBookings A function to update the user bookings
+ * @property {setVenues} setVenues A function to update the user venues
  * @returns {value} ErrorMessage, dataLogin, setDataLogin and logout functions
  * @example
  * return (
