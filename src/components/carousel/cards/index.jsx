@@ -17,7 +17,7 @@ import defaultImages from '../../../images/default.jpg';
  * @property {function} ButtonsCarousel A component that renders buttons to scroll through the images
  * @returns {React.ReactElement} return VenuesCarousel component
  * @example
- * <VenuesCarousel media={props.media} name={props.name} />
+ * <VenuesCarousel media={media} name={name} />
  */
 
 function VenuesCarousel({ media, name }) {
