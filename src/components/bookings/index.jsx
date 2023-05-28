@@ -2,6 +2,21 @@ import defaultImages from '../../images/default.jpg';
 import { AiFillHeart } from 'react-icons/ai';
 import { BookingForm } from '../../form';
 
+/**
+ * A component that render the venue booking form
+ * @component
+ * @param {Object} props The component props
+ * @param {number} props.rating The rating of the venue
+ * @param {string} props.name The name of the venue
+ * @param {string} props.address The address of the venue
+ * @param {string} props.city The city of the venue
+ * @param {number} props.maxGuests The maximum number of guests allowed
+ * @param {Array} props.data.bookings The bookings data of the venue
+ * @returns {React.ReactElement} return details component
+ * @example
+ * <Bookings data={data} />
+ */
+
 function Booking({ data }) {
   const { media, name, price, rating, location, bookings, maxGuests, id } =
     data;
